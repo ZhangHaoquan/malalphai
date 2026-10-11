@@ -507,7 +507,7 @@ function renderSide() {
     <tr class="grp"><td colspan="2">${byGemini()}</td></tr>
     <tr><td>Comments read</td><td>${read}</td></tr>
     <tr><td>Dollar calls kept</td><td>${G.opinions.length}</td></tr>
-    <tr><td>Skipped, with reason</td><td>${read - G.opinions.length}</td></tr>
+    <tr><td>Not a currency call</td><td>${read - G.opinions.length}</td></tr>
     <tr><td>Tokens in / out</td><td>${(G.trace.prompt_tokens / 1000).toFixed(1)}K / ${G.trace.output_tokens}</td></tr>
     <tr class="grp"><td colspan="2"><span class="prov">MalalphAI</span></td></tr>
     <tr><td>Deduped</td><td>${LIVE.dedupe.readings} → 1 dish</td></tr>
