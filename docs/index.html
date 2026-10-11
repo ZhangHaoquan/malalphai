@@ -8,440 +8,382 @@
 <body>
 <title>MalalphAI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=IBM+Plex+Mono:wght@500;600;700&family=Open+Sans:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=IBM+Plex+Mono:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap">
+<style id="logos">.lg-nimble{display:inline-block;height:var(--lg-h,12px);aspect-ratio:199/28;background:currentColor;vertical-align:-1px;-webkit-mask:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTk5IiBoZWlnaHQ9IjI4IiB2aWV3Qm94PSIwIDAgMTk5IDI4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNNjIuMDA2NyAxOS40MzE0TDU5Ljg4NDkgMTkuOTQ1OFYyLjQyNTc4SDY3LjQ2M1YyNS4xMjAxSDU3LjY3Mkw0Ni4zOTU3IDcuNjMwMzZMNDguNTE3NiA3LjExNTk1VjI1LjEyMDFINDAuOTM5NVYyLjQyNTc4SDUxLjAzMzZMNjIuMDA2NyAxOS40MzE0WiIgZmlsbD0iIzAwMCIvPgo8cGF0aCBkPSJNNzIuMDEzNSAyLjQyNTc4SDc5LjgzNDFWMjUuMTIwMUg3Mi4wMTM1VjIuNDI1NzhaIiBmaWxsPSIjMDAwIi8+CjxwYXRoIGQ9Ik0xMTkuMzkgMi40MjU3OFYyNS4xMjAxSDExMS45NjNWNS4zNjA5MkwxMTMuMzg4IDUuNTQyNDdMMTA1Ljc0OSAyNS4xMjAxSDk4LjAxOTZMOTAuMzgwOCA1LjYzMzI1TDkxLjgwNTUgNS40MjE0NFYyNS4xMjAxSDg0LjM3ODlWMi40MjU3OEg5Ni40NzM2TDEwMy4yNjQgMjAuOTE0MUgxMDAuNTY2TDEwNy4yOTUgMi40MjU3OEgxMTkuMzlaIiBmaWxsPSIjMDAwIi8+CjxwYXRoIGQ9Ik0xNDAuNDM5IDE0LjEwNThMMTQxLjA0NSAxMi43MTM5QzE0Mi43NjMgMTIuNzc0NCAxNDQuMTk4IDEzLjA0NjcgMTQ1LjM0OSAxMy41MzA5QzE0Ni41MDEgMTQuMDE1IDE0Ny4zNiAxNC42OTA4IDE0Ny45MjYgMTUuNTU4M0MxNDguNTEyIDE2LjQwNTUgMTQ4LjgwNSAxNy40MjQyIDE0OC44MDUgMTguNjE0NEMxNDguODA1IDE5Ljg0NSAxNDguNTIyIDIwLjk1NDUgMTQ3Ljk1NiAyMS45NDI5QzE0Ny40MTEgMjIuOTMxNCAxNDYuNTcyIDIzLjcwODEgMTQ1LjQ0IDI0LjI3MjlDMTQ0LjMwOSAyNC44Mzc3IDE0Mi44OTQgMjUuMTIwMSAxNDEuMTk3IDI1LjEyMDFIMTIzLjM0MkwxMjUuMDcgMTMuNDcwNEwxMjMuMzQyIDIuNDI1NzhIMTQwLjU2QzE0Mi42NjIgMi40MjU3OCAxNDQuMzA5IDIuOTIwMDEgMTQ1LjUwMSAzLjkwODQ4QzE0Ni42OTMgNC44NzY3NyAxNDcuMjg5IDYuMjI4MzUgMTQ3LjI4OSA3Ljk2MzIxQzE0Ny4yODkgOC45NTE2NyAxNDcuMDY3IDkuODc5NjIgMTQ2LjYyMyAxMC43NDdDMTQ2LjE3OCAxMS42MTQ1IDE0NS40NSAxMi4zNTA4IDE0NC40NCAxMi45NTZDMTQzLjQ1IDEzLjU0MSAxNDIuMTE2IDEzLjkyNDMgMTQwLjQzOSAxNC4xMDU4Wk0xMzAuOTgxIDIzLjQyNTZMMTI4LjAxMSAxOS45NDU4SDEzOC43MTFDMTM5LjM3OCAxOS45NDU4IDEzOS45MDMgMTkuNzc0NCAxNDAuMjg3IDE5LjQzMTRDMTQwLjY3MSAxOS4wNjgzIDE0MC44NjMgMTguNTg0MiAxNDAuODYzIDE3Ljk3OUMxNDAuODYzIDE3LjQzNDMgMTQwLjY3MSAxNi45NzAzIDE0MC4yODcgMTYuNTg3MUMxMzkuOTIzIDE2LjIwMzggMTM5LjM3OCAxNi4wMTIxIDEzOC42NSAxNi4wMTIxSDEyOS42NzhWMTAuOTI4NkgxMzcuNDk4QzEzOC4wMjQgMTAuOTI4NiAxMzguNDU4IDEwLjc2NzIgMTM4LjgwMiAxMC40NDQ1QzEzOS4xNjYgMTAuMTIxNyAxMzkuMzQ4IDkuNzA4MTUgMTM5LjM0OCA5LjIwMzgzQzEzOS4zNDggOC43Mzk4NiAxMzkuMTg2IDguMzU2NTggMTM4Ljg2MyA4LjA1Mzk4QzEzOC41MzkgNy43NTEzOSAxMzguMDg1IDcuNjAwMSAxMzcuNDk4IDcuNjAwMUgxMjguMDQxTDEzMC45ODEgNC4xMjAzTDEzMi41MjcgMTMuNDcwNEwxMzAuOTgxIDIzLjQyNTZaIiBmaWxsPSIjMDAwIi8+CjxwYXRoIGQ9Ik0xNjAuMTc5IDIuNDI1NzhWMjEuNjcwNkwxNTYuNjYzIDE4LjE2MDVIMTczLjU3N1YyNS4xMjAxSDE1Mi4zNTlWMi40MjU3OEgxNjAuMTc5WiIgZmlsbD0iIzAwMCIvPgo8cGF0aCBkPSJNMTk3LjIyOSAxMS4wNzk5VjE2LjQ2NkgxODAuMTAyVjExLjA3OTlIMTk3LjIyOVpNMTg1LjQ2OCAxMy43NzNMMTg0LjA3MyAyMi4yMTUzTDE4MS4xMDIgMTguOTQ3M0gxOTguMzVWMjUuMTIwMUgxNzYuMzQzTDE3OC4wMTEgMTMuNzczTDE3Ni4zNDMgMi40MjU3OEgxOTguMTk5VjguNTk4NjVIMTgxLjEwMkwxODQuMDczIDUuMzMwNjZMMTg1LjQ2OCAxMy43NzNaIiBmaWxsPSIjMDAwIi8+CjxwYXRoIGQ9Ik0zMi4wODQgMTAuNzgwM1YyNy4wNTE4TDEzLjcyMTcgMTMuMDA0OVYyNy4wNTQ3TDAgMTYuMjUzOVYwTDE4LjM2NzIgMTQuMTA4NFYwTDMyLjA4NCAxMC43ODAzWk0xLjk3NjU2IDEwLjEwNDVMNi44NzU5OCAxMy44MjMyVjE5LjI3MTVMMTEuNzc1NCAyMi45NTUxVjE3LjMyMjNMNi45NTUwOCAxMy43ODMyVjguMTA1NDdMMS45NzY1NiA0LjQxNzk3VjEwLjEwNDVaTTIwLjMwODYgMTAuMTA0NUwyNS4yMDkgMTMuODI0MlYxOS4yNzE1TDMwLjEwODQgMjIuOTU1MVYxNy4zMjIzTDI1LjI4NzEgMTMuNzgyMlY4LjEwNTQ3TDIwLjMwODYgNC40MTc5N1YxMC4xMDQ1WiIgZmlsbD0iIzAwMCIvPgo8L3N2Zz4K") center/contain no-repeat;mask:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTk5IiBoZWlnaHQ9IjI4IiB2aWV3Qm94PSIwIDAgMTk5IDI4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNNjIuMDA2NyAxOS40MzE0TDU5Ljg4NDkgMTkuOTQ1OFYyLjQyNTc4SDY3LjQ2M1YyNS4xMjAxSDU3LjY3Mkw0Ni4zOTU3IDcuNjMwMzZMNDguNTE3NiA3LjExNTk1VjI1LjEyMDFINDAuOTM5NVYyLjQyNTc4SDUxLjAzMzZMNjIuMDA2NyAxOS40MzE0WiIgZmlsbD0iIzAwMCIvPgo8cGF0aCBkPSJNNzIuMDEzNSAyLjQyNTc4SDc5LjgzNDFWMjUuMTIwMUg3Mi4wMTM1VjIuNDI1NzhaIiBmaWxsPSIjMDAwIi8+CjxwYXRoIGQ9Ik0xMTkuMzkgMi40MjU3OFYyNS4xMjAxSDExMS45NjNWNS4zNjA5MkwxMTMuMzg4IDUuNTQyNDdMMTA1Ljc0OSAyNS4xMjAxSDk4LjAxOTZMOTAuMzgwOCA1LjYzMzI1TDkxLjgwNTUgNS40MjE0NFYyNS4xMjAxSDg0LjM3ODlWMi40MjU3OEg5Ni40NzM2TDEwMy4yNjQgMjAuOTE0MUgxMDAuNTY2TDEwNy4yOTUgMi40MjU3OEgxMTkuMzlaIiBmaWxsPSIjMDAwIi8+CjxwYXRoIGQ9Ik0xNDAuNDM5IDE0LjEwNThMMTQxLjA0NSAxMi43MTM5QzE0Mi43NjMgMTIuNzc0NCAxNDQuMTk4IDEzLjA0NjcgMTQ1LjM0OSAxMy41MzA5QzE0Ni41MDEgMTQuMDE1IDE0Ny4zNiAxNC42OTA4IDE0Ny45MjYgMTUuNTU4M0MxNDguNTEyIDE2LjQwNTUgMTQ4LjgwNSAxNy40MjQyIDE0OC44MDUgMTguNjE0NEMxNDguODA1IDE5Ljg0NSAxNDguNTIyIDIwLjk1NDUgMTQ3Ljk1NiAyMS45NDI5QzE0Ny40MTEgMjIuOTMxNCAxNDYuNTcyIDIzLjcwODEgMTQ1LjQ0IDI0LjI3MjlDMTQ0LjMwOSAyNC44Mzc3IDE0Mi44OTQgMjUuMTIwMSAxNDEuMTk3IDI1LjEyMDFIMTIzLjM0MkwxMjUuMDcgMTMuNDcwNEwxMjMuMzQyIDIuNDI1NzhIMTQwLjU2QzE0Mi42NjIgMi40MjU3OCAxNDQuMzA5IDIuOTIwMDEgMTQ1LjUwMSAzLjkwODQ4QzE0Ni42OTMgNC44NzY3NyAxNDcuMjg5IDYuMjI4MzUgMTQ3LjI4OSA3Ljk2MzIxQzE0Ny4yODkgOC45NTE2NyAxNDcuMDY3IDkuODc5NjIgMTQ2LjYyMyAxMC43NDdDMTQ2LjE3OCAxMS42MTQ1IDE0NS40NSAxMi4zNTA4IDE0NC40NCAxMi45NTZDMTQzLjQ1IDEzLjU0MSAxNDIuMTE2IDEzLjkyNDMgMTQwLjQzOSAxNC4xMDU4Wk0xMzAuOTgxIDIzLjQyNTZMMTI4LjAxMSAxOS45NDU4SDEzOC43MTFDMTM5LjM3OCAxOS45NDU4IDEzOS45MDMgMTkuNzc0NCAxNDAuMjg3IDE5LjQzMTRDMTQwLjY3MSAxOS4wNjgzIDE0MC44NjMgMTguNTg0MiAxNDAuODYzIDE3Ljk3OUMxNDAuODYzIDE3LjQzNDMgMTQwLjY3MSAxNi45NzAzIDE0MC4yODcgMTYuNTg3MUMxMzkuOTIzIDE2LjIwMzggMTM5LjM3OCAxNi4wMTIxIDEzOC42NSAxNi4wMTIxSDEyOS42NzhWMTAuOTI4NkgxMzcuNDk4QzEzOC4wMjQgMTAuOTI4NiAxMzguNDU4IDEwLjc2NzIgMTM4LjgwMiAxMC40NDQ1QzEzOS4xNjYgMTAuMTIxNyAxMzkuMzQ4IDkuNzA4MTUgMTM5LjM0OCA5LjIwMzgzQzEzOS4zNDggOC43Mzk4NiAxMzkuMTg2IDguMzU2NTggMTM4Ljg2MyA4LjA1Mzk4QzEzOC41MzkgNy43NTEzOSAxMzguMDg1IDcuNjAwMSAxMzcuNDk4IDcuNjAwMUgxMjguMDQxTDEzMC45ODEgNC4xMjAzTDEzMi41MjcgMTMuNDcwNEwxMzAuOTgxIDIzLjQyNTZaIiBmaWxsPSIjMDAwIi8+CjxwYXRoIGQ9Ik0xNjAuMTc5IDIuNDI1NzhWMjEuNjcwNkwxNTYuNjYzIDE4LjE2MDVIMTczLjU3N1YyNS4xMjAxSDE1Mi4zNTlWMi40MjU3OEgxNjAuMTc5WiIgZmlsbD0iIzAwMCIvPgo8cGF0aCBkPSJNMTk3LjIyOSAxMS4wNzk5VjE2LjQ2NkgxODAuMTAyVjExLjA3OTlIMTk3LjIyOVpNMTg1LjQ2OCAxMy43NzNMMTg0LjA3MyAyMi4yMTUzTDE4MS4xMDIgMTguOTQ3M0gxOTguMzVWMjUuMTIwMUgxNzYuMzQzTDE3OC4wMTEgMTMuNzczTDE3Ni4zNDMgMi40MjU3OEgxOTguMTk5VjguNTk4NjVIMTgxLjEwMkwxODQuMDczIDUuMzMwNjZMMTg1LjQ2OCAxMy43NzNaIiBmaWxsPSIjMDAwIi8+CjxwYXRoIGQ9Ik0zMi4wODQgMTAuNzgwM1YyNy4wNTE4TDEzLjcyMTcgMTMuMDA0OVYyNy4wNTQ3TDAgMTYuMjUzOVYwTDE4LjM2NzIgMTQuMTA4NFYwTDMyLjA4NCAxMC43ODAzWk0xLjk3NjU2IDEwLjEwNDVMNi44NzU5OCAxMy44MjMyVjE5LjI3MTVMMTEuNzc1NCAyMi45NTUxVjE3LjMyMjNMNi45NTUwOCAxMy43ODMyVjguMTA1NDdMMS45NzY1NiA0LjQxNzk3VjEwLjEwNDVaTTIwLjMwODYgMTAuMTA0NUwyNS4yMDkgMTMuODI0MlYxOS4yNzE1TDMwLjEwODQgMjIuOTU1MVYxNy4zMjIzTDI1LjI4NzEgMTMuNzgyMlY4LjEwNTQ3TDIwLjMwODYgNC40MTc5N1YxMC4xMDQ1WiIgZmlsbD0iIzAwMCIvPgo8L3N2Zz4K") center/contain no-repeat}.lg-gemini{display:inline-block;height:calc(var(--lg-h,12px)*1.7);aspect-ratio:344/127;vertical-align:-5px;background:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzQ0IiBoZWlnaHQ9IjEyNyIgdmlld0JveD0iMCAwIDM0NCAxMjciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxtYXNrIGlkPSJtYXNrMF85NThfMTU4ODEiIHN0eWxlPSJtYXNrLXR5cGU6YWxwaGEiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjAiIHk9IjAiIHdpZHRoPSIzNDQiIGhlaWdodD0iMTI3Ij4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMzQuMTIzIDQxLjIyMDRDMjM1LjQ4OSA0NC4zMzU0IDIzNi4xNzIgNDcuNjYzOCAyMzYuMTcyIDUxLjIwNTVDMjM2LjE3MiA0Ny42NjM4IDIzNi44MzMgNDQuMzM1NCAyMzguMTU2IDQxLjIyMDRDMjM5LjUyMSAzOC4xMDU0IDI0MS4zNTYgMzUuMzk1OCAyNDMuNjYgMzMuMDkxNkMyNDUuOTY1IDMwLjc4NzMgMjQ4LjY3NCAyOC45NzM4IDI1MS43ODkgMjcuNjUxQzI1NC45MDQgMjYuMjg1NSAyNTguMjMzIDI1LjYwMjggMjYxLjc3NCAyNS42MDI4QzI1OC4yMzMgMjUuNjAyOCAyNTQuOTA0IDI0Ljk0MTQgMjUxLjc4OSAyMy42MTg1QzI0OC42NzQgMjIuMjUzMSAyNDUuOTY1IDIwLjQxODIgMjQzLjY2IDE4LjExNEMyNDEuMzU2IDE1LjgwOTcgMjM5LjUyMSAxMy4xMDAxIDIzOC4xNTYgOS45ODUwN0MyMzYuODMzIDYuODcwMDcgMjM2LjE3MiAzLjU0MTcxIDIzNi4xNzIgMEMyMzYuMTcyIDMuNTQxNzEgMjM1LjQ4OSA2Ljg3MDA3IDIzNC4xMjMgOS45ODUwN0MyMzIuODAxIDEzLjEwMDEgMjMwLjk4NyAxNS44MDk3IDIyOC42ODMgMTguMTE0QzIyNi4zNzkgMjAuNDE4MiAyMjMuNjY5IDIyLjI1MzEgMjIwLjU1NCAyMy42MTg1QzIxNy40MzkgMjQuOTQxNCAyMTQuMTExIDI1LjYwMjggMjEwLjU2OSAyNS42MDI4QzIxNC4xMTEgMjUuNjAyOCAyMTcuNDM5IDI2LjI4NTUgMjIwLjU1NCAyNy42NTFDMjIzLjY2OSAyOC45NzM4IDIyNi4zNzkgMzAuNzg3MyAyMjguNjgzIDMzLjA5MTZDMjMwLjk4NyAzNS4zOTU4IDIzMi44MDEgMzguMTA1NCAyMzQuMTIzIDQxLjIyMDRaTTI2LjE1MzIgMTIzLjE0QzMxLjM3NjIgMTI1LjI5MSAzNi45NDQ4IDEyNi4zNjYgNDIuODU5IDEyNi4zNjZDNDguODUwMSAxMjYuMzY2IDU0LjMwMzUgMTI1LjQwNiA1OS4yMTkyIDEyMy40ODZDNjQuMTM0OSAxMjEuNTY2IDY4LjM5NzggMTE4LjgzOSA3Mi4wMDc4IDExNS4zMDZDNzUuNjE3OCAxMTEuNzczIDc4LjQyMTMgMTA3LjU4NyA4MC40MTgzIDEwMi43NDhDODIuNDE1MyA5Ny44MzIxIDgzLjQxMzggOTIuNDU1NSA4My40MTM4IDg2LjYxODFWODYuNTAyOUM4My40MTM4IDg1LjQyNzYgODMuMzM3IDg0LjQyOSA4My4xODM0IDgzLjUwNzNDODMuMTA2NiA4Mi41ODU2IDgyLjk5MTQgODEuNjI1NSA4Mi44Mzc3IDgwLjYyN0g0My4wODk1VjkwLjE4OTdINzMuMDQ0N0M3Mi43Mzc0IDk0Ljc5ODIgNzEuNjYyMSA5OC43OTIyIDY5LjgxODcgMTAyLjE3MkM2OC4wNTIxIDEwNS40NzUgNjUuNzg2MyAxMDguMjAxIDYzLjAyMTIgMTEwLjM1MkM2MC4zMzI5IDExMi41MDIgNTcuMjIyMiAxMTQuMTE1IDUzLjY4OSAxMTUuMTkxQzUwLjIzMjYgMTE2LjE4OSA0Ni42MjI2IDExNi42ODkgNDIuODU5IDExNi42ODlDMzguNzExNCAxMTYuNjg5IDM0LjY3ODkgMTE1LjkyIDMwLjc2MTcgMTE0LjM4NEMyNi44NDQ1IDExMi44NDggMjMuMzQ5NyAxMTAuNjIxIDIwLjI3NzQgMTA3LjcwMkMxNy4yODE5IDEwNC43ODMgMTQuOTAwOCAxMDEuMjg4IDEzLjEzNDIgOTcuMjE3NkMxMS4zNjc2IDkzLjA3IDEwLjQ4NDMgODguNDIzMSAxMC40ODQzIDgzLjI3NjlDMTAuNDg0MyA3OC4xMzA4IDExLjMyOTIgNzMuNTIyMyAxMy4wMTkgNjkuNDUxNEMxNC43ODU2IDY1LjMwMzggMTcuMTY2NyA2MS44MDkgMjAuMTYyMiA1OC45NjcxQzIzLjE1NzcgNTYuMDQ4NCAyNi42MTQxIDUzLjgyMDkgMzAuNTMxMyA1Mi4yODQ4QzM0LjUyNTMgNTAuNzQ4NiAzOC42MzQ2IDQ5Ljk4MDUgNDIuODU5IDQ5Ljk4MDVDNDYuMDA4MiA0OS45ODA1IDQ5LjAwMzcgNTAuNDAzIDUxLjg0NTYgNTEuMjQ3OUM1NC42ODc1IDUyLjAxNTkgNTcuMjk5IDUzLjEyOTcgNTkuNjggNTQuNTg5QzYyLjEzNzkgNTYuMDQ4NCA2NC4yNTAxIDU3LjgxNSA2Ni4wMTY3IDU5Ljg4ODhMNzMuMTU5OSA1Mi41MTUyQzY5LjcwMzUgNDguNTk4IDY1LjI4NyA0NS41NjQgNTkuOTEwNSA0My40MTM0QzU0LjYxMDcgNDEuMjYyOCA0OC45MjY5IDQwLjE4NzUgNDIuODU5IDQwLjE4NzVDMzcuMDIxNiA0MC4xODc1IDMxLjQ5MTQgNDEuMjYyOCAyNi4yNjg0IDQzLjQxMzRDMjEuMTIyMyA0NS41NjQgMTYuNTUyMiA0OC41OTggMTIuNTU4MiA1Mi41MTUyQzguNjQwOTMgNTYuNDMyNCA1LjU2ODYgNjEuMDAyNSAzLjM0MTE2IDY2LjIyNTVDMS4xMTM3MiA3MS40NDg0IDAgNzcuMTMyMyAwIDgzLjI3NjlDMCA4OS40MjE2IDEuMTEzNzIgOTUuMTA1NCAzLjM0MTE2IDEwMC4zMjhDNS41Njg2IDEwNS41NTEgOC42NDA5MyAxMTAuMTIxIDEyLjU1ODIgMTE0LjAzOUMxNi40NzU0IDExNy45NTYgMjEuMDA3MSAxMjAuOTkgMjYuMTUzMiAxMjMuMTRaTTEwNC4wNTggMTIyLjMzNEMxMDguNTEyIDEyNS4wMjIgMTEzLjU4MiAxMjYuMzY2IDExOS4yNjYgMTI2LjM2NkMxMjUuNzE3IDEyNi4zNjYgMTMxLjEzMiAxMjQuOTA3IDEzNS41MTEgMTIxLjk4OEMxMzkuODg5IDExOS4wNyAxNDMuMjMgMTE1LjM4MyAxNDUuNTM0IDExMC45MjhMMTM2Ljc3OCAxMDYuNzhDMTM1LjE2NSAxMDkuNjk5IDEzMi45MzcgMTEyLjE1NyAxMzAuMDk2IDExNC4xNTRDMTI3LjMzIDExNi4xNTEgMTIzLjg3NCAxMTcuMTQ5IDExOS43MjYgMTE3LjE0OUMxMTYuNSAxMTcuMTQ5IDExMy4zOSAxMTYuMzQzIDExMC4zOTQgMTE0LjczQzEwNy4zOTkgMTEzLjExNyAxMDQuOTQxIDExMC42OTcgMTAzLjAyMSAxMDcuNDcyQzEwMS4zNjIgMTA0LjY4NCAxMDAuNDE5IDEwMS4yNjYgMTAwLjE5NCA5Ny4yMTc2SDE0Ni40NTZDMTQ2LjUzMyA5Ni44MzM2IDE0Ni41NzEgOTYuMzM0MyAxNDYuNTcxIDk1LjcxOTlDMTQ2LjY0OCA5NS4xMDU0IDE0Ni42ODYgOTQuNTI5MyAxNDYuNjg2IDkzLjk5MTdDMTQ2LjY4NiA4OC4xNTQyIDE0NS41MzQgODIuOTY5NyAxNDMuMjMgNzguNDM4QzE0MS4wMDIgNzMuOTA2MyAxMzcuNzc2IDcwLjM3MzEgMTMzLjU1MiA2Ny44Mzg1QzEyOS4zMjcgNjUuMjI3IDEyNC4yOTcgNjMuOTIxMiAxMTguNDU5IDYzLjkyMTJDMTEyLjY5OCA2My45MjEyIDEwNy42NjggNjUuMzgwNiAxMDMuMzY2IDY4LjI5OTNDOTkuMDY1IDcxLjE0MTIgOTUuNzIzOCA3NC45NDMyIDkzLjM0MjggNzkuNzA1M0M5MS4wMzg1IDg0LjQ2NzQgODkuODg2NCA4OS42NTIgODkuODg2NCA5NS4yNTlDODkuODg2NCAxMDEuMjUgOTEuMTE1MyAxMDYuNTg4IDkzLjU3MzIgMTExLjI3NEM5Ni4xMDc5IDExNS45NTkgOTkuNjAyNyAxMTkuNjQ2IDEwNC4wNTggMTIyLjMzNFpNMTAwLjc4MSA4OC44MDcxQzEwMS4xNDMgODcuMDk3MSAxMDEuNjYgODUuNDg0MSAxMDIuMzI5IDgzLjk2ODJDMTAzLjc4OSA4MC42NjU0IDEwNS45MDEgNzguMDU0IDEwOC42NjYgNzYuMTMzOEMxMTEuNTA4IDc0LjEzNjcgMTE0LjgxMSA3My4xMzgyIDExOC41NzQgNzMuMTM4MkMxMjEuNzIzIDczLjEzODIgMTI0LjM3MyA3My42NzU5IDEyNi41MjQgNzQuNzUxMkMxMjguNjc1IDc1Ljc0OTcgMTMwLjQ0MSA3Ny4wNTU0IDEzMS44MjQgNzguNjY4NEMxMzMuMjA2IDgwLjI4MTQgMTM0LjIwNSA4Mi4wMDk2IDEzNC44MTkgODMuODUzQzEzNS40MzQgODUuNjE5NiAxMzUuNzc5IDg3LjI3MSAxMzUuODU2IDg4LjgwNzFIMTAwLjc4MVpNMTU1LjQ5NyA2NS43NjQ2VjEyNC41MjNIMTY1Ljg2NlY5MS44MDI2QzE2NS44NjYgODguNTc2NyAxNjYuNTE5IDg1LjU0MjggMTY3LjgyNSA4Mi43MDA5QzE2OS4xMzEgNzkuODU5IDE3MC45MzYgNzcuNTkzMSAxNzMuMjQgNzUuOTAzM0MxNzUuNTQ0IDc0LjEzNjcgMTc4LjE1NiA3My4yNTM0IDE4MS4wNzQgNzMuMjUzNEMxODUuMTQ1IDczLjI1MzQgMTg4LjI5NCA3NC40NDQgMTkwLjUyMiA3Ni44MjVDMTkyLjgyNiA3OS4xMjkzIDE5My45NzggODMuMDg0OSAxOTMuOTc4IDg4LjY5MTlWMTI0LjUyM0gyMDQuMjMyVjkxLjU3MjJDMjA0LjIzMiA4OC4zNDYzIDIwNC44ODUgODUuMzUwNyAyMDYuMTkxIDgyLjU4NTZDMjA3LjQ5NiA3OS43NDM3IDIwOS4zMDEgNzcuNDc3OSAyMTEuNjA2IDc1Ljc4ODFDMjEzLjkxIDc0LjA5ODMgMjE2LjUyMSA3My4yNTM0IDIxOS40NCA3My4yNTM0QzIyMy41ODggNzMuMjUzNCAyMjYuNzc1IDc0LjQwNTYgMjI5LjAwMyA3Ni43MDk4QzIzMS4zMDcgNzkuMDE0MSAyMzIuNDU5IDgyLjk2OTcgMjMyLjQ1OSA4OC41NzY3VjEyNC41MjNIMjQyLjcxM1Y4Ni44NDg1QzI0Mi43MTMgODAuMDEyNiAyNDEuMDIzIDc0LjQ4MjQgMjM3LjY0NCA3MC4yNTc5QzIzNC4zNDEgNjYuMDMzNSAyMjkuMTU2IDYzLjkyMTIgMjIyLjA5IDYzLjkyMTJDMjE3LjQwNSA2My45MjEyIDIxMy4zNzIgNjQuOTk2NSAyMDkuOTkzIDY3LjE0NzJDMjA2LjYxMyA2OS4yOTc4IDIwMy45MjUgNzIuMDI0NSAyMDEuOTI4IDc1LjMyNzNDMjAwLjU0NSA3MS45NDc3IDE5OC4yNzkgNjkuMjIxIDE5NS4xMyA2Ny4xNDcyQzE5Mi4wNTggNjQuOTk2NSAxODguMzMzIDYzLjkyMTIgMTgzLjk1NSA2My45MjEyQzE4MS40OTcgNjMuOTIxMiAxNzkuMDM5IDY0LjQyMDUgMTc2LjU4MSA2NS40MTlDMTc0LjIgNjYuMzQwNyAxNzIuMDg4IDY3LjYwOCAxNzAuMjQ0IDY5LjIyMUMxNjguNDAxIDcwLjc1NzIgMTY2Ljk0MiA3Mi40ODU0IDE2NS44NjYgNzQuNDA1NkgxNjUuNDA1VjY1Ljc2NDZIMTU1LjQ5N1pNMjUyLjA0NSA2NS43NjQ2VjEyNC41MjNIMjYyLjI5OVY2NS43NjQ2SDI1Mi4wNDVaTTI1MS45MyA1My4zMjE3QzI1My4zODkgNTQuNzA0MiAyNTUuMTE4IDU1LjM5NTUgMjU3LjExNSA1NS4zOTU1QzI1OS4xODggNTUuMzk1NSAyNjAuOTE3IDU0LjcwNDIgMjYyLjI5OSA1My4zMjE3QzI2My42ODIgNTEuODYyMyAyNjQuMzczIDUwLjEzNDEgMjY0LjM3MyA0OC4xMzcxQzI2NC4zNzMgNDYuMDYzMyAyNjMuNjgyIDQ0LjMzNTEgMjYyLjI5OSA0Mi45NTI2QzI2MC45MTcgNDEuNDkzMiAyNTkuMTg4IDQwLjc2MzUgMjU3LjExNSA0MC43NjM1QzI1NS4xMTggNDAuNzYzNSAyNTMuMzg5IDQxLjQ5MzIgMjUxLjkzIDQyLjk1MjZDMjUwLjU0NyA0NC4zMzUxIDI0OS44NTYgNDYuMDYzMyAyNDkuODU2IDQ4LjEzNzFDMjQ5Ljg1NiA1MC4xMzQxIDI1MC41NDcgNTEuODYyMyAyNTEuOTMgNTMuMzIxN1pNMjcxLjkyOSA2NS43NjQ2VjEyNC41MjNIMjgyLjI5OFY5MS44MDI2QzI4Mi4yOTggODguNjUzNSAyODIuOTUxIDg1LjY5NjQgMjg0LjI1NyA4Mi45MzEzQzI4NS42NCA4MC4wODk0IDI4Ny41MjEgNzcuNzg1MSAyODkuOTAyIDc2LjAxODVDMjkyLjI4MyA3NC4xNzUxIDI5NS4wODcgNzMuMjUzNCAyOTguMzEzIDczLjI1MzRDMzAyLjYxNCA3My4yNTM0IDMwNi4wNzEgNzQuNDQ0IDMwOC42ODIgNzYuODI1QzMxMS4yOTMgNzkuMTI5MyAzMTIuNTk5IDgzLjA4NDkgMzEyLjU5OSA4OC42OTE5VjEyNC41MjNIMzIyLjk2OFY4Ni44NDg1QzMyMi45NjggNzkuOTM1OCAzMjEuMTI1IDc0LjQwNTYgMzE3LjQzOCA3MC4yNTc5QzMxMy43NTEgNjYuMDMzNSAzMDguMzM2IDYzLjkyMTIgMzAxLjE5MyA2My45MjEyQzI5Ni45NjkgNjMuOTIxMiAyOTMuMTI4IDY0Ljk1ODEgMjg5LjY3MiA2Ny4wMzJDMjg2LjIxNiA2OS4xMDU4IDI4My43MTkgNzEuNTYzNyAyODIuMTgzIDc0LjQwNTZIMjgxLjcyMlY2NS43NjQ2SDI3MS45MjlaTTMzMS42NzIgNjUuNzY0NlYxMjQuNTIzSDM0MS45MjZWNjUuNzY0NkgzMzEuNjcyWk0zMzEuNTU3IDUzLjMyMTdDMzMzLjAxNiA1NC43MDQyIDMzNC43NDUgNTUuMzk1NSAzMzYuNzQyIDU1LjM5NTVDMzM4LjgxNSA1NS4zOTU1IDM0MC41NDQgNTQuNzA0MiAzNDEuOTI2IDUzLjMyMTdDMzQzLjMwOSA1MS44NjIzIDM0NCA1MC4xMzQxIDM0NCA0OC4xMzcxQzM0NCA0Ni4wNjMzIDM0My4zMDkgNDQuMzM1MSAzNDEuOTI2IDQyLjk1MjZDMzQwLjU0NCA0MS40OTMyIDMzOC44MTUgNDAuNzYzNSAzMzYuNzQyIDQwLjc2MzVDMzM0Ljc0NSA0MC43NjM1IDMzMy4wMTYgNDEuNDkzMiAzMzEuNTU3IDQyLjk1MjZDMzMwLjE3NSA0NC4zMzUxIDMyOS40ODMgNDYuMDYzMyAzMjkuNDgzIDQ4LjEzNzFDMzI5LjQ4MyA1MC4xMzQxIDMzMC4xNzUgNTEuODYyMyAzMzEuNTU3IDUzLjMyMTdaIiBmaWxsPSJ3aGl0ZSIvPgo8L21hc2s+CjxnIG1hc2s9InVybCgjbWFzazBfOTU4XzE1ODgxKSI+CjxyZWN0IHg9Ii0xNTguMjUiIHk9Ii00NTUuNDQzIiB3aWR0aD0iODMyLjA5IiBoZWlnaHQ9IjY4NS4zMjQiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl85NThfMTU4ODEpIi8+CjwvZz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl85NThfMTU4ODEiIHgxPSItNTcuNDA0OSIgeTE9IjEzMC40NDEiIHgyPSIzNTQuOTciIHkyPSIzMC4zNjkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzQzOURERiIvPgo8c3RvcCBvZmZzZXQ9IjAuNTI0MjA4IiBzdG9wLWNvbG9yPSIjNEY4N0VEIi8+CjxzdG9wIG9mZnNldD0iMC43ODE0NTIiIHN0b3AtY29sb3I9IiM5NDc2QzUiLz4KPHN0b3Agb2Zmc2V0PSIwLjg4ODI1MiIgc3RvcC1jb2xvcj0iI0JDNjg4RSIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNENjY0NUQiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K") center/contain no-repeat}</style>
 <style>
-/* Layout: MLH-style long page. Hero + sponsors -> kitchen flow diagram -> pot -> buffet -> season -> why the sponsors. */
+/* Layout: compact masthead; main column (pot -> buffet -> season) with a sticky "real run" sidebar; method + sponsors below the fold. MLH palette. */
 :root {
-  --bg: #f5f5f9;
-  --surface: #ffffff;
-  --ink: #242425;
-  --muted: #5d5d6b;
-  --line: #e1e1ea;
-  --red: #e73427;
-  --blue: #1d539f;
-  --yellow: #f8b92a;
-  --nimble: #0b8a73;
-  --gem1: #4285f4; --gem2: #9b72cb; --gem3: #d96570;
-  --down: #1d539f; --side: #b9b9c6; --up: #e73427;
+  --bg: #f5f5f9; --surface: #ffffff; --ink: #242425; --muted: #62626f; --line: #e3e3eb;
+  --red: #e73427; --blue: #1d539f; --yellow: #f8b92a; --nimble: #0b8a73; --gem: #6f6bd8;
+  --down: #1d539f; --side: #c3c3cf; --up: #e73427; --code: #f0f0f5;
   --logo: "Bagel Fat One", "Arial Rounded MT Bold", system-ui, sans-serif;
   --head: "IBM Plex Mono", ui-monospace, Menlo, monospace;
   --body: "Open Sans", system-ui, -apple-system, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #17171a; --surface: #222226; --ink: #f1f1f4; --muted: #a9a9b8; --line: #36363d;
-    --red: #ff5a4c; --blue: #6c9be0; --yellow: #f8b92a; --nimble: #2fc4a6;
-    --down: #6c9be0; --side: #5a5a66; --up: #ff5a4c; color-scheme: dark;
+    --bg: #161619; --surface: #212125; --ink: #f0f0f3; --muted: #a6a6b4; --line: #34343b;
+    --red: #ff5a4c; --blue: #6c9be0; --nimble: #31c4a5; --gem: #a29cf5;
+    --down: #6c9be0; --side: #55555f; --up: #ff5a4c; --code: #1a1a1e; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #17171a; --surface: #222226; --ink: #f1f1f4; --muted: #a9a9b8; --line: #36363d;
-  --red: #ff5a4c; --blue: #6c9be0; --yellow: #f8b92a; --nimble: #2fc4a6;
-  --down: #6c9be0; --side: #5a5a66; --up: #ff5a4c; color-scheme: dark;
+  --bg: #161619; --surface: #212125; --ink: #f0f0f3; --muted: #a6a6b4; --line: #34343b;
+  --red: #ff5a4c; --blue: #6c9be0; --nimble: #31c4a5; --gem: #a29cf5;
+  --down: #6c9be0; --side: #55555f; --up: #ff5a4c; --code: #1a1a1e; color-scheme: dark;
 }
 * { box-sizing: border-box; }
-body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.55; }
-.wrap { max-width: 1160px; margin: 0 auto; padding-inline: 16px; padding-block: 0 64px; display: grid; gap: 44px; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 14px; line-height: 1.5; }
+.wrap { max-width: 1200px; margin: 0 auto; padding-inline: 16px; padding-block: 0 56px; display: grid; gap: 28px; }
 h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
-h2 { font-family: var(--head); font-weight: 700; font-size: clamp(1.35rem, 3vw, 1.75rem); letter-spacing: -.01em; }
-.kicker { font-family: var(--head); font-size: .74rem; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; color: var(--red); }
+h2 { font-family: var(--head); font-weight: 700; font-size: 1.15rem; }
+.k { font-family: var(--head); font-size: .68rem; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
 .mono { font-family: var(--head); font-variant-numeric: tabular-nums; }
 .muted { color: var(--muted); }
-.ex { display: inline-block; font-family: var(--head); font-size: .66rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); border: 1.5px dashed var(--muted); border-radius: 4px; padding: 0 6px; }
-.real { display: inline-flex; align-items: center; gap: 6px; font-family: var(--head); font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--nimble); }
-.real::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--nimble); box-shadow: 0 0 0 3px color-mix(in srgb, var(--nimble) 25%, transparent); }
-.gem { background: linear-gradient(90deg, var(--gem1), var(--gem2), var(--gem3)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.nim { color: var(--nimble); }
-section { display: grid; gap: 16px; }
-.head { display: grid; gap: 6px; max-width: 76ch; }
-.head p { margin: 0; color: var(--muted); }
-button { font: inherit; font-weight: 700; cursor: pointer; border-radius: 6px; padding: 9px 14px; border: 2px solid var(--ink); background: var(--surface); color: var(--ink); }
-button.primary { background: var(--red); border-color: var(--red); color: #fff; }
+.note { font-size: .8rem; color: var(--muted); margin: 0; }
+section { display: grid; gap: 10px; min-width: 0; }
+.sh { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 16px; flex-wrap: wrap; border-bottom: 2px solid var(--ink); padding-bottom: 6px; }
+.sh p { margin: 0; font-size: .82rem; color: var(--muted); }
+button { font: inherit; font-weight: 600; cursor: pointer; border-radius: 6px; padding: 6px 12px; border: 1.5px solid var(--ink); background: var(--surface); color: var(--ink); }
 button:focus-visible, input:focus-visible, [tabindex]:focus-visible, a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+.ex { font-family: var(--head); font-size: .6rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); border: 1px dashed var(--muted); border-radius: 3px; padding: 0 5px; }
+.real { display: inline-flex; align-items: center; gap: 5px; font-family: var(--head); font-size: .62rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--nimble); }
+.real::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--nimble); }
 
-/* Event ribbon */
-.ribbon { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between; align-items: center; padding-block: 12px; border-bottom: 1px solid var(--line); font-family: var(--head); font-size: .74rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
-.ribbon .stripes { display: inline-flex; gap: 3px; margin-right: 8px; vertical-align: -1px; }
-.ribbon .stripes i { width: 14px; height: 10px; }
+/* Provenance badges: who produced this piece of data */
+.prov { display: inline-flex; align-items: center; gap: 6px; font-size: .68rem; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.prov.n { color: var(--ink); }
+.prov.n::before, .prov.g::before { content: ""; width: 3px; align-self: stretch; border-radius: 2px; }
+.prov.n::before { background: var(--nimble); }
+.prov.g::before { background: var(--gem); }
 
-/* Hero */
-.hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 28px; align-items: center; padding-top: 12px; }
-@media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
-.logo { font-family: var(--logo); font-weight: 400; font-size: clamp(3rem, 9vw, 5.6rem); line-height: .9; color: var(--red); letter-spacing: .005em; }
+/* Masthead */
+.ribbon { display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: space-between; align-items: center; padding-block: 10px; border-bottom: 1px solid var(--line); font-family: var(--head); font-size: .68rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.stripes { display: inline-flex; gap: 3px; margin-right: 8px; vertical-align: -1px; }
+.stripes i { width: 12px; height: 9px; }
+.mast { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: end; justify-content: space-between; }
+.logo { font-family: var(--logo); font-weight: 400; font-size: clamp(2.4rem, 6vw, 3.6rem); line-height: .9; color: var(--red); }
 .logo span { color: var(--ink); }
-.tag { font-family: var(--head); font-weight: 700; font-size: clamp(1.15rem, 2.6vw, 1.5rem); margin-top: 10px; }
-.pitch { font-size: 1.05rem; max-width: 56ch; margin: 12px 0 0; }
-.pitch b { font-weight: 700; }
-.sponsors { display: grid; gap: 12px; }
-.sp { background: var(--surface); border: 2px solid var(--ink); border-radius: 10px; padding: 16px 18px; display: grid; gap: 4px; text-decoration: none; color: var(--ink); }
-.sp small { font-family: var(--head); font-size: .66rem; text-transform: uppercase; letter-spacing: .14em; color: var(--muted); font-weight: 700; }
-.sp .name { font-family: var(--head); font-weight: 700; font-size: 1.7rem; line-height: 1.1; }
-.sp p { margin: 0; font-size: .88rem; color: var(--muted); }
-.sp.n { border-color: var(--nimble); box-shadow: 5px 5px 0 var(--nimble); }
-.sp.g { border-color: var(--gem2); box-shadow: 5px 5px 0 var(--gem2); }
+.tag { font-family: var(--head); font-weight: 700; font-size: 1.05rem; margin-top: 6px; }
+.lede { margin: 6px 0 0; max-width: 62ch; color: var(--muted); }
+.powered { display: grid; gap: 6px; justify-items: end; font-size: .72rem; color: var(--muted); }
+.powered .row { display: flex; align-items: center; gap: 14px; --lg-h: 16px; color: var(--ink); }
+.powered .plus { color: var(--muted); font-family: var(--head); }
 
-/* Live run numbers */
-.run { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; background: var(--surface); border: 2px solid var(--ink); border-radius: 10px; overflow: hidden; }
-@media (max-width: 760px) { .run { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.run div { padding: 14px 16px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: grid; gap: 2px; }
-.run b { font-family: var(--head); font-size: 1.7rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
-.run span { font-size: .82rem; color: var(--muted); }
-.run em { font-style: normal; font-family: var(--head); font-size: .66rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-.runcap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; font-size: .8rem; color: var(--muted); }
-
-/* Flow diagram */
-.flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; position: relative; }
-@media (max-width: 900px) { .flow { grid-template-columns: 1fr; } }
-.lane { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 10px; align-content: start; position: relative; }
-.lane > header { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding-bottom: 8px; border-bottom: 3px solid var(--c); }
-.lane > header h3 { font-family: var(--head); font-size: 1rem; }
-.lane > header small { font-family: var(--head); font-size: .7rem; font-weight: 700; color: var(--c); text-transform: uppercase; letter-spacing: .08em; }
-.lane.n { --c: var(--nimble); } .lane.g { --c: var(--gem2); } .lane.k { --c: var(--red); }
-.node { border: 1.5px solid var(--line); border-left: 5px solid var(--c); border-radius: 8px; padding: 10px 12px; display: grid; gap: 3px; background: var(--bg); }
-.node h4 { font-size: .92rem; display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
-.node p { margin: 0; font-size: .82rem; color: var(--muted); }
-.node code { font-family: var(--head); font-size: .74rem; color: var(--ink); background: var(--surface); border-radius: 4px; padding: 0 4px; overflow-wrap: anywhere; }
-.st { font-family: var(--head); font-size: .6rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 1px 6px; border-radius: 4px; white-space: nowrap; }
-.st.live { background: var(--nimble); color: #fff; }
-.st.next { border: 1.5px dashed var(--muted); color: var(--muted); }
-.down-arrow { text-align: center; color: var(--muted); font-family: var(--head); font-size: .9rem; line-height: 1; }
-.lane:not(:last-child)::after { content: "→"; position: absolute; right: -16px; top: 50%; transform: translateY(-50%); font-family: var(--head); font-weight: 700; font-size: 1.3rem; color: var(--ink); background: var(--bg); padding: 2px 0; }
-@media (max-width: 900px) { .lane:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -19px; transform: translateX(-50%); } }
-.loop { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; border: 2px dashed var(--red); border-radius: 12px; padding: 12px 16px; font-size: .88rem; }
-.loop b { font-family: var(--head); color: var(--red); }
+/* Main + sidebar */
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 28px; align-items: start; }
+@media (max-width: 960px) { .layout { grid-template-columns: 1fr; } }
+.main { display: grid; gap: 28px; min-width: 0; }
+aside { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); display: grid; gap: 18px; min-width: 0; }
+@media (max-width: 960px) { aside { position: static; } }
+.kv { width: 100%; border-collapse: collapse; font-size: .8rem; }
+.kv td { padding: 5px 0; border-bottom: 1px solid var(--line); vertical-align: baseline; }
+.kv td:last-child { text-align: right; font-family: var(--head); font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; padding-left: 8px; }
+.kv tr.grp td { border-bottom: 0; padding-top: 10px; --lg-h: 11px; }
+.stalls { list-style: none; margin: 0; padding: 0; font-size: .78rem; }
+.stalls li { display: flex; gap: 8px; align-items: center; padding: 4px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.stalls .u { font-family: var(--head); font-size: .72rem; flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--side); flex: none; }
+.dot.on { background: var(--nimble); }
+.addrow { display: flex; gap: 6px; }
+.addrow input { flex: 1; min-width: 0; font: inherit; font-size: .8rem; padding: 6px 8px; border: 1.5px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); }
 
 /* Pot */
-.pothead { display: flex; justify-content: space-between; align-items: end; gap: 12px; flex-wrap: wrap; }
-.toggle { display: inline-flex; border: 2px solid var(--ink); border-radius: 999px; overflow: hidden; }
-.toggle button { border: 0; border-radius: 0; padding: 6px 14px; font-size: .85rem; background: transparent; }
+.toggle { display: inline-flex; border: 1.5px solid var(--ink); border-radius: 999px; overflow: hidden; }
+.toggle button { border: 0; border-radius: 0; padding: 3px 12px; font-size: .78rem; background: transparent; }
 .toggle button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
-.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: .78rem; color: var(--muted); }
-.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; background: var(--c); }
-.pots { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-.pot { background: var(--surface); border: 2px solid var(--ink); border-radius: 12px 12px 36px 36px; padding: 16px 16px 22px; display: grid; gap: 10px; }
-.pot h3 { font-family: var(--head); font-size: 1.25rem; display: flex; justify-content: space-between; align-items: baseline; }
-.pot h3 small { font-family: var(--body); font-size: .75rem; color: var(--muted); font-weight: 600; }
-.heat { font-size: .9rem; letter-spacing: .05em; }
-.hz { display: grid; gap: 4px; }
-.hz .row { display: flex; justify-content: space-between; font-size: .78rem; }
-.bar { display: flex; height: 12px; border-radius: 4px; overflow: hidden; background: var(--line); }
+.pottable { width: 100%; border-collapse: collapse; }
+.pottable th { font-family: var(--head); font-size: .66rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); text-align: left; padding: 4px 8px 6px 0; }
+.pottable td { padding: 7px 8px 7px 0; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.pottable td.pair { font-family: var(--head); font-weight: 700; font-size: .95rem; white-space: nowrap; }
+.pottable td.pair small { display: block; font-family: var(--body); font-weight: 400; font-size: .7rem; color: var(--muted); }
+.cell { display: grid; gap: 3px; min-width: 120px; }
+.cell .lab { display: flex; justify-content: space-between; font-size: .72rem; }
+.call.up { color: var(--up); font-weight: 700; } .call.down { color: var(--down); font-weight: 700; } .call.side { color: var(--muted); }
+.bar { display: flex; height: 10px; border-radius: 2px; overflow: hidden; background: var(--line); }
 .bar i { display: block; height: 100%; }
 .bar .d { background: var(--down); } .bar .s { background: var(--side); } .bar .u { background: var(--up); }
-.hz .bar { height: 20px; border-radius: 6px; }
-.hz .bar i { display: flex; align-items: center; justify-content: center; color: #fff; font-size: .68rem; font-weight: 700; font-family: var(--head); font-style: normal; }
-.hz .bar .s { color: var(--ink); }
-.call { font-weight: 700; }
-.call.up { color: var(--up); } .call.down { color: var(--down); } .call.side { color: var(--muted); }
-.note { font-size: .8rem; color: var(--muted); margin: 0; }
+.potwrap { overflow-x: auto; }
+.legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: .72rem; color: var(--muted); }
+.legend span::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; background: var(--c); }
 
 /* Buffet */
-.filters { display: flex; gap: 6px; flex-wrap: wrap; }
-.chip { font-size: .8rem; padding: 5px 11px; border-radius: 999px; border: 2px solid var(--line); }
+.filters { display: flex; gap: 4px; flex-wrap: wrap; }
+.chip { font-size: .72rem; padding: 2px 9px; border-radius: 999px; border: 1.5px solid var(--line); }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-.buffet { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
-.dish { background: var(--surface); border: 1.5px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 8px; align-content: start; min-width: 0; cursor: pointer; transition: transform .15s ease, border-color .15s ease; }
+.buffet { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+.dish { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px; display: grid; gap: 7px; align-content: start; min-width: 0; cursor: pointer; }
 .dish:hover { border-color: var(--ink); }
-@media (prefers-reduced-motion: no-preference) { .dish:hover { transform: translateY(-2px); } }
-.dish.live { border: 2.5px solid var(--nimble); grid-column: span 2; box-shadow: 5px 5px 0 var(--nimble); }
+.dish.live { border: 2px solid var(--nimble); grid-column: span 2; }
 @media (max-width: 600px) { .dish.live { grid-column: auto; } }
-.dish .top { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
-.pair { font-family: var(--head); font-weight: 700; font-size: .85rem; }
-.ing { font-family: var(--head); font-size: .68rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
-.quote { margin: 0; font-size: .93rem; }
-.by { font-size: .8rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 10px; }
-.by b { color: var(--ink); }
-.dupe { font-size: .76rem; font-weight: 700; color: var(--nimble); }
-.tri { display: grid; grid-template-columns: 34px 1fr; gap: 3px 8px; align-items: center; font-size: .72rem; }
+.dish .top { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.dish .pair { font-family: var(--head); font-weight: 700; font-size: .8rem; }
+.quote { margin: 0; font-size: .88rem; }
+.by { font-size: .74rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 2px 8px; }
+.by b { color: var(--ink); font-weight: 600; }
+.tri { display: grid; grid-template-columns: 30px 1fr; gap: 3px 6px; align-items: center; font-size: .68rem; }
 .tri .lbl { color: var(--muted); font-family: var(--head); }
-.peek { font-family: var(--head); font-size: .74rem; font-weight: 700; color: var(--red); }
-.badges { display: flex; gap: 6px; flex-wrap: wrap; }
-.pill { font-family: var(--head); font-size: .64rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; color: #fff; }
-.pill.n { background: var(--nimble); }
-.pill.g { background: linear-gradient(90deg, var(--gem1), var(--gem2)); }
+.provrow { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+.dupe { font-size: .7rem; font-weight: 600; color: var(--nimble); }
+.open { font-family: var(--head); font-size: .66rem; font-weight: 700; color: var(--red); }
 
 /* Chefs */
-.tablewrap { overflow-x: auto; background: var(--surface); border: 1.5px solid var(--line); border-radius: 12px; }
-table { width: 100%; border-collapse: collapse; min-width: 720px; font-size: .88rem; }
-th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: middle; }
-th { font-family: var(--head); font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
-tr:last-child td { border-bottom: 0; }
-td input[type=range] { width: 120px; accent-color: var(--red); }
-.val { font-family: var(--head); font-size: .78rem; display: inline-block; width: 3.4em; text-align: right; }
-.spark { display: inline-flex; gap: 2px; vertical-align: middle; margin-left: 6px; }
-.spark i { width: 6px; height: 12px; border-radius: 1px; background: var(--side); }
+.tablewrap { overflow-x: auto; }
+table.chefs { width: 100%; border-collapse: collapse; min-width: 640px; font-size: .82rem; }
+.chefs th, .chefs td { text-align: left; padding: 6px 8px 6px 0; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.chefs th { font-family: var(--head); font-size: .64rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 600; }
+.chefs input[type=range] { width: 100px; accent-color: var(--red); vertical-align: middle; }
+.val { font-family: var(--head); font-size: .74rem; display: inline-block; width: 3.2em; text-align: right; }
+.spark { display: inline-flex; gap: 1px; vertical-align: middle; margin-left: 6px; }
+.spark i { width: 5px; height: 11px; background: var(--side); }
 .spark i.h { background: var(--nimble); }
 
-/* Why sponsors */
+/* Below the fold: method + sponsors */
+.flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); }
+@media (max-width: 860px) { .flow { grid-template-columns: 1fr; } }
+.lane { padding: 12px 14px; display: grid; gap: 0; align-content: start; border-right: 1px solid var(--line); }
+.lane:last-child { border-right: 0; }
+@media (max-width: 860px) { .lane { border-right: 0; border-bottom: 1px solid var(--line); } }
+.lane > header { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding-bottom: 8px; margin-bottom: 4px; border-bottom: 3px solid var(--c); --lg-h: 12px; }
+.lane > header h3 { font-family: var(--head); font-size: .9rem; }
+.lane.n { --c: var(--nimble); } .lane.g { --c: var(--gem); } .lane.c { --c: var(--red); }
+.step { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: .8rem; }
+.step:last-child { border-bottom: 0; }
+.step b { font-weight: 700; }
+.step p { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: .76rem; }
+.step code, .why code { font-family: var(--head); font-size: .7rem; background: var(--code); border-radius: 3px; padding: 0 3px; color: var(--ink); }
+.st { font-family: var(--head); font-size: .56rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 1px 5px; border-radius: 3px; align-self: center; }
+.st.live { background: var(--nimble); color: #fff; }
+.st.next { border: 1px dashed var(--muted); color: var(--muted); }
+.loop { display: flex; gap: 8px 14px; align-items: baseline; flex-wrap: wrap; font-size: .8rem; padding: 8px 12px; border: 1.5px dashed var(--red); border-radius: 8px; }
+.loop b { font-family: var(--head); color: var(--red); }
 .why { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-@media (max-width: 820px) { .why { grid-template-columns: 1fr; } }
-.whycard { background: var(--surface); border: 2px solid var(--c); border-radius: 12px; padding: 18px; display: grid; gap: 12px; align-content: start; }
-.whycard.n { --c: var(--nimble); } .whycard.g { --c: var(--gem2); }
-.whycard h3 { font-family: var(--head); font-size: 1.2rem; }
-.whycard ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
-.whycard li { display: grid; grid-template-columns: 84px 1fr; gap: 10px; font-size: .88rem; }
-.whycard li b { font-family: var(--head); color: var(--c); font-size: .95rem; }
-.whycard li span { color: var(--muted); }
-.whycard li span strong { color: var(--ink); }
+@media (max-width: 760px) { .why { grid-template-columns: 1fr; } }
+.why table { width: 100%; border-collapse: collapse; font-size: .8rem; }
+.why caption { text-align: left; padding-bottom: 6px; --lg-h: 15px; caption-side: top; }
+.why td { padding: 6px 8px 6px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.why td:first-child { font-family: var(--head); font-weight: 700; white-space: nowrap; width: 1%; }
+.why.n td:first-child { color: var(--nimble); } .why .g td:first-child { color: var(--gem); }
+.math { font-size: .8rem; display: grid; gap: 4px; }
+.math p { margin: 0; }
 
-/* Pantry */
-.pantry { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
-@media (max-width: 820px) { .pantry { grid-template-columns: 1fr; } }
-.panel { background: var(--surface); border: 1.5px solid var(--line); border-radius: 12px; padding: 16px; display: grid; gap: 12px; align-content: start; min-width: 0; }
-.addrow { display: flex; gap: 8px; flex-wrap: wrap; }
-.addrow input { flex: 1 1 220px; min-width: 0; font: inherit; padding: 9px 12px; border: 2px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink); }
-.stalls { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
-.stalls li { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 8px; background: var(--bg); min-width: 0; }
-.stalls .url { font-family: var(--head); font-size: .78rem; overflow-wrap: anywhere; flex: 1; min-width: 0; }
-.stalls .n { font-size: .76rem; color: var(--muted); white-space: nowrap; }
-.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--nimble); flex: none; }
-.dot.idle { background: var(--side); }
-.runlog { font-family: var(--head); font-size: .74rem; color: var(--muted); background: var(--bg); border-radius: 8px; padding: 10px; white-space: pre-wrap; }
-.math p { margin: 0; font-size: .88rem; }
+/* Receipt (the geeky click-in) */
+dialog { width: min(980px, calc(100vw - 24px)); max-height: calc(100vh - 32px); border: 1.5px solid var(--ink); border-radius: 10px; padding: 0; background: var(--surface); color: var(--ink); }
+dialog::backdrop { background: rgb(12 12 16 / .6); }
+.rc { display: grid; gap: 12px; padding: 16px; }
+.rc-head { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+.rc-head h3 { font-family: var(--head); font-size: 1rem; }
+.rc-head p { margin: 2px 0 0; color: var(--muted); font-size: .82rem; }
+.tabs { display: flex; gap: 0; border-bottom: 1.5px solid var(--line); flex-wrap: wrap; }
+.tabs button { border: 0; border-bottom: 2.5px solid transparent; border-radius: 0; background: none; font-family: var(--head); font-size: .74rem; padding: 6px 12px; margin-bottom: -1.5px; color: var(--muted); }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--red); }
+.stage { display: grid; gap: 10px; min-width: 0; }
+.srcbar { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; font-family: var(--head); font-size: .7rem; color: var(--muted); padding: 6px 10px; background: var(--code); border-radius: 6px; --lg-h: 11px; }
+.srcbar b { color: var(--ink); font-weight: 600; }
+.thread { display: grid; gap: 0; max-height: 52vh; overflow: auto; border: 1px solid var(--line); border-radius: 6px; }
+.cm { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); gap: 10px; padding: 9px 12px; border-bottom: 1px solid var(--line); }
+@media (max-width: 700px) { .cm { grid-template-columns: 1fr; } }
+.cm:last-child { border-bottom: 0; }
+.cm.kept { background: color-mix(in srgb, var(--nimble) 7%, transparent); }
+.cm .meta { font-family: var(--head); font-size: .68rem; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; }
+.cm .meta b { color: var(--ink); font-family: var(--body); font-size: .8rem; }
+.cm .txt { margin: 3px 0 0; font-size: .85rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+.ann { font-size: .74rem; border-left: 3px solid var(--side); padding: 2px 0 2px 8px; color: var(--muted); align-self: start; display: grid; gap: 4px; }
+.ann.kept { border-left-color: var(--gem); color: var(--ink); }
+.ann .h { font-family: var(--head); font-size: .62rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.ann .tri { grid-template-columns: 28px 1fr; }
+.wf { display: grid; gap: 0; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.span { display: grid; grid-template-columns: 210px minmax(0, 1fr) 70px; gap: 10px; align-items: center; padding: 7px 10px; border-bottom: 1px solid var(--line); font-size: .76rem; }
+@media (max-width: 700px) { .span { grid-template-columns: 1fr 60px; } .span .track { grid-column: 1 / -1; grid-row: 2; } }
+.span:last-child { border-bottom: 0; }
+.span .nm { font-family: var(--head); font-size: .72rem; display: grid; --lg-h: 10px; }
+.span .nm small { font-family: var(--body); color: var(--muted); font-size: .68rem; }
+.span .track { height: 12px; background: var(--code); border-radius: 2px; position: relative; }
+.span .track i { position: absolute; top: 0; bottom: 0; border-radius: 2px; background: var(--c, var(--muted)); }
+.span .d { font-family: var(--head); font-size: .72rem; text-align: right; font-variant-numeric: tabular-nums; }
+.lin { display: grid; gap: 0; }
+.lin .node { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 10px; padding: 7px 0 7px 14px; border-left: 2px solid var(--c, var(--line)); position: relative; font-size: .78rem; --lg-h: 10px; }
+.lin .node::before { content: ""; position: absolute; left: -6px; top: 12px; width: 10px; height: 10px; border-radius: 50%; background: var(--surface); border: 2px solid var(--c, var(--muted)); }
+@media (max-width: 700px) { .lin .node { grid-template-columns: 1fr; } }
+.lin .node .what { font-weight: 600; }
+.lin .node code { font-family: var(--head); font-size: .72rem; overflow-wrap: anywhere; color: var(--ink); }
+.lin .node small { display: block; color: var(--muted); font-size: .7rem; }
+pre { margin: 0; font-family: var(--head); font-size: .72rem; background: var(--code); border-radius: 6px; padding: 12px; overflow: auto; max-height: 48vh; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
+.rawpick { display: flex; gap: 4px; flex-wrap: wrap; }
+.rawpick button { font-size: .7rem; padding: 2px 9px; border-radius: 999px; border-width: 1px; }
+.rawpick button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
 
-pre { margin: 0; font-family: var(--head); font-size: .74rem; background: var(--bg); border-radius: 8px; padding: 12px; overflow-x: auto; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
-
-/* Receipt dialog */
-dialog { width: min(940px, calc(100vw - 24px)); max-height: calc(100vh - 32px); border: 2px solid var(--ink); border-radius: 14px; padding: 0; background: var(--surface); color: var(--ink); }
-dialog::backdrop { background: rgb(15 15 20 / .6); }
-.rc { display: grid; gap: 14px; padding: 18px; }
-.rc-head { display: flex; justify-content: space-between; gap: 12px; align-items: start; flex-wrap: wrap; }
-.rc-head h3 { font-family: var(--head); font-size: 1.2rem; }
-.rc-head p { margin: 4px 0 0; color: var(--muted); font-size: .88rem; }
-.pipe { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-family: var(--head); font-size: .72rem; font-weight: 700; }
-.pipe span { padding: 4px 9px; border-radius: 6px; background: var(--bg); }
-.pipe span.n { background: var(--nimble); color: #fff; }
-.pipe span.g { background: linear-gradient(90deg, var(--gem1), var(--gem2)); color: #fff; }
-.pipe i { font-style: normal; color: var(--muted); }
-.tabs { display: flex; gap: 6px; flex-wrap: wrap; }
-.tabs button { font-size: .8rem; padding: 6px 12px; border-radius: 999px; border-width: 1.5px; }
-.tabs button[aria-selected="true"] { background: var(--ink); color: var(--bg); }
-.stage { display: grid; gap: 8px; min-width: 0; }
-.stage pre { max-height: 46vh; }
-.stats { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .8rem; }
-.stats b { font-family: var(--head); }
-
-footer { display: grid; gap: 8px; color: var(--muted); font-size: .82rem; border-top: 1px solid var(--line); padding-top: 18px; }
-footer .made { font-family: var(--head); font-weight: 700; color: var(--ink); font-size: .9rem; }
+footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; color: var(--muted); font-size: .74rem; border-top: 1px solid var(--line); padding-top: 14px; --lg-h: 11px; }
 </style>
 
 <div class="wrap">
   <div class="ribbon">
-    <span><span class="stripes" aria-hidden="true"><i style="background:var(--red)"></i><i style="background:var(--blue)"></i><i style="background:var(--yellow)"></i></span>AI Engineer NYC 2026 · MLH hackathon</span>
-    <span>Powered by <span class="nim">Nimble</span> + <span class="gem">Gemini</span></span>
+    <span><span class="stripes" aria-hidden="true"><i style="background:var(--red)"></i><i style="background:var(--blue)"></i><i style="background:var(--yellow)"></i></span>AI Engineer NYC 2026 · MLH</span>
+    <span>FX sentiment · 4 USD pairs · 3 horizons</span>
   </div>
 
-  <!-- HERO -->
-  <section class="hero">
+  <header class="mast">
     <div>
-      <div class="kicker">Mala Alpha AI</div>
       <h1 class="logo">Malalph<span>AI</span></h1>
       <div class="tag">Turning talk into direction.</div>
-      <p class="pitch">Great ideas come from great data, and every day traders argue about the dollar in forums around the world. <b>MalalphAI</b> gathers that chatter, works out who said what and when, and cooks it into a probability for where USD is heading in 5, 22 and 66 days. Like a hot pot, you season it yourself: trust the chefs who've been right and turn down the ones who haven't.</p>
+      <p class="lede">Traders argue about the dollar in forums all day. MalalphAI collects those opinions, records who said what and when, and turns them into odds on where USD is heading. You season the pot by trusting the authors who've been right.</p>
     </div>
-    <div class="sponsors">
-      <a class="sp n" href="https://www.nimbleway.com" target="_blank" rel="noopener">
-        <small>Shopping powered by</small>
-        <span class="name nim">Nimble</span>
-        <p>Gets past bot walls and brings back live forum threads as clean markdown.</p>
-      </a>
-      <a class="sp g" href="https://ai.google.dev" target="_blank" rel="noopener">
-        <small>Tasting powered by</small>
-        <span class="name gem">Gemini API</span>
-        <p>Reads every comment, finds the real calls, and scores them as probabilities.</p>
-      </a>
+    <div class="powered">
+      <span>Powered by</span>
+      <div class="row"><a href="https://www.nimbleway.com" target="_blank" rel="noopener" style="color:inherit" aria-label="Nimble"><i class="lg-nimble" style="--lg-h:18px"></i></a><span class="plus">+</span><a href="https://ai.google.dev/gemini-api" target="_blank" rel="noopener" aria-label="Gemini API"><i class="lg-gemini" style="--lg-h:16px"></i></a></div>
     </div>
-  </section>
+  </header>
 
-  <!-- LIVE RUN NUMBERS -->
-  <section>
-    <div class="runcap"><span class="real">Real run, 11 Oct 2026, ForexFactory</span><span>Nimble extract + Gemini structured output</span></div>
-    <div class="run">
-      <div><em class="nim">Nimble</em><b>5.6s</b><span>to fetch a Cloudflare-protected thread with the stealth browser</span></div>
-      <div><em class="nim">Nimble</em><b>30+</b><span>stories with live comments from one news page</span></div>
-      <div><em class="gem">Gemini</em><b>15 → 2</b><span>comments read, real dollar calls kept, each skip explained</span></div>
-      <div><em>Dedupe</em><b>4 → 1</b><span>same comments seen on 2 pages merged into 1 dish</span></div>
-    </div>
-  </section>
+  <div class="layout">
+    <div class="main">
+      <!-- POT -->
+      <section>
+        <div class="sh">
+          <h2>The pot · USD outlook</h2>
+          <div class="toggle" role="group" aria-label="Which pot">
+            <button type="button" id="potDefault" aria-pressed="true">Default</button>
+            <button type="button" id="potMine" aria-pressed="false">My pot</button>
+          </div>
+        </div>
+        <div class="potwrap"><table class="pottable" id="pots"></table></div>
+        <div class="provrow">
+          <div class="legend"><span style="--c:var(--down)">USD down</span><span style="--c:var(--side)">Sideways (inside ±1σ)</span><span style="--c:var(--up)">USD up</span></div>
+          <span class="note" id="potMode"></span>
+        </div>
+      </section>
 
-  <!-- FLOW -->
-  <section>
-    <div class="head">
-      <div class="kicker">How the kitchen works</div>
-      <h2>From forum chatter to a forecast in three stations</h2>
-      <p>Nimble does the shopping, Gemini does the tasting, and a small Bayesian pot does the cooking. Steps marked <span class="st live">live</span> ran on real data today. Steps marked <span class="st next">next</span> are designed and come next.</p>
+      <!-- BUFFET -->
+      <section>
+        <div class="sh">
+          <h2>The buffet · opinions in the pot</h2>
+          <div class="filters" id="filters"></div>
+        </div>
+        <div class="buffet" id="buffet"></div>
+      </section>
+
+      <!-- CHEFS -->
+      <section>
+        <div class="sh"><h2>Season to taste · whose calls you trust</h2><p>Changes cook <b>My pot</b>.</p></div>
+        <div class="tablewrap">
+          <table class="chefs">
+            <thead><tr><th>Chef</th><th>Stall</th><th>Hit rate</th><th>Weight</th><th>Trust USD-up calls</th><th>Trust USD-down calls</th></tr></thead>
+            <tbody id="chefs"></tbody>
+          </table>
+        </div>
+      </section>
     </div>
+
+    <aside>
+      <section>
+        <div class="sh"><h2>Real run</h2><span class="real">11 Oct 2026</span></div>
+        <table class="kv" id="runkv"></table>
+        <p class="note">Open the green dish to see the full trace.</p>
+      </section>
+      <section>
+        <div class="sh"><h2>Pantry</h2></div>
+        <ul class="stalls" id="stalls"></ul>
+        <form class="addrow" id="addForm">
+          <input id="newUrl" type="url" placeholder="Add a forum URL" aria-label="Forum URL to add">
+          <button type="submit">Add</button>
+        </form>
+      </section>
+    </aside>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="sh"><h2>How the kitchen works</h2><p><span class="st live">live</span> ran on real data today · <span class="st next">next</span> designed</p></div>
     <div class="flow">
       <div class="lane n">
-        <header><h3>1 · Shop</h3><small>Nimble</small></header>
-        <div class="node"><h4>Your pantry <span class="st live">live</span></h4><p>You list the forums you trust: ForexFactory, r/Forex, BabyPips and more.</p></div>
-        <div class="down-arrow" aria-hidden="true">↓</div>
-        <div class="node"><h4>Find fresh threads <span class="st next">next</span></h4><p>Nimble Search with <code>time_range: day</code> and <code>include_domains</code> finds today's threads about each pair.</p></div>
-        <div class="down-arrow" aria-hidden="true">↓</div>
-        <div class="node"><h4>Fetch past the bot wall <span class="st live">live</span></h4><p>Nimble Extract with the <code>vx10</code> stealth browser waits for comments to load and returns the page as markdown.</p></div>
-        <div class="down-arrow" aria-hidden="true">↓</div>
-        <div class="node"><h4>Scale out <span class="st next">next</span></h4><p>Nimble Crawl follows <code>/news/\d+</code> thread links across a whole site in one job, on a schedule.</p></div>
+        <header><h3>1 · Shop</h3><i class="lg-nimble" role="img" aria-label="Nimble"></i></header>
+        <div class="step"><b>Pantry of forums</b><span class="st live">live</span><p>You list the forums you trust.</p></div>
+        <div class="step"><b>Find fresh threads</b><span class="st next">next</span><p>Nimble Search with <code>time_range: day</code> and <code>include_domains</code>.</p></div>
+        <div class="step"><b>Fetch past bot walls</b><span class="st live">live</span><p>Nimble Extract with the <code>vx10</code> stealth browser and a 3s wait returns the thread as markdown.</p></div>
+        <div class="step"><b>Scale to whole forums</b><span class="st next">next</span><p>Nimble Crawl with <code>include_paths: /news/\d+</code> on a schedule.</p></div>
       </div>
       <div class="lane g">
-        <header><h3>2 · Taste</h3><small>Gemini API</small></header>
-        <div class="node"><h4>Trim the page <span class="st live">live</span></h4><p>We keep the headline and comment thread and drop menus and ads, so Gemini reads only the conversation.</p></div>
-        <div class="down-arrow" aria-hidden="true">↓</div>
-        <div class="node"><h4>Read every comment <span class="st live">live</span></h4><p>Gemini returns JSON that matches a fixed schema: author, comment ID, time, pairs, and P(down / sideways / up) for 5, 22 and 66 days, with a one-line reason.</p></div>
-        <div class="down-arrow" aria-hidden="true">↓</div>
-        <div class="node"><h4>Skip the noise <span class="st live">live</span></h4><p>Jokes, politics and questions are dropped, each with a reason. In the live run 13 of 15 comments were set aside.</p></div>
-        <div class="down-arrow" aria-hidden="true">↓</div>
-        <div class="node"><h4>Spot the same take twice <span class="st next">next</span></h4><p>The comment ID catches repeats within a site. Gemini embeddings will catch the same view reposted on another forum.</p></div>
+        <header><h3>2 · Taste</h3><i class="lg-gemini" role="img" aria-label="Gemini"></i></header>
+        <div class="step"><b>Trim to the conversation</b><span class="st live">live</span><p>Keep the headline and the comments, and drop menus.</p></div>
+        <div class="step"><b>Read every comment</b><span class="st live">live</span><p>Gemini fills a JSON schema: author, comment ID, time, pairs, and P(down/side/up) for 5, 22 and 66 days, with a reason.</p></div>
+        <div class="step"><b>Skip the noise</b><span class="st live">live</span><p>Each dropped joke, political aside or question comes with a reason.</p></div>
+        <div class="step"><b>Match reposts across sites</b><span class="st next">next</span><p>Gemini embeddings; within a site, the comment ID already works.</p></div>
       </div>
-      <div class="lane k">
-        <header><h3>3 · Cook &amp; serve</h3><small>MalalphAI</small></header>
-        <div class="node"><h4>Start from the broth <span class="st live">live</span></h4><p>Before anyone speaks: 16% down, 68% sideways, 16% up. That's a normal curve split at ±1σ.</p></div>
-        <div class="down-arrow" aria-hidden="true">↓</div>
-        <div class="node"><h4>Bayesian update <span class="st live">live</span></h4><p>Each dish nudges the pot by <code>chef weight × your trust × freshness</code>. Fresh comments count more.</p></div>
-        <div class="down-arrow" aria-hidden="true">↓</div>
-        <div class="node"><h4>pot.json <span class="st live">live</span></h4><p>One small file holds the outlook for 4 pairs × 3 horizons, updated after every shopping trip.</p></div>
-        <div class="down-arrow" aria-hidden="true">↓</div>
-        <div class="node"><h4>The buffet <span class="st live">live</span></h4><p>This page shows every dish, where it came from, and how much it moved the pot.</p></div>
+      <div class="lane c">
+        <header><h3>3 · Cook &amp; serve</h3><span class="k">MalalphAI</span></header>
+        <div class="step"><b>Broth (prior)</b><span class="st live">live</span><p>16 / 68 / 16: a normal curve split at ±1σ.</p></div>
+        <div class="step"><b>Bayesian update</b><span class="st live">live</span><p>Each dish shifts the log-odds by chef weight × your trust × freshness.</p></div>
+        <div class="step"><b>pot.json</b><span class="st live">live</span><p>4 pairs × 3 horizons, updated after every run.</p></div>
+        <div class="step"><b>Buffet page</b><span class="st live">live</span><p>Every number traces back to its source comment.</p></div>
       </div>
     </div>
-    <div class="loop"><b>↺ Scorekeeper</b><span>When a call's horizon passes, we check it against the real price move (up, down, or inside ±1σ). That updates the chef's hit rate, which feeds straight back into their weight.</span><span class="st next">next</span></div>
+    <div class="loop"><b>↺ Scorekeeper</b><span>When a call's horizon passes, we score it against the real price move (up, down, or inside ±1σ). The result updates that chef's hit rate, which feeds back into their weight.</span><span class="st next">next</span></div>
   </section>
 
-  <!-- POT -->
+  <!-- SPONSORS -->
   <section>
-    <div class="pothead">
-      <div class="head">
-        <div class="kicker">The pot</div>
-        <h2>Where is the dollar heading?</h2>
-        <p>"Up" means USD strengthens. For example, USDJPY at 158 going higher means one dollar buys more yen. Sideways means the move stays within ±1σ for that horizon.</p>
-      </div>
-      <div class="toggle" role="group" aria-label="Which pot">
-        <button type="button" id="potDefault" aria-pressed="true">Default pot</button>
-        <button type="button" id="potMine" aria-pressed="false">My pot</button>
-      </div>
-    </div>
-    <div class="legend"><span style="--c:var(--down)">USD lower</span><span style="--c:var(--side)">Sideways (±1σ)</span><span style="--c:var(--up)">USD higher</span></div>
-    <div class="pots" id="pots"></div>
-    <p class="note" id="potMode"></p>
-  </section>
-
-  <!-- BUFFET -->
-  <section>
-    <div class="pothead">
-      <div class="head">
-        <div class="kicker">The buffet</div>
-        <h2>Ingredients from forums around the world</h2>
-        <p>Click a dish to see how it was made: the Nimble request, Nimble's output, what Gemini read from it, and how duplicates were merged. The green dish is real. The rest are examples.</p>
-      </div>
-      <div class="filters" id="filters"></div>
-    </div>
-    <div class="buffet" id="buffet"></div>
-  </section>
-
-  <!-- CHEFS -->
-  <section>
-    <div class="head">
-      <div class="kicker">Season to taste</div>
-      <h2>Every author is a chef. You pick whose cooking you trust.</h2>
-      <p>Chefs start at a 50% hit rate and earn or lose weight as their calls come due. Override any chef, or trust their USD-up calls more than their USD-down calls. Your changes cook <b>My pot</b>.</p>
-    </div>
-    <div class="tablewrap">
-      <table>
-        <thead><tr><th>Chef</th><th>Stall</th><th>Hit rate</th><th>Weight</th><th>Trust up-calls</th><th>Trust down-calls</th></tr></thead>
-        <tbody id="chefs"></tbody>
+    <div class="sh"><h2>Why these sponsors</h2></div>
+    <div class="why">
+      <table class="n">
+        <caption><i class="lg-nimble" role="img" aria-label="Nimble"></i> · shopping</caption>
+        <tr><td>vx10</td><td>The stealth browser gets past ForexFactory's Cloudflare wall on the first try.</td></tr>
+        <tr><td>.md</td><td>Output is clean markdown with author, time and permalink kept, ready for an LLM.</td></tr>
+        <tr><td>1 API</td><td>Search, Extract, Crawl and Map: find threads, fetch them, scale out.</td></tr>
+        <tr><td>geo</td><td><code>country</code> and <code>locale</code> read Tokyo, London and Toronto forums as locals see them.</td></tr>
+        <tr><td>$1/1K</td><td>Cheap enough to re-shop every stall several times a day.</td></tr>
+      </table>
+      <table class="g">
+        <caption><i class="lg-gemini" role="img" aria-label="Gemini"></i> · tasting</caption>
+        <tr><td>schema</td><td><code>responseSchema</code> means every opinion arrives with the same fields, with no parsing.</td></tr>
+        <tr><td>judgment</td><td>Kept 2 real dollar calls out of 18 comments, with a reason for each skip.</td></tr>
+        <tr><td>FX sense</td><td>"Sell usd" becomes USD down on all four pairs, and "EUR/USD up" becomes USDEUR down.</td></tr>
+        <tr><td>calibrated</td><td>Starts from the 16/68/16 baseline and moves only as far as the text justifies.</td></tr>
+        <tr><td>embed</td><td>Next: embeddings to match reposts across forums.</td></tr>
       </table>
     </div>
-  </section>
-
-  <!-- WHY SPONSORS -->
-  <section>
-    <div class="head">
-      <div class="kicker">Why these sponsors</div>
-      <h2>The two ingredients we couldn't cook without</h2>
-    </div>
-    <div class="why">
-      <div class="whycard n">
-        <h3>Shopping with <span class="nim">Nimble</span></h3>
-        <ul>
-          <li><b>vx10</b><span><strong>Gets past bot walls.</strong> ForexFactory sits behind Cloudflare. Nimble's stealth browser returned the full thread on the first try.</span></li>
-          <li><b>.md</b><span><strong>LLM-ready output.</strong> Pages come back as clean markdown with authors, times and permalinks intact, ready for Gemini.</span></li>
-          <li><b>1 API</b><span><strong>Search, Extract, Crawl, Map.</strong> Find fresh threads, fetch them, and scale to a whole forum without changing tools.</span></li>
-          <li><b>geo</b><span><strong>Ingredients from everywhere.</strong> Country and locale targeting reads Tokyo, London and Toronto forums the way local traders see them.</span></li>
-          <li><b>$1/1K</b><span><strong>Cheap to re-shop.</strong> Re-crawl every stall several times a day. The trial includes 5,000 free pages.</span></li>
-        </ul>
-      </div>
-      <div class="whycard g">
-        <h3>Tasting with the <span class="gem">Gemini API</span></h3>
-        <ul>
-          <li><b>schema</b><span><strong>Structured output.</strong> A JSON schema means every opinion comes back with the same fields, so it goes straight into the pot without parsing.</span></li>
-          <li><b>judgment</b><span><strong>Knows a call from a joke.</strong> Of 15 real comments, Gemini kept the 2 dollar calls and gave a reason for each of the 13 it skipped.</span></li>
-          <li><b>FX sense</b><span><strong>Understands pair direction.</strong> "Sell usd" becomes USD down on all four pairs, and "EUR/USD up" becomes USDEUR down.</span></li>
-          <li><b>calibrated</b><span><strong>Probabilities, not hype.</strong> Gemini starts from the 16/68/16 baseline and moves only as far as the text justifies.</span></li>
-          <li><b>embed</b><span><strong>Dedupe across sites (next).</strong> Gemini embeddings match the same view reposted on another forum.</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- PANTRY + MATH -->
-  <section>
-    <div class="head">
-      <div class="kicker">Your pantry</div>
-      <h2>Add the forums you shop at</h2>
-    </div>
-    <div class="pantry">
-      <div class="panel">
-        <form class="addrow" id="addForm">
-          <input id="newUrl" type="url" placeholder="https://www.forexfactory.com/news" aria-label="Forum to add">
-          <button type="submit">Add stall</button>
-        </form>
-        <ul class="stalls" id="stalls"></ul>
-        <button class="primary" id="runBtn" type="button">Go shopping with Nimble</button>
-        <div class="runlog" id="runlog">Last real run, 11 Oct 2026 14:38 EDT: Nimble fetched forexfactory.com/news (vx10, 9.8s, 50,807 chars of markdown) and one story thread (5.6s). Gemini read both pages.</div>
-      </div>
-      <div class="panel math">
-        <div class="kicker">The recipe, in one line</div>
-        <p class="mono">log P(k) = log prior(k) + Σ wᵢ · log(qᵢ(k) / prior(k))</p>
-        <p>k is down, sideways or up. qᵢ is Gemini's reading of dish i, and wᵢ = chef weight × your up/down trust × freshness.</p>
-        <p>Freshness halves after 2 days for the 5-day call, 7 days for the 22-day call and 20 days for the 66-day call. Each chef's weight starts from a Beta(2,2) prior, so a new chef starts at 50%.</p>
-        <div class="kicker">pot.json</div>
-        <pre id="json"></pre>
-      </div>
+    <div class="math">
+      <p class="k">The recipe</p>
+      <p class="mono">log P(k) = log prior(k) + Σᵢ wᵢ · log(qᵢ(k) / prior(k)),  wᵢ = chef weight × trust(up|down) × 0.5^(age / half-life)</p>
+      <p class="muted">Half-lives: 2 days for the 5-day horizon, 7 days for 22 days, 20 days for 66 days. Chef weight starts from a Beta(2,2) prior on hit rate.</p>
     </div>
   </section>
 
   <footer>
-    <span class="made">Built at AI Engineer NYC 2026 with <span class="nim">Nimble</span> and the <span class="gem">Gemini API</span>.</span>
-    <span>The green dish and the numbers in the "Real run" strip come from live Nimble and Gemini calls. Every other author, quote and number is example data. Forum comments are quoted from public ForexFactory threads. This is not trading advice.</span>
+    <span>Built at AI Engineer NYC 2026 · extracted by <i class="lg-nimble" role="img" aria-label="Nimble"></i> · interpreted by <i class="lg-gemini" role="img" aria-label="Gemini"></i></span>
+    <span>Green items are real data. Everything else is example data. This is not trading advice.</span>
   </footer>
 </div>
 
 <dialog id="receipt" aria-labelledby="rcTitle">
   <div class="rc">
     <div class="rc-head">
-      <div>
-        <div class="badges"><span class="pill n">Fetched by Nimble</span><span class="pill g">Read by Gemini</span></div>
-        <h3 id="rcTitle">Kitchen receipt</h3>
-        <p id="rcSub"></p>
-      </div>
+      <div><h3 id="rcTitle"></h3><p id="rcSub"></p></div>
       <button type="button" id="rcClose">Close</button>
     </div>
-    <div class="pipe" aria-hidden="true"><span class="n">Nimble Extract</span><i>→</i><span class="n">markdown</span><i>→</i><span class="g">Gemini</span><i>→</i><span>dedupe</span><i>→</i><span>pot</span></div>
     <div class="tabs" role="tablist" id="rcTabs"></div>
     <div class="stage" id="rcStage"></div>
   </div>
 </dialog>
 
-<script type="application/json" id="live">{"nimble_story": {"request": {"method": "POST", "endpoint": "https://sdk.nimbleway.com/v2/extract", "body": {"url": "https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire", "driver": "vx10", "formats": ["markdown"], "browser_actions": [{"wait": 3000}]}}, "response": {"url": "https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire", "task_id": "b67e0864-d493-402c-a050-26cf53ab6495", "status": "success", "data": {"markdown": "# Trump: Effective immediately, there is an energy ceasefire in the war between Russia and Ukraine | Forex Factory\n\n…\n\n*   **Comments / Top**\n*   Subscribe\n*   Expand Replies\n\n    Collapse Replies\n\nComment Options\n\nSort Comments By:\n\nTop Newest Oldest\n\n|     |     |     |\n| --- | --- | --- |\n|     |     |     |\n|     |     |     |\n\nNon-English comments will be translated upon submission.\n\n[![](https://assets.faireconomy.media/nfs/customavatars/thumbs/medium/avatar99620_56.gif)](https://www.forexfactory.com/the*fool)\n\n[The Fool](https://www.forexfactory.com/the*fool)\n\n2 hr 9 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953478#post15953478)\n\nAttached Image (click to enlarge)\n\n[![Click to Enlarge\nName: screenshot.webp\nSize: 21 KB](https://www.forexfactory.com/attachment/image/5307782/thumbnail?d=1791736222 \"Click to Enlarge\nName: screenshot.webp\nSize: 21 KB\")](https://www.forexfactory.com/attachment/image/5307782?d=1791736222)\n\n0\n\n5\n\n[![](https://assets.faireconomy.media/nfs/customavatars/thumbs/medium/avatar812618_1.gif)](https://www.forexfactory.com/momofrmnyc)\n\n[Momofrmnyc](https://www.forexfactory.com/momofrmnyc)\n\n1 hr 21 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953491#post15953491)\n\nI mean I don’t think we ever claimed Trump to be the most honest individual.\n\nBut hey you got too feed fake optimism in the markets I suppose.\n\n0\n\n2\n\n[![](https://assets.faireconomy.media/nfs/customavatars/thumbs/medium/avatar1437607_2.gif)](https://www.forexfactory.com/polimini)\n\n[Polimini](https://www.forexfactory.com/polimini)\n\n1 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953534#post15953534)\n\nZelensky should just say thank you. Ungrateful mother f... /s\n\nReply  \n\nView 1 more reply to The Fool\n\nHide reply to The Fool\n\n[![](https://assets.faireconomy.media/nfs/customavatars/thumbs/medium/avatar185640_6.gif)](https://www.forexfactory.com/eqshack)\n\n[eqshack](https://www.forexfactory.com/eqshack)\n\n1 hr 46 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953482#post15953482)\n\nSell usd\n\nReply\n\n1\n\n1\n\nTrader#3861\n\n1 hr 38 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953485#post15953485)\n\nBut energy deal is done in USD\n\nReply  \n\n[![](https://assets.faireconomy.media/nfs/customavatars/thumbs/medium/avatar185640_6.gif)](https://www.forexfactory.com/eqshack)\n\n[eqshack](https://www.forexfactory.com/eqshack)\n\n5 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953531#post15953531)\n\nAnd...? Oil down - inflation down - no rate hike - dollar down - stocks up.\n\nReply  \n\n[![](https://assets.faireconomy.media/nfs/customavatars/thumbs/medium/avatar185640_6.gif)](https://www.forexfactory.com/eqshack)\n\n[eqshack](https://www.forexfactory.com/eqshack)\n\n4 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953532#post15953532)\n\nAka gold up\n\nReply  \n\nView 1 reply to eqshack\n\nHide reply to eqshack\n\nView 1 reply to Trader#3861\n\nHide reply to Trader#3861\n\nhttps://www.forexfactory.com/manmeetkaur\n\n… (trimmed for display)"}, "metadata": {"query_time": "2026-10-11T18:40:18.560Z", "query_duration": 5567, "response_parameters": {"input_url": "https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire"}, "driver": "vx10"}, "status_code": 200}, "full_markdown_chars": 20055}, "nimble_news": {"url": "https://www.forexfactory.com/news", "metadata": {"query_time": "2026-10-11T18:38:56.548Z", "query_duration": 9803, "response_parameters": {"input_url": "https://www.forexfactory.com/news"}, "driver": "vx10"}, "markdown_chars": 50807}, "gemini_story": {"opinions": [{"author": "eqshack", "quote": "Sell usd", "pairs": ["USDEUR", "USDJPY", "USDGBP", "USDCAD"], "outlook": {"5d": {"usd_down": 0.65, "sideways": 0.25, "usd_up": 0.1}, "22d": {"usd_down": 0.6, "sideways": 0.3, "usd_up": 0.1}, "66d": {"usd_down": 0.5, "sideways": 0.35, "usd_up": 0.15}}, "reason": "Author explicitly recommends selling the US dollar.", "comment_id": "15953482", "relative_time": "1 hr 46 min ago"}, {"author": "eqshack", "quote": "Oil down - inflation down - no rate hike - dollar down - stocks up.", "pairs": ["USDEUR", "USDJPY", "USDGBP", "USDCAD"], "outlook": {"5d": {"usd_down": 0.7, "sideways": 0.2, "usd_up": 0.1}, "22d": {"usd_down": 0.6, "sideways": 0.3, "usd_up": 0.1}, "66d": {"usd_down": 0.5, "sideways": 0.35, "usd_up": 0.15}}, "reason": "Author argues that lower energy prices lead to lower inflation and no rate hikes, driving the US dollar down.", "comment_id": "15953531", "relative_time": "5 min ago"}], "skipped": [{"author": "The Fool", "reason": "Posted an image attachment with no currency forecast."}, {"author": "Momofrmnyc", "reason": "Political comment without a specific currency view."}, {"author": "Polimini", "reason": "Sarcastic political comment."}, {"author": "Trader#3861", "reason": "General comment about energy transactions being in USD without an explicit directional call."}, {"author": "eqshack", "reason": "Comment 'Aka gold up' expresses a view on gold rather than the specified currency pairs."}, {"author": "Manmeetkaur", "reason": "Pure question."}, {"author": "Vancarbon", "reason": "Political commentary on news deflection techniques."}, {"author": "leila9", "reason": "Political opinion without a currency view."}, {"author": "martynaciesl", "reason": "Question regarding trading gold."}, {"author": "Mhdeldar", "reason": "Comment on the news story authenticity without a currency view."}, {"author": "xfpw", "reason": "Joke comment."}, {"author": "m.karkhane", "reason": "Joke comment."}, {"author": "Trader#AC40", "reason": "Political commentary regarding Donald Trump."}], "model": "gemini-3.5-flash", "source_url": "https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire", "source_task_id": "b67e0864-d493-402c-a050-26cf53ab6495", "fetched_at": "2026-10-11T18:40:18.560Z"}, "dedupe": {"key": "ForexFactory comment ID (from the permalink)", "readings": 4, "unique_comments": 2, "by_comment_id": {"15953482": [{"page": "story page", "author": "eqshack", "quote": "Sell usd", "model": "gemini-3.5-flash"}, {"page": "news page", "author": "eqshack", "quote": "Sell usd", "model": "gemini-3.8-flash"}], "15953531": [{"page": "story page", "author": "eqshack", "quote": "Oil down - inflation down - no rate hike - dollar down - stocks up.", "model": "gemini-3.5-flash"}, {"page": "news page", "author": "eqshack", "quote": "Oil down - inflation down - no rate hike - dollar down - stocks up.", "model": "gemini-3.8-flash"}]}, "result": "Same author, same thread, same view: merged into 1 dish. Probabilities are averaged across the story-page readings."}}</script>
+<script type="application/json" id="live">{"title": "Trump: Effective immediately, there is an energy ceasefire in the war between Russia and Ukraine", "nimble_story": {"request": {"method": "POST", "endpoint": "https://sdk.nimbleway.com/v2/extract", "body": {"url": "https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire", "driver": "vx10", "formats": ["markdown"], "browser_actions": [{"wait": 3000}]}}, "response": {"url": "https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire", "task_id": "b67e0864-d493-402c-a050-26cf53ab6495", "status": "success", "data": {"markdown": "# Trump: Effective immediately, there is an energy ceasefire in the war between Russia and Ukraine\n\n…\n\n*   **Comments / Top**\n*   Subscribe\n*   Expand Replies\n\n    Collapse Replies\n\nComment Options\n\nSort Comments By:\n\nTop Newest Oldest\n\n|     |     |     |\n| --- | --- | --- |\n|     |     |     |\n|     |     |     |\n\nNon-English comments will be translated upon submission.\n\n[![](https://assets.faireconomy.media/nfs/customavatars/thumbs/medium/avatar99620_56.gif)](https://www.forexfactory.com/the*fool)\n\n[The Fool](https://www.forexfactory.com/the*fool)\n\n2 hr 9 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953478#post15953478)\n\nAttached Image (click to enlarge)\n\n[![Click to Enlarge\nName: screenshot.webp\nSize: 21 KB](https://www.forexfactory.com/attachment/image/5307782/thumbnail?d=1791736222 \"Click to Enlarge\nName: screenshot.webp\nSize: 21 KB\")](https://www.forexfactory.com/attachment/image/5307782?d=1791736222)\n\n0\n\n5\n\n[![](https://assets.faireconomy.media/nfs/customavatars/thumbs/medium/avatar812618_1.gif)](https://www.forexfactory.com/momofrmnyc)\n\n[Momofrmnyc](https://www.forexfactory.com/momofrmnyc)\n\n1 hr 21 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953491#post15953491)\n\nI mean I don’t think we ever claimed Trump to be the most honest individual.\n\nBut hey you got too feed fake optimism in the markets I suppose.\n\n0\n\n2\n\n[![](https://assets.faireconomy.media/nfs/customavatars/thumbs/medium/avatar1437607_2.gif)](https://www.forexfactory.com/polimini)\n\n[Polimini](https://www.forexfactory.com/polimini)\n\n1 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953534#post15953534)\n\nZelensky should just say thank you. Ungrateful mother f... /s\n\nReply  \n\nView 1 more reply to The Fool\n\nHide reply to The Fool\n\n[![](https://assets.faireconomy.media/nfs/customavatars/thumbs/medium/avatar185640_6.gif)](https://www.forexfactory.com/eqshack)\n\n[eqshack](https://www.forexfactory.com/eqshack)\n\n1 hr 46 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953482#post15953482)\n\nSell usd\n\nReply\n\n1\n\n1\n\nTrader#3861\n\n1 hr 38 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953485#post15953485)\n\nBut energy deal is done in USD\n\nReply  \n\n[![](https://assets.faireconomy.media/nfs/customavatars/thumbs/medium/avatar185640_6.gif)](https://www.forexfactory.com/eqshack)\n\n[eqshack](https://www.forexfactory.com/eqshack)\n\n5 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953531#post15953531)\n\nAnd...? Oil down - inflation down - no rate hike - dollar down - stocks up.\n\nReply  \n\n[![](https://assets.faireconomy.media/nfs/customavatars/thumbs/medium/avatar185640_6.gif)](https://www.forexfactory.com/eqshack)\n\n[eqshack](https://www.forexfactory.com/eqshack)\n\n4 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953532#post15953532)\n\nAka gold up\n\nReply  \n\nView 1 reply to eqshack\n\nHide reply to eqshack\n\nView 1 reply to Trader#3861\n\nHide reply to Trader#3861\n\nhttps://www.forexfactory.com/manmeetkaur\n\n… (trimmed for display)"}, "metadata": {"query_time": "2026-10-11T18:40:18.560Z", "query_duration": 5567, "response_parameters": {"input_url": "https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire"}, "driver": "vx10"}, "status_code": 200}, "full_markdown_chars": 20055}, "nimble_news": {"url": "https://www.forexfactory.com/news", "task_id": "229c5255-bf8a-4c3f-8601-a5df527d221b", "metadata": {"query_time": "2026-10-11T18:38:56.548Z", "query_duration": 9803, "response_parameters": {"input_url": "https://www.forexfactory.com/news"}, "driver": "vx10"}, "markdown_chars": 50807}, "thread": [{"id": "15953478", "author": "The Fool", "relative": "2 hr 9 min ago", "at": "2026-10-11T16:31Z", "text": "[image]", "gemini": {"kept": false, "reason": "Posted screenshots without any currency outlook."}}, {"id": "15953482", "author": "eqshack", "relative": "1 hr 46 min ago", "at": "2026-10-11T16:54Z", "text": "Sell usd", "gemini": {"kept": true, "pairs": ["USDEUR", "USDJPY", "USDGBP", "USDCAD"], "outlook": {"5d": {"usd_down": 0.45, "sideways": 0.45, "usd_up": 0.1}, "22d": {"usd_down": 0.35, "sideways": 0.5, "usd_up": 0.15}, "66d": {"usd_down": 0.3, "sideways": 0.55, "usd_up": 0.15}}, "reason": "Recommends selling the US dollar following the ceasefire announcement."}}, {"id": "15953485", "author": "Trader#3861", "relative": "1 hr 38 min ago", "at": "2026-10-11T17:02Z", "text": "But energy deal is done in USD", "gemini": {"kept": false, "reason": "Observation regarding energy pricing currency without an explicit directional view."}}, {"id": "15953487", "author": "Manmeetkaur", "relative": "1 hr 33 min ago", "at": "2026-10-11T17:07Z", "text": "Why", "gemini": {"kept": false, "reason": "Pure question."}}, {"id": "15953489", "author": "Trader#AC40", "relative": "1 hr 27 min ago", "at": "2026-10-11T17:13Z", "text": "Desperation to make himself look good and cuts a deal with terrorist Putin!! Americans, get rid of him now!\n*   ## Related Stories\n[image]\n[Zelenskyy: Discussed the energy ceasefire announced by Trump. Ukraine supports the ceasefire, and it is important that Russia supports it as well](https://www.forexfactory.com/news/1430917-zelenskyy-discussed-the-energy-ceasefire-announced-by-trump)\n[image]\n[image] [From @ZelenskyyUa](https://www.forexfactory.com/news/1430917-zelenskyy-discussed-the-energy-ceasefire-announced-by-trump/hit) _|_ 2 hr 27 min ago _|_ [1 comment](https://www.forexfactory.com/news/1430917-zelenskyy-discussed-the-energy-ceasefire-announced-by-trump#post)\nI just spoke with @MarkJCarney, @alexstubb, and @SecGenNATO Mark Rutte. We discussed the energy ceasefire announced by President Trump. Ukraine supports the ceasefire, and it is important that Russia support it as well. We are awaiting details from the American side. For our part, Ukraine always FULLY supports steps toward de-escalation, the protection of lives, and the decisions needed to end the war and guarantee lasting peace. Thank you!\n[image]\n[Putin relayed Iran war proposal to Trump, Kremlin says](https://www.forexfactory.com/news/1430890-putin-relayed-iran-war-proposal-to-trump-kremlin)\n[image]\n[From cnbc.com](https://www.forexfactory.com/news/1430890-putin-relayed-iran-war-proposal-to-trump-kremlin/hit) _|_ 18 hr ago _|_ [14 comments](https://www.forexfactory.com/news/1430890-putin-relayed-iran-war-proposal-to-trump-kremlin#post)\nRussian President Vladimir Putin conveyed Tehran’s vision for a possible end to the war in Iran to U.S. President Donald Trump, Russian state media reported Saturday. The report comes a day after Trump said Russia will supply diesel to the global market amid a surge in energy prices caused by the wars in Iran and Ukraine. Russia’s Interfax news agency ...\n[image]\n[Hormuz attacks intensify as efforts to end war on Iran stall](https://www.forexfactory.com/news/1430921-hormuz-attacks-intensify-as-efforts-to-end-war)\n[image]\n[From aljazeera.com](https://www.forexfactory.com/news/1430921-hormuz-attacks-intensify-as-efforts-to-end-war/hit) _|_ 2 hr 16 min ago _|_ [4 comments](https://www.forexfactory.com/news/1430921-hormuz-attacks-intensify-as-efforts-to-end-war#post)\nStrikes around the strategic Strait of Hormuz have picked up again as mediated efforts to end the US-Israel war on Iran remain deadlocked. The Islamic Revolutionary Guard Corps (IRGC) Navy said on Saturday night that an unnamed crude oil supertanker hit a naval mine and suffered a major fire while using an unauthorised route in the waterway with navigation ...\n*   More\n*   Story Stats\n*   **Oct 11, 12:20pm** _| 2 hr 20 min ago_\nPosted by\n[[image] Newsstand](https://www.forexfactory.com/newsstand)\n[image] Low Impact Breaking\n4,378\n*   186 traders viewing now, 23 are registered:\n[Joyeti](https://www.forexfactory.com/joyeti)\n,\n[254708073339](https://www.forexfactory.com/254708073339)\n,\nInvisible\n,\n[Kvngprops](https://www.forexfactory.com/kvngprops)\n,\n[SmartBrain0](https://www.forexfactory.com/smartbrain0)\n,\n[Self-made](https://www.forexfactory.com/self-made)\n,\n[AntonyLews](https://www.forexfactory.com/antonylews)\n,\n[Lelu1](https://www.forexfactory.com/lelu1)\n,\n[Jaileyzz](https://www.forexfactory.com/jaileyzz)\n,\n[paul.soze](https://www.forexfactory.com/paul.soze)\n,\nInvisible\n,\n[junaidmelior](https://www.forexfactory.com/junaidmelior)\n,\n[Adnanbond](https://www.forexfactory.com/adnanbond)\n,\n[MukhtiarAhma](https://www.forexfactory.com/mukhtiarahma)\n,\n[Karanjot](https://www.forexfactory.com/karanjot)\n,\n[Wycfx](https://www.forexfactory.com/wycfx)\n,\n[Tony868](https://www.forexfactory.com/tony868)\n,\n[1.00trader](https://www.forexfactory.com/1.00trader)\n,\n[antopreneur](https://www.forexfactory.com/antopreneur)\n,\n[rishabh7844](https://www.forexfactory.com/rishabh7844)\n,\n[Rachitjn](https://www.forexfactory.com/rachitjn)\n,\n[Alirao007](https://www.forexfactory.com/alirao007)\n,\n[abulfaiz](https://www.forexfactory.com/abulfaiz)\n**Add Image:**\n*   Device\n*   Screenshot  Press CTRL+V\n*   You have reached the maximum number of attachments allowed per post.\n*   **Attached Images**\n*   **Attached Files**\nTop of Page [Default Page](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire?reset=1)\n[Homepage](https://www.forexfactory.com/)\n*   [image]\n*   [image]\n**About FF**\n*   [Mission](https://www.forexfactory.com/mission)\n*   [Products](https://www.forexfactory.com/products)\n*   [User Guide](https://www.forexfactory.com/userguide)\n*   [Media Kit](https://www.forexfactory.com/mediakit)\n*   [Blog](https://www.forexfactory.com/blog)\n*   [Contact](https://www.forexfactory.com/contact)\n**FF Products**\n*   [Forums](https://www.forexfactory.com/forums)\n*   [Trades](https://www.forexfactory.com/trades)\n*   [Calendar](https://www.forexfactory.com/calendar)\n*   [News](https://www.forexfactory.com/news)\n*   [Market](https://www.forexfactory.com/market)\n*   [Brokers](https://www.forexfactory.com/brokers)\n*   [Trade Explorer](https://www.forexfactory.com/tradeexplorer)\n**FF Website**\n*   [Homepage](https://www.forexfactory.com/)\n*   [Search](https://www.forexfactory.com/search)\n*   [Traders](https://www.forexfactory.com/traders)\n*   [Report a Problem](https://www.forexfactory.com/contact?subject=technical)\n**Follow FF**\n*   [image]\n*   [image]\nFF Sister Sites:\n*   https://www.metalsmine.com/\n*   https://www.energyexch.com/\n*   https://www.cryptocraft.com/\nForex Factory® is a brand of [Fair Economy, Inc.](https://www.faireconomy.com/)\nDo Not Sell or Share My Personal Information\n[Terms of Service](https://www.forexfactory.com/notices#tos) / [©2026](https://www.forexfactory.com/notices#copyright)\n[Fair Economy](https://www.faireconomy.com/)", "gemini": {"kept": false, "reason": "Political opinion without a currency view."}}, {"id": "15953491", "author": "Momofrmnyc", "relative": "1 hr 21 min ago", "at": "2026-10-11T17:19Z", "text": "I mean I don’t think we ever claimed Trump to be the most honest individual.\nBut hey you got too feed fake optimism in the markets I suppose.", "gemini": {"kept": false, "reason": "Political opinion about Trump without a currency view."}}, {"id": "15953495", "author": "martynaciesl", "relative": "1 hr 15 min ago", "at": "2026-10-11T17:25Z", "text": "Gold SELL?", "gemini": {"kept": false, "reason": "Question about gold trading, no currency pair forecast."}}, {"id": "15953502", "author": "leila9", "relative": "1 hr 6 min ago", "at": "2026-10-11T17:34Z", "text": "Wow! This guy is so clever! Im proud of my vote.", "gemini": {"kept": false, "reason": "Political comment praising Trump."}}, {"id": "15953505", "author": "Mhdeldar", "relative": "59 min ago", "at": "2026-10-11T17:41Z", "text": "Fake!", "gemini": {"kept": false, "reason": "One-word reaction to news without currency view."}}, {"id": "15953508", "author": "xfpw", "relative": "52 min ago", "at": "2026-10-11T17:48Z", "text": "yea i see orange", "gemini": {"kept": false, "reason": "Off-topic remark/joke."}}, {"id": "15953513", "author": "Vancarbon", "relative": "36 min ago", "at": "2026-10-11T18:04Z", "text": "If we’re talking about this then we’re not focusing on Iran , deflection technique 101 .", "gemini": {"kept": false, "reason": "Political discussion and commentary without a currency forecast."}}, {"id": "15953515", "author": "m.karkhane", "relative": "28 min ago", "at": "2026-10-11T18:12Z", "text": "Yeah like the last time.\nBy the way, i think tomorrow is monday[image][image][image]", "gemini": {"kept": false, "reason": "Banter without any currency view."}}, {"id": "15953519", "author": "Vancarbon", "relative": "20 min ago", "at": "2026-10-11T18:20Z", "text": "Have you tried stand-up comedy ?\nYou’d go down a treat .", "gemini": {"kept": false, "reason": "Political discussion and commentary without a currency forecast."}}, {"id": "15953527", "author": "The Fool", "relative": "11 min ago", "at": "2026-10-11T18:29Z", "text": "\"trading from the US\" but posting from Tehran lol.\n[image]", "gemini": {"kept": false, "reason": "Posted screenshots without any currency outlook."}}, {"id": "15953531", "author": "eqshack", "relative": "5 min ago", "at": "2026-10-11T18:35Z", "text": "And...? Oil down - inflation down - no rate hike - dollar down - stocks up.", "gemini": {"kept": true, "pairs": ["USDEUR", "USDJPY", "USDGBP", "USDCAD"], "outlook": {"5d": {"usd_down": 0.45, "sideways": 0.45, "usd_up": 0.1}, "22d": {"usd_down": 0.4, "sideways": 0.45, "usd_up": 0.15}, "66d": {"usd_down": 0.35, "sideways": 0.5, "usd_up": 0.15}}, "reason": "Expects lower oil and inflation to prevent rate hikes and push the dollar down."}}, {"id": "15953532", "author": "eqshack", "relative": "4 min ago", "at": "2026-10-11T18:36Z", "text": "Aka gold up"}, {"id": "15953534", "author": "Polimini", "relative": "1 min ago", "at": "2026-10-11T18:39Z", "text": "Zelensky should just say thank you. Ungrateful mother f... /s", "gemini": {"kept": false, "reason": "Political comment without a currency view."}}, {"id": "15953533", "author": "Vancarbon", "relative": "1 min ago", "at": "2026-10-11T18:39Z", "text": "It’s actually the opposite , she posted this at the start of the year .\nleila9\nJan 2, 2026 11:04am\n“ As an Iranian, I fully support the President’s actions on Iran and his efforts to protect protesters—the overwhelming majority of the population—in their struggle for safety and freedom.”\nI’ve nothing against her sentiment in that statement ; her unremitting love for Donald might bring attention to herself and make Natalie rather jealous .", "gemini": {"kept": false, "reason": "Political discussion and commentary without a currency forecast."}}], "gemini_story": {"opinions": [{"author": "eqshack", "quote": "Sell usd", "pairs": ["USDEUR", "USDJPY", "USDGBP", "USDCAD"], "outlook": {"5d": {"usd_down": 0.45, "sideways": 0.45, "usd_up": 0.1}, "22d": {"usd_down": 0.35, "sideways": 0.5, "usd_up": 0.15}, "66d": {"usd_down": 0.3, "sideways": 0.55, "usd_up": 0.15}}, "reason": "Recommends selling the US dollar following the ceasefire announcement.", "comment_id": "15953482", "relative_time": "1 hr 46 min ago"}, {"author": "eqshack", "quote": "Oil down - inflation down - no rate hike - dollar down - stocks up.", "pairs": ["USDEUR", "USDJPY", "USDGBP", "USDCAD"], "outlook": {"5d": {"usd_down": 0.45, "sideways": 0.45, "usd_up": 0.1}, "22d": {"usd_down": 0.4, "sideways": 0.45, "usd_up": 0.15}, "66d": {"usd_down": 0.35, "sideways": 0.5, "usd_up": 0.15}}, "reason": "Expects lower oil and inflation to prevent rate hikes and push the dollar down.", "comment_id": "15953531", "relative_time": "5 min ago"}], "skipped": [{"author": "The Fool", "reason": "Posted screenshots without any currency outlook."}, {"author": "Momofrmnyc", "reason": "Political opinion about Trump without a currency view."}, {"author": "Polimini", "reason": "Political comment without a currency view."}, {"author": "Trader#3861", "reason": "Observation regarding energy pricing currency without an explicit directional view."}, {"author": "Manmeetkaur", "reason": "Pure question."}, {"author": "Vancarbon", "reason": "Political discussion and commentary without a currency forecast."}, {"author": "leila9", "reason": "Political comment praising Trump."}, {"author": "martynaciesl", "reason": "Question about gold trading, no currency pair forecast."}, {"author": "Mhdeldar", "reason": "One-word reaction to news without currency view."}, {"author": "xfpw", "reason": "Off-topic remark/joke."}, {"author": "m.karkhane", "reason": "Banter without any currency view."}, {"author": "Trader#AC40", "reason": "Political opinion without a currency view."}], "model": "gemini-3.8-flash", "source_url": "https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire", "source_task_id": "b67e0864-d493-402c-a050-26cf53ab6495", "fetched_at": "2026-10-11T18:40:18.560Z", "trace": {"attempts": [{"model": "gemini-3.8-flash", "status": 200, "ms": 86013}], "response_id": "Z-DLau6zD4qb9MoPmeaZmQw", "input_chars": 15403, "markdown_sha256": "78baf18cab325f215403a40e33d0c9fc1f16578e7b48d606edfd38fec2e9bb4e", "prompt_tokens": 6065, "output_tokens": 920, "thinking_tokens": 1721}}, "gemini_news": {"model": "gemini-3.8-flash", "opinions": 2, "skipped": 10}, "dedupe": {"key": "ForexFactory comment ID (from the permalink)", "readings": 4, "unique_comments": 2, "by_comment_id": {"15953482": [{"page": "story page", "author": "eqshack", "quote": "Sell usd"}, {"page": "news page", "author": "eqshack", "quote": "Sell usd"}], "15953531": [{"page": "story page", "author": "eqshack", "quote": "Oil down - inflation down - no rate hike - dollar down - stocks up."}, {"page": "news page", "author": "eqshack", "quote": "Oil down - inflation down - no rate hike - dollar down - stocks up."}]}, "result": "Same author, same thread, same view: 2 comments merged into 1 dish."}}</script>
 <script>
 const PAIRS = ["USDEUR", "USDJPY", "USDGBP", "USDCAD"];
 const H = ["5d", "22d", "66d"];
 const HALF = { "5d": 2, "22d": 7, "66d": 20 };
 const PRIOR = [0.16, 0.68, 0.16];
 const LIVE = JSON.parse(document.getElementById("live").textContent);
+const G = LIVE.gemini_story, NS = LIVE.nimble_story, NN = LIVE.nimble_news;
+const NIM = `<i class="lg-nimble" role="img" aria-label="Nimble"></i>`;
+const GEM = `<i class="lg-gemini" role="img" aria-label="Gemini"></i>`;
+const byNimble = (extra = "") => `<span class="prov n">Extracted by ${NIM}${extra}</span>`;
+const byGemini = (extra = "") => `<span class="prov g">Interpreted by ${GEM}${extra}</span>`;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const pct = x => Math.round(x * 100);
+const sec = ms => (ms / 1000).toFixed(1) + "s";
 
 let stalls = [
-  { url: "https://www.forexfactory.com/news", n: "1 real dish", real: true },
-  { url: "https://www.reddit.com/r/Forex", n: "example" },
-  { url: "https://forums.babypips.com", n: "example" },
+  { url: "forexfactory.com/news", n: "live", on: true },
+  { url: "reddit.com/r/Forex", n: "example" },
+  { url: "forums.babypips.com", n: "example" },
 ];
 
 const chefs = {
@@ -454,44 +396,28 @@ const chefs = {
   "newbie_scalper":  { stall: "reddit",       hits: [0,0,1,0,0],           w: null, up: 1, dn: 1 },
 };
 
-// Live dish: Gemini's two readings of eqshack's comments, merged (averaged) into one dish.
-const liveOps = LIVE.gemini_story.opinions;
-const avgQ = h => ["usd_down", "sideways", "usd_up"].map(k => liveOps.reduce((a, o) => a + o.outlook[h][k], 0) / liveOps.length);
+const KEYS = ["usd_down", "sideways", "usd_up"];
+const avgQ = h => KEYS.map(k => G.opinions.reduce((a, o) => a + o.outlook[h][k], 0) / G.opinions.length);
+const latest = G.opinions.map(o => LIVE.thread.find(c => c.id === o.comment_id)).filter(Boolean).sort((a, b) => b.at.localeCompare(a.at))[0];
+const liveAgeDays = latest ? (Date.parse(NS.response.metadata.query_time) - Date.parse(latest.at)) / 864e5 : 0.05;
 
 const dishes = [
-  { pair: "USD (all 4)", all: true, live: true, chef: "eqshack", ago: 0.07, dupes: ["forexfactory"], ing: "Fresh catch",
-    text: liveOps.map(o => o.quote).join(" … "),
+  { pair: "USD (all 4)", all: true, live: true, chef: "eqshack", ago: liveAgeDays, stalls: ["forexfactory"], text: G.opinions.map(o => o.quote).join(" … "),
     q: Object.fromEntries(H.map(h => [h, avgQ(h)])) },
-  { pair: "USDJPY", chef: "BoJ_watcher_88", ago: 0.3, dupes: ["forexfactory", "reddit"], ing: "Wagyu slice",
-    text: "BoJ minutes lean hawkish. USDJPY at 158 looks heavy, and I see it back below 155 within two weeks.",
-    q: { "5d": [.45,.45,.10], "22d": [.50,.38,.12], "66d": [.35,.45,.20] } },
-  { pair: "USDJPY", chef: "carry_trade_kat", ago: 1.5, dupes: ["reddit"], ing: "Shiitake",
-    text: "Carry is still king. The rate gap is huge, so I'm buying dips in USDJPY into year end.",
-    q: { "5d": [.15,.55,.30], "22d": [.12,.45,.43], "66d": [.15,.40,.45] } },
-  { pair: "USDEUR", chef: "pip_whisperer", ago: 0.5, dupes: ["forexfactory"], ing: "Truffle shaving",
-    text: "ECB sounds done cutting. The euro grinds higher, so the dollar buys fewer euros over the next month.",
-    q: { "5d": [.25,.60,.15], "22d": [.45,.42,.13], "66d": [.40,.45,.15] } },
-  { pair: "USDEUR", chef: "LondonFixLarry", ago: 3, dupes: ["forexfactory", "babypips"], ing: "Rye crouton",
-    text: "Range trade on the euro until payrolls. Nothing to see here.",
-    q: { "5d": [.10,.80,.10], "22d": [.15,.70,.15], "66d": [.20,.60,.20] } },
-  { pair: "USDGBP", chef: "LondonFixLarry", ago: 0.8, dupes: ["forexfactory"], ing: "Rye crouton",
-    text: "Hot UK CPI means the BoE holds. Sterling squeezes up, so USDGBP drifts lower.",
-    q: { "5d": [.40,.50,.10], "22d": [.42,.45,.13], "66d": [.30,.50,.20] } },
-  { pair: "USDGBP", chef: "newbie_scalper", ago: 0.1, dupes: ["reddit"], ing: "Instant noodle",
-    text: "GBP is going to crash, mark my words!!! Dollar to the moon.",
-    q: { "5d": [.10,.40,.50], "22d": [.10,.40,.50], "66d": [.10,.40,.50] } },
-  { pair: "USDCAD", chef: "LoonieTunes", ago: 1, dupes: ["babypips", "forexfactory"], ing: "Maple tofu",
-    text: "Oil is bid and the BoC is on hold. The loonie strengthens and USDCAD heads lower.",
-    q: { "5d": [.35,.55,.10], "22d": [.48,.40,.12], "66d": [.45,.40,.15] } },
-  { pair: "USDCAD", chef: "carry_trade_kat", ago: 6, dupes: ["reddit"], ing: "Shiitake",
-    text: "USDCAD breakout coming. US data is too strong.",
-    q: { "5d": [.15,.50,.35], "22d": [.15,.45,.40], "66d": [.20,.45,.35] } },
+  { pair: "USDJPY", chef: "BoJ_watcher_88", ago: 0.3, stalls: ["forexfactory", "reddit"], text: "BoJ minutes lean hawkish. USDJPY at 158 looks heavy, and I see it back below 155 within two weeks.", q: { "5d": [.45,.45,.10], "22d": [.50,.38,.12], "66d": [.35,.45,.20] } },
+  { pair: "USDJPY", chef: "carry_trade_kat", ago: 1.5, stalls: ["reddit"], text: "Carry is still king. The rate gap is huge, so I'm buying dips in USDJPY into year end.", q: { "5d": [.15,.55,.30], "22d": [.12,.45,.43], "66d": [.15,.40,.45] } },
+  { pair: "USDEUR", chef: "pip_whisperer", ago: 0.5, stalls: ["forexfactory"], text: "ECB sounds done cutting. The euro grinds higher, so the dollar buys fewer euros over the next month.", q: { "5d": [.25,.60,.15], "22d": [.45,.42,.13], "66d": [.40,.45,.15] } },
+  { pair: "USDEUR", chef: "LondonFixLarry", ago: 3, stalls: ["forexfactory", "babypips"], text: "Range trade on the euro until payrolls. Nothing to see here.", q: { "5d": [.10,.80,.10], "22d": [.15,.70,.15], "66d": [.20,.60,.20] } },
+  { pair: "USDGBP", chef: "LondonFixLarry", ago: 0.8, stalls: ["forexfactory"], text: "Hot UK CPI means the BoE holds. Sterling squeezes up, so USDGBP drifts lower.", q: { "5d": [.40,.50,.10], "22d": [.42,.45,.13], "66d": [.30,.50,.20] } },
+  { pair: "USDGBP", chef: "newbie_scalper", ago: 0.1, stalls: ["reddit"], text: "GBP is going to crash, mark my words!!! Dollar to the moon.", q: { "5d": [.10,.40,.50], "22d": [.10,.40,.50], "66d": [.10,.40,.50] } },
+  { pair: "USDCAD", chef: "LoonieTunes", ago: 1, stalls: ["babypips", "forexfactory"], text: "Oil is bid and the BoC is on hold. The loonie strengthens and USDCAD heads lower.", q: { "5d": [.35,.55,.10], "22d": [.48,.40,.12], "66d": [.45,.40,.15] } },
+  { pair: "USDCAD", chef: "carry_trade_kat", ago: 6, stalls: ["reddit"], text: "USDCAD breakout coming. US data is too strong.", q: { "5d": [.15,.50,.35], "22d": [.15,.45,.40], "66d": [.20,.45,.35] } },
 ];
 
 let mine = false, filter = "All";
-const pct = x => Math.round(x * 100);
 const hitRate = c => (c.hits.reduce((a, b) => a + b, 0) + 2) / (c.hits.length + 4);
 const weight = c => (mine && c.w !== null) ? c.w : hitRate(c);
+const fresh = (d, h) => Math.pow(0.5, d.ago / HALF[h]);
 
 function cook(pair, h) {
   const lp = PRIOR.map(Math.log);
@@ -500,44 +426,30 @@ function cook(pair, h) {
     if (d.pair !== pair && !d.all) continue;
     const c = chefs[d.chef], q = d.q[h];
     const trust = mine ? (q[2] > q[0] ? c.up : c.dn) : 1;
-    const w = weight(c) * trust * Math.pow(0.5, d.ago / HALF[h]);
+    const w = weight(c) * trust * fresh(d, h);
     for (let k = 0; k < 3; k++) lp[k] += w * Math.log(q[k] / PRIOR[k]);
     n++;
   }
   const m = Math.max(...lp), e = lp.map(v => Math.exp(v - m)), s = e.reduce((a, b) => a + b, 0);
   return { p: e.map(v => v / s), n };
 }
-
-function bar(p, labels) {
-  const t = v => labels && v > .12 ? pct(v) + "%" : "";
-  return `<div class="bar"><i class="d" style="width:${p[0]*100}%">${t(p[0])}</i><i class="s" style="width:${p[1]*100}%">${t(p[1])}</i><i class="u" style="width:${p[2]*100}%">${t(p[2])}</i></div>`;
-}
+const bar = p => `<div class="bar" aria-hidden="true"><i class="d" style="width:${p[0]*100}%"></i><i class="s" style="width:${p[1]*100}%"></i><i class="u" style="width:${p[2]*100}%"></i></div>`;
 function callOf(p) {
-  if (p[2] - PRIOR[2] > .08 && p[2] > p[0]) return ["up", "USD up"];
-  if (p[0] - PRIOR[0] > .08 && p[0] > p[2]) return ["down", "USD down"];
-  return ["side", "Mostly sideways"];
+  if (p[2] - PRIOR[2] > .06 && p[2] > p[0]) return ["up", `USD up ${pct(p[2])}%`];
+  if (p[0] - PRIOR[0] > .06 && p[0] > p[2]) return ["down", `USD down ${pct(p[0])}%`];
+  return ["side", `sideways ${pct(p[1])}%`];
 }
 
 function renderPots() {
-  const out = {};
-  document.getElementById("pots").innerHTML = PAIRS.map(pair => {
-    out[pair] = {};
-    let heat = 0, dishesN = 0;
-    const rows = H.map(h => {
-      const { p, n } = cook(pair, h);
-      dishesN = n;
-      out[pair][h] = { usd_down: +p[0].toFixed(3), sideways: +p[1].toFixed(3), usd_up: +p[2].toFixed(3) };
-      heat = Math.max(heat, Math.abs(p[2] - p[0]));
-      const [cls, txt] = callOf(p);
-      return `<div class="hz"><div class="row"><span class="mono">${h}</span><span class="call ${cls}">${txt}</span></div>${bar(p, true)}</div>`;
-    }).join("");
-    const chilis = Math.min(5, Math.max(1, Math.round(heat * 8)));
-    return `<article class="pot"><h3>${pair}<small>${dishesN} dishes</small></h3><div class="heat" title="How strongly the pot leans" aria-label="Heat ${chilis} of 5">${"🌶️".repeat(chilis)}<span class="muted" style="opacity:.35">${"🌶️".repeat(5 - chilis)}</span></div>${rows}</article>`;
-  }).join("");
-  document.getElementById("json").textContent = JSON.stringify({ updated: LIVE.gemini_story.fetched_at, pot: mine ? "mine" : "default", pairs: out }, null, 1);
-  document.getElementById("potMode").textContent = mine
-    ? "My pot: your chef weights and up/down trust are applied."
-    : "Default pot: every chef is weighted by their track record.";
+  let html = `<thead><tr><th>Pair</th>${H.map(h => `<th>${h === "5d" ? "5 days" : h === "22d" ? "22 days (~1 mo)" : "66 days (~3 mo)"}</th>`).join("")}</tr></thead><tbody>`;
+  for (const pair of PAIRS) {
+    let n = 0;
+    const cells = H.map(h => { const r = cook(pair, h); n = r.n; const [cls, txt] = callOf(r.p);
+      return `<td><div class="cell" title="down ${pct(r.p[0])}% · sideways ${pct(r.p[1])}% · up ${pct(r.p[2])}%"><div class="lab"><span class="call ${cls}">${txt}</span><span class="muted mono">${pct(r.p[0])}/${pct(r.p[1])}/${pct(r.p[2])}</span></div>${bar(r.p)}</div></td>`; }).join("");
+    html += `<tr><td class="pair">${pair}<small>${n} opinions</small></td>${cells}</tr>`;
+  }
+  document.getElementById("pots").innerHTML = html + "</tbody>";
+  document.getElementById("potMode").textContent = mine ? "Your weights applied." : "Weighted by each chef's track record.";
 }
 
 function renderBuffet() {
@@ -547,18 +459,17 @@ function renderBuffet() {
   document.getElementById("buffet").innerHTML = dishes.filter(d => filter === "All" || d.pair === filter || d.all).map(d => {
     const i = dishes.indexOf(d);
     const when = d.ago < 1 ? `${Math.max(1, Math.round(d.ago * 24))}h ago` : `${d.ago}d ago`;
-    const tri = H.map(h => `<span class="lbl">${h}</span>${bar(d.q[h], false)}`).join("");
-    const dupe = d.live
-      ? `<span class="dupe">2 comments, seen on 2 pages, merged into 1 dish</span>`
-      : (d.dupes.length > 1 ? `<span class="dupe">Seen on ${d.dupes.length} stalls (${d.dupes.join(", ")}), merged into 1</span>` : "");
-    return `<article class="dish${d.live ? " live" : ""}" tabindex="0" role="button" data-i="${i}" aria-label="Open the kitchen receipt for ${d.chef}">
-      <div class="badges">${d.live ? `<span class="real">Real · live from ForexFactory</span>` : `<span class="ex">Example</span>`}<span class="pill n">Nimble</span><span class="pill g">Gemini</span></div>
-      <div class="top"><span class="pair">${d.pair}</span><span class="ing">${d.ing}</span></div>
-      <p class="quote">“${d.text}”</p>
-      <div class="by"><span>by <b>${d.chef}</b></span><span>${when}</span><span>via ${d.dupes[0]}</span></div>
-      ${dupe}
+    const tri = H.map(h => `<span class="lbl">${h}</span>${bar(d.q[h])}`).join("");
+    const dupe = d.live ? `<span class="dupe">${LIVE.dedupe.readings} readings → ${LIVE.dedupe.unique_comments} comments → 1 dish</span>`
+      : d.stalls.length > 1 ? `<span class="dupe">seen on ${d.stalls.length} stalls → 1 dish</span>` : "<span></span>";
+    return `<article class="dish${d.live ? " live" : ""}" tabindex="0" role="button" data-i="${i}" aria-label="Open trace for ${esc(d.chef)}">
+      <div class="top"><span class="pair">${d.pair}</span>${d.live ? `<span class="real">real · ForexFactory</span>` : `<span class="ex">example</span>`}</div>
+      <p class="quote">“${esc(d.text)}”</p>
+      <div class="by"><span>by <b>${esc(d.chef)}</b></span><span>${when}</span><span>via ${d.stalls[0]}</span></div>
+      ${byNimble()}
       <div class="tri">${tri}</div>
-      <span class="peek">See the kitchen receipt →</span>
+      ${byGemini()}
+      <div class="provrow">${dupe}<span class="open">${d.live ? "trace & lineage →" : "details →"}</span></div>
     </article>`;
   }).join("");
   document.querySelectorAll("#buffet .dish").forEach(el => {
@@ -570,22 +481,21 @@ function renderBuffet() {
 function renderChefs() {
   document.getElementById("chefs").innerHTML = Object.entries(chefs).map(([name, c]) => {
     const hr = hitRate(c), w = c.w === null ? hr : c.w;
-    const spark = c.hits.length ? c.hits.map(x => `<i class="${x ? "h" : ""}"></i>`).join("") : "";
+    const spark = c.hits.map(x => `<i class="${x ? "h" : ""}"></i>`).join("");
     return `<tr>
       <td><b>${name}</b> ${c.real ? `<span class="real">real</span>` : ""}</td><td>${c.stall}</td>
-      <td><span class="mono">${pct(hr)}%</span>${spark ? `<span class="spark" aria-hidden="true">${spark}</span>` : ` <span class="muted">new chef</span>`}</td>
+      <td><span class="mono">${pct(hr)}%</span>${spark ? `<span class="spark" aria-hidden="true">${spark}</span>` : ` <span class="muted">new</span>`}</td>
       <td><input type="range" id="w-${name}" min="0" max="1.5" step="0.05" value="${w.toFixed(2)}" data-k="w" data-c="${name}" aria-label="Weight for ${name}"><span class="val">${w.toFixed(2)}</span></td>
-      <td><input type="range" id="u-${name}" min="0" max="2" step="0.1" value="${c.up}" data-k="up" data-c="${name}" aria-label="Trust in ${name}'s USD-up calls"><span class="val">${c.up.toFixed(1)}×</span></td>
-      <td><input type="range" id="d-${name}" min="0" max="2" step="0.1" value="${c.dn}" data-k="dn" data-c="${name}" aria-label="Trust in ${name}'s USD-down calls"><span class="val">${c.dn.toFixed(1)}×</span></td>
+      <td><input type="range" id="u-${name}" min="0" max="2" step="0.1" value="${c.up}" data-k="up" data-c="${name}" aria-label="Trust ${name}'s USD-up calls"><span class="val">${c.up.toFixed(1)}×</span></td>
+      <td><input type="range" id="d-${name}" min="0" max="2" step="0.1" value="${c.dn}" data-k="dn" data-c="${name}" aria-label="Trust ${name}'s USD-down calls"><span class="val">${c.dn.toFixed(1)}×</span></td>
     </tr>`;
   }).join("");
-  document.querySelectorAll("#chefs input").forEach(inp => inp.oninput = () => {
+  document.querySelectorAll(".chefs input").forEach(inp => inp.oninput = () => {
     chefs[inp.dataset.c][inp.dataset.k] = +inp.value;
     inp.nextElementSibling.textContent = inp.dataset.k === "w" ? (+inp.value).toFixed(2) : (+inp.value).toFixed(1) + "×";
     setMine(true);
   });
 }
-
 function setMine(v) {
   mine = v;
   document.getElementById("potDefault").setAttribute("aria-pressed", String(!v));
@@ -593,49 +503,98 @@ function setMine(v) {
   renderPots();
 }
 
-function renderStalls() {
-  document.getElementById("stalls").innerHTML = stalls.map(s =>
-    `<li><span class="dot ${s.real ? "" : "idle"}"></span><span class="url">${s.url}</span><span class="n">${s.n}</span></li>`).join("");
+function renderSide() {
+  const gAttempt = G.trace.attempts.filter(a => a.status === 200)[0];
+  const read = LIVE.thread.length;
+  document.getElementById("runkv").innerHTML = `
+    <tr class="grp"><td colspan="2">${byNimble()}</td></tr>
+    <tr><td>Pages fetched</td><td>2</td></tr>
+    <tr><td>Thread fetch (vx10)</td><td>${sec(NS.response.metadata.query_duration)}</td></tr>
+    <tr><td>Markdown returned</td><td>${((NS.full_markdown_chars + NN.markdown_chars) / 1000).toFixed(0)}K chars</td></tr>
+    <tr><td>Bot wall</td><td>passed</td></tr>
+    <tr class="grp"><td colspan="2">${byGemini()}</td></tr>
+    <tr><td>Comments read</td><td>${read}</td></tr>
+    <tr><td>Dollar calls kept</td><td>${G.opinions.length}</td></tr>
+    <tr><td>Skipped, with reason</td><td>${read - G.opinions.length}</td></tr>
+    <tr><td>Tokens in / out</td><td>${(G.trace.prompt_tokens / 1000).toFixed(1)}K / ${G.trace.output_tokens}</td></tr>
+    <tr class="grp"><td colspan="2"><span class="prov">MalalphAI</span></td></tr>
+    <tr><td>Deduped</td><td>${LIVE.dedupe.readings} → 1 dish</td></tr>
+    <tr><td>Pots updated</td><td>4 × 3</td></tr>`;
+  document.getElementById("stalls").innerHTML = stalls.map(s => `<li><span class="dot ${s.on ? "on" : ""}"></span><span class="u">${esc(s.url)}</span><span class="muted">${s.n}</span></li>`).join("");
 }
 
-/* ---------- Kitchen receipt ---------- */
-function receiptFor(d) {
-  if (d.live) {
-    const N = LIVE.nimble_story, m = N.response.metadata;
-    const stats = `<div class="stats"><span>status <b>${N.response.status_code}</b></span><span>driver <b>${m.driver}</b> (stealth browser)</span><span>fetched in <b>${(m.query_duration / 1000).toFixed(1)}s</b></span><span>at <b>${m.query_time.slice(0, 16).replace("T", " ")} UTC</b></span><span>full page <b>${N.full_markdown_chars.toLocaleString()}</b> chars of markdown</span></div>`;
-    return [
-      { label: "Nimble output", real: "nimble", cap: "Nimble's real response from ForexFactory. The comment thread arrives as markdown with each author, a relative time and a permalink.", extra: stats, json: N.response },
-      { label: "Nimble request", real: "nimble", cap: "The exact call we sent. The 3-second wait lets the comments load before Nimble captures the page.", json: N.request },
-      { label: "Gemini reads it", real: "gemini", cap: `Gemini's real structured output (${LIVE.gemini_story.model}). It kept ${LIVE.gemini_story.opinions.length} dollar calls and explained each of the ${LIVE.gemini_story.skipped.length} comments it skipped.`, json: LIVE.gemini_story },
-      { label: "Dedupe", real: "both", cap: "The same two comments also appeared on the ForexFactory news page, which Nimble fetched separately. Matching comment IDs collapse 4 readings into 1 dish.", json: LIVE.dedupe },
-      { label: "Into the pot", cap: "This is a call on the dollar itself, so it seasons all four pots.", json: H.map(h => ({ horizon: h, gemini_merged: { usd_down: +d.q[h][0].toFixed(3), sideways: +d.q[h][1].toFixed(3), usd_up: +d.q[h][2].toFixed(3) }, chef_weight: +weight(chefs.eqshack).toFixed(2), freshness: +Math.pow(0.5, d.ago / HALF[h]).toFixed(2) })) },
-    ];
-  }
-  const url = `https://www.${d.dupes[0] === "reddit" ? "reddit.com/r/Forex/comments/…" : d.dupes[0] === "babypips" ? "forums.babypips.com/t/…" : "forexfactory.com/news/…"}`;
-  return [
-    { label: "Nimble output", cap: "An example dish. Real dishes show Nimble's full response here, like the green one.", json: { url, status: "success", data: { markdown: `**${d.chef}** · ${d.ago < 1 ? Math.max(1, Math.round(d.ago * 24)) + " hr ago" : d.ago + " days ago"}\n\n${d.text}` }, metadata: { driver: "vx10" }, status_code: 200 } },
-    { label: "Gemini reads it", cap: "The same schema Gemini filled for the real dish.", json: { author: d.chef, pairs: [d.pair], quote: d.text, outlook: Object.fromEntries(H.map(h => [h, { usd_down: d.q[h][0], sideways: d.q[h][1], usd_up: d.q[h][2] }])) } },
-    { label: "Dedupe", cap: "Same author and same view across stalls count once.", json: { seen_on: d.dupes, kept: 1 } },
+/* ---------- The geeky click-in: thread, trace, lineage, raw ---------- */
+function threadView() {
+  const m = NS.response.metadata;
+  const head = `<div class="srcbar">${byNimble()}<span>driver <b>${m.driver}</b></span><span>status <b>${NS.response.status_code}</b></span><span><b>${sec(m.query_duration)}</b></span><span>task <b>${NS.response.task_id.slice(0, 8)}…</b></span><span>${esc(LIVE.title)}</span></div>`;
+  const rows = LIVE.thread.map(c => {
+    const g = c.gemini;
+    const ann = !g ? `<div class="ann">${byGemini(" · no currency call")}</div>`
+      : g.kept ? `<div class="ann kept">${byGemini()}<span>${esc(g.reason)}</span><div class="tri">${H.map(h => `<span class="mono muted">${h}</span>${bar(KEYS.map(k => g.outlook[h][k]))}`).join("")}</div><span class="mono muted">${g.pairs.join(" · ")}</span></div>`
+      : `<div class="ann">${byGemini(" · skipped")}<span>${esc(g.reason)}</span></div>`;
+    return `<div class="cm${g && g.kept ? " kept" : ""}"><div><div class="meta"><b>${esc(c.author)}</b><span>${c.at.replace("T", " ")}</span><span>${esc(c.relative)}</span><span>#${c.id}</span></div><p class="txt">${esc(c.text || "[image]")}</p></div>${ann}</div>`;
+  }).join("");
+  return `${head}<div class="thread">${rows}</div><p class="note">The ${LIVE.thread.length} comments Nimble extracted from the live page, parsed from its markdown into author, time and permalink ID. On the right is what Gemini made of each one. Times are worked out from the fetch time.</p>`;
+}
+
+function traceView() {
+  const ga = G.trace.attempts;
+  const spans = [
+    { nm: "nimble.extract", sub: "forexfactory.com/news · vx10", ms: NN.metadata.query_duration, c: "var(--nimble)", lg: NIM },
+    { nm: "nimble.extract", sub: "story thread · vx10 + 3s wait", ms: NS.response.metadata.query_duration, c: "var(--nimble)", lg: NIM },
+    { nm: "trim.comments", sub: `${NS.full_markdown_chars.toLocaleString()} → ${G.trace.input_chars.toLocaleString()} chars`, ms: 5, c: "var(--muted)" },
+    ...ga.map(a => ({ nm: "gemini.generateContent", sub: `${a.model} · HTTP ${a.status}${a.status === 200 ? ` · ${G.trace.prompt_tokens.toLocaleString()} in / ${G.trace.output_tokens} out / ${G.trace.thinking_tokens} thinking tok` : ""}`, ms: a.ms, c: a.status === 200 ? "var(--gem)" : "var(--red)", lg: GEM })),
+    { nm: "dedupe.by_comment_id", sub: `${LIVE.dedupe.readings} readings → ${LIVE.dedupe.unique_comments} comments → 1 dish`, ms: 1, c: "var(--muted)" },
+    { nm: "pot.bayes_update", sub: "4 pairs × 3 horizons", ms: 1, c: "var(--red)" },
   ];
+  const total = spans.reduce((a, s) => a + s.ms, 0);
+  let t = 0;
+  const rows = spans.map(s => { const left = t / total * 100, w = Math.max(.6, s.ms / total * 100); t += s.ms;
+    return `<div class="span"><span class="nm">${s.nm}<small>${s.sub}</small></span><span class="track"><i style="left:${left}%;width:${w}%;--c:${s.c}"></i></span><span class="d">${s.ms >= 100 ? sec(s.ms) : "<0.1s"}</span></div>`; }).join("");
+  return `<div class="srcbar">${byNimble()}${byGemini()}<span>end to end <b>${sec(total)}</b></span><span>Gemini response <b>${G.trace.response_id || "n/a"}</b></span></div><div class="wf">${rows}</div><p class="note">Spans run one after another. Nimble and Gemini latencies are measured. Local steps are shown at their nominal cost.</p>`;
+}
+
+function lineageView() {
+  const ids = G.opinions.map(o => "#" + o.comment_id).join(", ");
+  const nodes = [
+    { c: "var(--muted)", what: "Source", v: `<code>${esc(NS.response.url)}</code><small>public ForexFactory thread</small>` },
+    { c: "var(--nimble)", what: `Extracted by ${NIM}`, v: `<code>task_id ${NS.response.task_id}</code><small>${NS.response.metadata.query_time} · ${NS.response.metadata.driver} · HTTP ${NS.response.status_code}</small>` },
+    { c: "var(--nimble)", what: "Markdown snapshot", v: `<code>sha256 ${G.trace.markdown_sha256.slice(0, 16)}…</code><small>${NS.full_markdown_chars.toLocaleString()} chars, saved in data/raw/</small>` },
+    { c: "var(--gem)", what: `Interpreted by ${GEM}`, v: `<code>${G.model} · response ${G.trace.response_id}</code><small>${G.opinions.length} opinions, ${G.skipped.length} skips, saved in data/extracted/</small>` },
+    { c: "var(--muted)", what: "Comments", v: `<code>${ids}</code><small>author eqshack, merged by comment ID (also seen on the news page, task ${NN.task_id.slice(0, 8)}…)</small>` },
+    { c: "var(--red)", what: "Dish → pot", v: `<code>dish eqshack/${G.opinions.map(o => o.comment_id).join("+")}</code><small>feeds USDEUR, USDJPY, USDGBP and USDCAD × 5d, 22d and 66d</small>` },
+  ];
+  return `<div class="lin">${nodes.map(n => `<div class="node" style="--c:${n.c}"><span class="what">${n.what}</span><span>${n.v}</span></div>`).join("")}</div>`;
+}
+
+let rawSel = 0;
+function rawView(draw) {
+  const opts = [["Nimble request", NS.request], ["Nimble response", NS.response], ["Gemini response", G], ["Dedupe", LIVE.dedupe]];
+  setTimeout(() => {
+    document.querySelectorAll(".rawpick button").forEach(b => b.onclick = () => { rawSel = +b.dataset.r; draw(); });
+    document.getElementById("rawpre").textContent = JSON.stringify(opts[rawSel][1], null, 2);
+  });
+  return `<div class="rawpick">${opts.map((o, k) => `<button type="button" aria-pressed="${k === rawSel}" data-r="${k}">${o[0]}</button>`).join("")}</div><pre id="rawpre"></pre><p class="note">Exact payloads saved from the live calls. Long markdown is trimmed to the comment thread.</p>`;
+}
+
+function exampleView(d) {
+  return `<div class="srcbar">${byNimble()}<span class="ex">example</span></div>
+    <div class="thread"><div class="cm"><div><div class="meta"><b>${esc(d.chef)}</b><span>${d.ago < 1 ? Math.max(1, Math.round(d.ago * 24)) + " hr ago" : d.ago + " days ago"}</span><span>${d.stalls.join(" + ")}</span></div><p class="txt">${esc(d.text)}</p></div>
+    <div class="ann kept">${byGemini()}<div class="tri">${H.map(h => `<span class="mono muted">${h}</span>${bar(d.q[h])}`).join("")}</div><span class="mono muted">${d.pair}</span></div></div></div>
+    <p class="note">This is an example dish. Open the green one for a real trace, lineage and raw payloads.</p>`;
 }
 
 let rcTab = 0;
 function openReceipt(i) {
-  const d = dishes[i], tabs = receiptFor(d);
-  rcTab = 0;
+  const d = dishes[i];
+  const tabs = d.live ? [["Thread", threadView], ["Trace", traceView], ["Lineage", lineageView], ["Raw JSON", rawView]] : [["Details", () => exampleView(d)]];
+  rcTab = 0; rawSel = 0;
   document.getElementById("rcTitle").textContent = `${d.pair} · ${d.chef}`;
   document.getElementById("rcSub").textContent = `“${d.text}”`;
   const draw = () => {
-    document.getElementById("rcTabs").innerHTML = tabs.map((t, k) => `<button type="button" role="tab" aria-selected="${k === rcTab}" data-k="${k}">${t.label}</button>`).join("");
+    document.getElementById("rcTabs").innerHTML = tabs.map((t, k) => `<button type="button" role="tab" aria-selected="${k === rcTab}" data-k="${k}">${t[0]}</button>`).join("");
     document.querySelectorAll("#rcTabs button").forEach(b => b.onclick = () => { rcTab = +b.dataset.k; draw(); });
-    const t = tabs[rcTab];
-    const src = { nimble: "Real Nimble API data", gemini: "Real Gemini API output", both: "Real Nimble + Gemini data" }[t.real];
-    const foot = t.real
-      ? `<p class="note"><span class="real">${src}</span> Saved from live calls on 11 Oct 2026. Long markdown is trimmed to the comment thread for display.</p>`
-      : `<p class="note"><span class="ex">Example</span></p>`;
-    const st = document.getElementById("rcStage");
-    st.innerHTML = `<p class="note">${t.cap}</p>${t.extra || ""}<pre></pre>${foot}`;
-    st.querySelector("pre").textContent = JSON.stringify(t.json, null, 2);
+    document.getElementById("rcStage").innerHTML = tabs[rcTab][1](draw);
   };
   draw();
   const dlg = document.getElementById("receipt");
@@ -648,21 +607,14 @@ document.getElementById("addForm").addEventListener("submit", e => {
   e.preventDefault();
   const v = document.getElementById("newUrl").value.trim();
   if (!v) return;
-  stalls.push({ url: v, n: "queued for next run" });
+  stalls.push({ url: v.replace(/^https?:\/\/(www\.)?/, ""), n: "queued" });
   document.getElementById("newUrl").value = "";
-  renderStalls();
+  renderSide();
 });
-document.getElementById("runBtn").onclick = () => {
-  const log = document.getElementById("runlog");
-  const lines = [`Nimble: shopping ${stalls.length} stalls with the vx10 stealth browser…`];
-  log.textContent = lines.join("\n");
-  ["Nimble: pages returned as markdown", "Gemini: reading comments into structured opinions", "Dedupe: merging repeats by comment ID", "Pot: updated (demo replay of the 11 Oct run)"]
-    .forEach((s, i) => setTimeout(() => { lines.push(s); log.textContent = lines.join("\n"); }, 500 * (i + 1)));
-};
 document.getElementById("potDefault").onclick = () => setMine(false);
 document.getElementById("potMine").onclick = () => setMine(true);
 
-renderStalls(); renderPots(); renderBuffet(); renderChefs();
+renderSide(); renderPots(); renderBuffet(); renderChefs();
 </script>
 
 </body>

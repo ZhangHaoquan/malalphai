@@ -2,6 +2,7 @@
 
 Usage: python3 pipeline/gemini_extract.py data/raw/ff_story_1430919.json > data/extracted/ff_story_1430919.json
 """
+import hashlib
 import json
 import os
 import sys
@@ -62,24 +63,32 @@ def extract(nimble_result: dict) -> dict:
     prompt = PROMPT.format(fetched_at=nimble_result["metadata"]["query_time"], pairs=", ".join(PAIRS), markdown=md[:60000])
     body = {"contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {"responseMimeType": "application/json", "responseSchema": SCHEMA, "temperature": 0.2}}
-    out, used = None, None
+    out, used, attempts = None, None, []
     for attempt in range(6):
         model = MODELS[attempt % len(MODELS)]
         req = urllib.request.Request(
             f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
             data=json.dumps(body).encode(), headers={"Content-Type": "application/json", "x-goog-api-key": os.environ["GEMINI_API_KEY"]})
+        t0 = time.time()
         try:
             with urllib.request.urlopen(req, timeout=120) as r:
                 out, used = json.load(r), model
+                attempts.append({"model": model, "status": 200, "ms": round((time.time() - t0) * 1000)})
                 break
         except urllib.error.HTTPError as e:
+            attempts.append({"model": model, "status": e.code, "ms": round((time.time() - t0) * 1000)})
             print(f"{model}: HTTP {e.code}, retrying", file=sys.stderr)
             time.sleep(2 + attempt * 2)
     if out is None:
         raise SystemExit("Gemini unavailable after retries")
     result = json.loads(out["candidates"][0]["content"]["parts"][0]["text"])
+    usage = out.get("usageMetadata", {})
     result.update(model=used, source_url=nimble_result["url"], source_task_id=nimble_result["task_id"],
-                  fetched_at=nimble_result["metadata"]["query_time"])
+                  fetched_at=nimble_result["metadata"]["query_time"],
+                  trace={"attempts": attempts, "response_id": out.get("responseId"),
+                         "input_chars": len(md), "markdown_sha256": hashlib.sha256(nimble_result["data"]["markdown"].encode()).hexdigest(),
+                         "prompt_tokens": usage.get("promptTokenCount"), "output_tokens": usage.get("candidatesTokenCount"),
+                         "thinking_tokens": usage.get("thoughtsTokenCount")})
     return result
 
 

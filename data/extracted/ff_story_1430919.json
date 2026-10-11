@@ -11,22 +11,22 @@
       ],
       "outlook": {
         "5d": {
-          "usd_down": 0.65,
-          "sideways": 0.25,
+          "usd_down": 0.45,
+          "sideways": 0.45,
           "usd_up": 0.1
         },
         "22d": {
-          "usd_down": 0.6,
-          "sideways": 0.3,
-          "usd_up": 0.1
+          "usd_down": 0.35,
+          "sideways": 0.5,
+          "usd_up": 0.15
         },
         "66d": {
-          "usd_down": 0.5,
-          "sideways": 0.35,
+          "usd_down": 0.3,
+          "sideways": 0.55,
           "usd_up": 0.15
         }
       },
-      "reason": "Author explicitly recommends selling the US dollar.",
+      "reason": "Recommends selling the US dollar following the ceasefire announcement.",
       "comment_id": "15953482",
       "relative_time": "1 hr 46 min ago"
     },
@@ -41,22 +41,22 @@
       ],
       "outlook": {
         "5d": {
-          "usd_down": 0.7,
-          "sideways": 0.2,
+          "usd_down": 0.45,
+          "sideways": 0.45,
           "usd_up": 0.1
         },
         "22d": {
-          "usd_down": 0.6,
-          "sideways": 0.3,
-          "usd_up": 0.1
+          "usd_down": 0.4,
+          "sideways": 0.45,
+          "usd_up": 0.15
         },
         "66d": {
-          "usd_down": 0.5,
-          "sideways": 0.35,
+          "usd_down": 0.35,
+          "sideways": 0.5,
           "usd_up": 0.15
         }
       },
-      "reason": "Author argues that lower energy prices lead to lower inflation and no rate hikes, driving the US dollar down.",
+      "reason": "Expects lower oil and inflation to prevent rate hikes and push the dollar down.",
       "comment_id": "15953531",
       "relative_time": "5 min ago"
     }
@@ -64,23 +64,19 @@
   "skipped": [
     {
       "author": "The Fool",
-      "reason": "Posted an image attachment with no currency forecast."
+      "reason": "Posted screenshots without any currency outlook."
     },
     {
       "author": "Momofrmnyc",
-      "reason": "Political comment without a specific currency view."
+      "reason": "Political opinion about Trump without a currency view."
     },
     {
       "author": "Polimini",
-      "reason": "Sarcastic political comment."
+      "reason": "Political comment without a currency view."
     },
     {
       "author": "Trader#3861",
-      "reason": "General comment about energy transactions being in USD without an explicit directional call."
-    },
-    {
-      "author": "eqshack",
-      "reason": "Comment 'Aka gold up' expresses a view on gold rather than the specified currency pairs."
+      "reason": "Observation regarding energy pricing currency without an explicit directional view."
     },
     {
       "author": "Manmeetkaur",
@@ -88,35 +84,50 @@
     },
     {
       "author": "Vancarbon",
-      "reason": "Political commentary on news deflection techniques."
+      "reason": "Political discussion and commentary without a currency forecast."
     },
     {
       "author": "leila9",
-      "reason": "Political opinion without a currency view."
+      "reason": "Political comment praising Trump."
     },
     {
       "author": "martynaciesl",
-      "reason": "Question regarding trading gold."
+      "reason": "Question about gold trading, no currency pair forecast."
     },
     {
       "author": "Mhdeldar",
-      "reason": "Comment on the news story authenticity without a currency view."
+      "reason": "One-word reaction to news without currency view."
     },
     {
       "author": "xfpw",
-      "reason": "Joke comment."
+      "reason": "Off-topic remark/joke."
     },
     {
       "author": "m.karkhane",
-      "reason": "Joke comment."
+      "reason": "Banter without any currency view."
     },
     {
       "author": "Trader#AC40",
-      "reason": "Political commentary regarding Donald Trump."
+      "reason": "Political opinion without a currency view."
     }
   ],
-  "model": "gemini-3.5-flash",
+  "model": "gemini-3.8-flash",
   "source_url": "https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire",
   "source_task_id": "b67e0864-d493-402c-a050-26cf53ab6495",
-  "fetched_at": "2026-10-11T18:40:18.560Z"
+  "fetched_at": "2026-10-11T18:40:18.560Z",
+  "trace": {
+    "attempts": [
+      {
+        "model": "gemini-3.8-flash",
+        "status": 200,
+        "ms": 86013
+      }
+    ],
+    "response_id": "Z-DLau6zD4qb9MoPmeaZmQw",
+    "input_chars": 15403,
+    "markdown_sha256": "78baf18cab325f215403a40e33d0c9fc1f16578e7b48d606edfd38fec2e9bb4e",
+    "prompt_tokens": 6065,
+    "output_tokens": 920,
+    "thinking_tokens": 1721
+  }
 }
