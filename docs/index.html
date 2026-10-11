@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>MalalphAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=IBM+Plex+Mono:wght@500;600;700&family=Open+Sans:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: MLH-style long page. Hero + sponsors -> kitchen flow diagram -> pot -> buffet -> season -> why the sponsors. */
+:root {
+  --bg: #f5f5f9;
+  --surface: #ffffff;
+  --ink: #242425;
+  --muted: #5d5d6b;
+  --line: #e1e1ea;
+  --red: #e73427;
+  --blue: #1d539f;
+  --yellow: #f8b92a;
+  --nimble: #0b8a73;
+  --gem1: #4285f4; --gem2: #9b72cb; --gem3: #d96570;
+  --down: #1d539f; --side: #b9b9c6; --up: #e73427;
+  --logo: "Bagel Fat One", "Arial Rounded MT Bold", system-ui, sans-serif;
+  --head: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --body: "Open Sans", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17171a; --surface: #222226; --ink: #f1f1f4; --muted: #a9a9b8; --line: #36363d;
+    --red: #ff5a4c; --blue: #6c9be0; --yellow: #f8b92a; --nimble: #2fc4a6;
+    --down: #6c9be0; --side: #5a5a66; --up: #ff5a4c; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #17171a; --surface: #222226; --ink: #f1f1f4; --muted: #a9a9b8; --line: #36363d;
+  --red: #ff5a4c; --blue: #6c9be0; --yellow: #f8b92a; --nimble: #2fc4a6;
+  --down: #6c9be0; --side: #5a5a66; --up: #ff5a4c; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.55; }
+.wrap { max-width: 1160px; margin: 0 auto; padding-inline: 16px; padding-block: 0 64px; display: grid; gap: 44px; }
+h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
+h2 { font-family: var(--head); font-weight: 700; font-size: clamp(1.35rem, 3vw, 1.75rem); letter-spacing: -.01em; }
+.kicker { font-family: var(--head); font-size: .74rem; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; color: var(--red); }
+.mono { font-family: var(--head); font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+.ex { display: inline-block; font-family: var(--head); font-size: .66rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); border: 1.5px dashed var(--muted); border-radius: 4px; padding: 0 6px; }
+.real { display: inline-flex; align-items: center; gap: 6px; font-family: var(--head); font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--nimble); }
+.real::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--nimble); box-shadow: 0 0 0 3px color-mix(in srgb, var(--nimble) 25%, transparent); }
+.gem { background: linear-gradient(90deg, var(--gem1), var(--gem2), var(--gem3)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.nim { color: var(--nimble); }
+section { display: grid; gap: 16px; }
+.head { display: grid; gap: 6px; max-width: 76ch; }
+.head p { margin: 0; color: var(--muted); }
+button { font: inherit; font-weight: 700; cursor: pointer; border-radius: 6px; padding: 9px 14px; border: 2px solid var(--ink); background: var(--surface); color: var(--ink); }
+button.primary { background: var(--red); border-color: var(--red); color: #fff; }
+button:focus-visible, input:focus-visible, [tabindex]:focus-visible, a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+
+/* Event ribbon */
+.ribbon { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between; align-items: center; padding-block: 12px; border-bottom: 1px solid var(--line); font-family: var(--head); font-size: .74rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.ribbon .stripes { display: inline-flex; gap: 3px; margin-right: 8px; vertical-align: -1px; }
+.ribbon .stripes i { width: 14px; height: 10px; }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 28px; align-items: center; padding-top: 12px; }
+@media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
+.logo { font-family: var(--logo); font-weight: 400; font-size: clamp(3rem, 9vw, 5.6rem); line-height: .9; color: var(--red); letter-spacing: .005em; }
+.logo span { color: var(--ink); }
+.tag { font-family: var(--head); font-weight: 700; font-size: clamp(1.15rem, 2.6vw, 1.5rem); margin-top: 10px; }
+.pitch { font-size: 1.05rem; max-width: 56ch; margin: 12px 0 0; }
+.pitch b { font-weight: 700; }
+.sponsors { display: grid; gap: 12px; }
+.sp { background: var(--surface); border: 2px solid var(--ink); border-radius: 10px; padding: 16px 18px; display: grid; gap: 4px; text-decoration: none; color: var(--ink); }
+.sp small { font-family: var(--head); font-size: .66rem; text-transform: uppercase; letter-spacing: .14em; color: var(--muted); font-weight: 700; }
+.sp .name { font-family: var(--head); font-weight: 700; font-size: 1.7rem; line-height: 1.1; }
+.sp p { margin: 0; font-size: .88rem; color: var(--muted); }
+.sp.n { border-color: var(--nimble); box-shadow: 5px 5px 0 var(--nimble); }
+.sp.g { border-color: var(--gem2); box-shadow: 5px 5px 0 var(--gem2); }
+
+/* Live run numbers */
+.run { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; background: var(--surface); border: 2px solid var(--ink); border-radius: 10px; overflow: hidden; }
+@media (max-width: 760px) { .run { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.run div { padding: 14px 16px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: grid; gap: 2px; }
+.run b { font-family: var(--head); font-size: 1.7rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.run span { font-size: .82rem; color: var(--muted); }
+.run em { font-style: normal; font-family: var(--head); font-size: .66rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.runcap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; font-size: .8rem; color: var(--muted); }
+
+/* Flow diagram */
+.flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; position: relative; }
+@media (max-width: 900px) { .flow { grid-template-columns: 1fr; } }
+.lane { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 10px; align-content: start; position: relative; }
+.lane > header { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding-bottom: 8px; border-bottom: 3px solid var(--c); }
+.lane > header h3 { font-family: var(--head); font-size: 1rem; }
+.lane > header small { font-family: var(--head); font-size: .7rem; font-weight: 700; color: var(--c); text-transform: uppercase; letter-spacing: .08em; }
+.lane.n { --c: var(--nimble); } .lane.g { --c: var(--gem2); } .lane.k { --c: var(--red); }
+.node { border: 1.5px solid var(--line); border-left: 5px solid var(--c); border-radius: 8px; padding: 10px 12px; display: grid; gap: 3px; background: var(--bg); }
+.node h4 { font-size: .92rem; display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+.node p { margin: 0; font-size: .82rem; color: var(--muted); }
+.node code { font-family: var(--head); font-size: .74rem; color: var(--ink); background: var(--surface); border-radius: 4px; padding: 0 4px; overflow-wrap: anywhere; }
+.st { font-family: var(--head); font-size: .6rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 1px 6px; border-radius: 4px; white-space: nowrap; }
+.st.live { background: var(--nimble); color: #fff; }
+.st.next { border: 1.5px dashed var(--muted); color: var(--muted); }
+.down-arrow { text-align: center; color: var(--muted); font-family: var(--head); font-size: .9rem; line-height: 1; }
+.lane:not(:last-child)::after { content: "→"; position: absolute; right: -16px; top: 50%; transform: translateY(-50%); font-family: var(--head); font-weight: 700; font-size: 1.3rem; color: var(--ink); background: var(--bg); padding: 2px 0; }
+@media (max-width: 900px) { .lane:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -19px; transform: translateX(-50%); } }
+.loop { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; border: 2px dashed var(--red); border-radius: 12px; padding: 12px 16px; font-size: .88rem; }
+.loop b { font-family: var(--head); color: var(--red); }
+
+/* Pot */
+.pothead { display: flex; justify-content: space-between; align-items: end; gap: 12px; flex-wrap: wrap; }
+.toggle { display: inline-flex; border: 2px solid var(--ink); border-radius: 999px; overflow: hidden; }
+.toggle button { border: 0; border-radius: 0; padding: 6px 14px; font-size: .85rem; background: transparent; }
+.toggle button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: .78rem; color: var(--muted); }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; background: var(--c); }
+.pots { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.pot { background: var(--surface); border: 2px solid var(--ink); border-radius: 12px 12px 36px 36px; padding: 16px 16px 22px; display: grid; gap: 10px; }
+.pot h3 { font-family: var(--head); font-size: 1.25rem; display: flex; justify-content: space-between; align-items: baseline; }
+.pot h3 small { font-family: var(--body); font-size: .75rem; color: var(--muted); font-weight: 600; }
+.heat { font-size: .9rem; letter-spacing: .05em; }
+.hz { display: grid; gap: 4px; }
+.hz .row { display: flex; justify-content: space-between; font-size: .78rem; }
+.bar { display: flex; height: 12px; border-radius: 4px; overflow: hidden; background: var(--line); }
+.bar i { display: block; height: 100%; }
+.bar .d { background: var(--down); } .bar .s { background: var(--side); } .bar .u { background: var(--up); }
+.hz .bar { height: 20px; border-radius: 6px; }
+.hz .bar i { display: flex; align-items: center; justify-content: center; color: #fff; font-size: .68rem; font-weight: 700; font-family: var(--head); font-style: normal; }
+.hz .bar .s { color: var(--ink); }
+.call { font-weight: 700; }
+.call.up { color: var(--up); } .call.down { color: var(--down); } .call.side { color: var(--muted); }
+.note { font-size: .8rem; color: var(--muted); margin: 0; }
+
+/* Buffet */
+.filters { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { font-size: .8rem; padding: 5px 11px; border-radius: 999px; border: 2px solid var(--line); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.buffet { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.dish { background: var(--surface); border: 1.5px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 8px; align-content: start; min-width: 0; cursor: pointer; transition: transform .15s ease, border-color .15s ease; }
+.dish:hover { border-color: var(--ink); }
+@media (prefers-reduced-motion: no-preference) { .dish:hover { transform: translateY(-2px); } }
+.dish.live { border: 2.5px solid var(--nimble); grid-column: span 2; box-shadow: 5px 5px 0 var(--nimble); }
+@media (max-width: 600px) { .dish.live { grid-column: auto; } }
+.dish .top { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+.pair { font-family: var(--head); font-weight: 700; font-size: .85rem; }
+.ing { font-family: var(--head); font-size: .68rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+.quote { margin: 0; font-size: .93rem; }
+.by { font-size: .8rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 10px; }
+.by b { color: var(--ink); }
+.dupe { font-size: .76rem; font-weight: 700; color: var(--nimble); }
+.tri { display: grid; grid-template-columns: 34px 1fr; gap: 3px 8px; align-items: center; font-size: .72rem; }
+.tri .lbl { color: var(--muted); font-family: var(--head); }
+.peek { font-family: var(--head); font-size: .74rem; font-weight: 700; color: var(--red); }
+.badges { display: flex; gap: 6px; flex-wrap: wrap; }
+.pill { font-family: var(--head); font-size: .64rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; color: #fff; }
+.pill.n { background: var(--nimble); }
+.pill.g { background: linear-gradient(90deg, var(--gem1), var(--gem2)); }
+
+/* Chefs */
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1.5px solid var(--line); border-radius: 12px; }
+table { width: 100%; border-collapse: collapse; min-width: 720px; font-size: .88rem; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+th { font-family: var(--head); font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+td input[type=range] { width: 120px; accent-color: var(--red); }
+.val { font-family: var(--head); font-size: .78rem; display: inline-block; width: 3.4em; text-align: right; }
+.spark { display: inline-flex; gap: 2px; vertical-align: middle; margin-left: 6px; }
+.spark i { width: 6px; height: 12px; border-radius: 1px; background: var(--side); }
+.spark i.h { background: var(--nimble); }
+
+/* Why sponsors */
+.why { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 820px) { .why { grid-template-columns: 1fr; } }
+.whycard { background: var(--surface); border: 2px solid var(--c); border-radius: 12px; padding: 18px; display: grid; gap: 12px; align-content: start; }
+.whycard.n { --c: var(--nimble); } .whycard.g { --c: var(--gem2); }
+.whycard h3 { font-family: var(--head); font-size: 1.2rem; }
+.whycard ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.whycard li { display: grid; grid-template-columns: 84px 1fr; gap: 10px; font-size: .88rem; }
+.whycard li b { font-family: var(--head); color: var(--c); font-size: .95rem; }
+.whycard li span { color: var(--muted); }
+.whycard li span strong { color: var(--ink); }
+
+/* Pantry */
+.pantry { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+@media (max-width: 820px) { .pantry { grid-template-columns: 1fr; } }
+.panel { background: var(--surface); border: 1.5px solid var(--line); border-radius: 12px; padding: 16px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.addrow { display: flex; gap: 8px; flex-wrap: wrap; }
+.addrow input { flex: 1 1 220px; min-width: 0; font: inherit; padding: 9px 12px; border: 2px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink); }
+.stalls { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.stalls li { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 8px; background: var(--bg); min-width: 0; }
+.stalls .url { font-family: var(--head); font-size: .78rem; overflow-wrap: anywhere; flex: 1; min-width: 0; }
+.stalls .n { font-size: .76rem; color: var(--muted); white-space: nowrap; }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--nimble); flex: none; }
+.dot.idle { background: var(--side); }
+.runlog { font-family: var(--head); font-size: .74rem; color: var(--muted); background: var(--bg); border-radius: 8px; padding: 10px; white-space: pre-wrap; }
+.math p { margin: 0; font-size: .88rem; }
+
+pre { margin: 0; font-family: var(--head); font-size: .74rem; background: var(--bg); border-radius: 8px; padding: 12px; overflow-x: auto; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
+
+/* Receipt dialog */
+dialog { width: min(940px, calc(100vw - 24px)); max-height: calc(100vh - 32px); border: 2px solid var(--ink); border-radius: 14px; padding: 0; background: var(--surface); color: var(--ink); }
+dialog::backdrop { background: rgb(15 15 20 / .6); }
+.rc { display: grid; gap: 14px; padding: 18px; }
+.rc-head { display: flex; justify-content: space-between; gap: 12px; align-items: start; flex-wrap: wrap; }
+.rc-head h3 { font-family: var(--head); font-size: 1.2rem; }
+.rc-head p { margin: 4px 0 0; color: var(--muted); font-size: .88rem; }
+.pipe { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-family: var(--head); font-size: .72rem; font-weight: 700; }
+.pipe span { padding: 4px 9px; border-radius: 6px; background: var(--bg); }
+.pipe span.n { background: var(--nimble); color: #fff; }
+.pipe span.g { background: linear-gradient(90deg, var(--gem1), var(--gem2)); color: #fff; }
+.pipe i { font-style: normal; color: var(--muted); }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.tabs button { font-size: .8rem; padding: 6px 12px; border-radius: 999px; border-width: 1.5px; }
+.tabs button[aria-selected="true"] { background: var(--ink); color: var(--bg); }
+.stage { display: grid; gap: 8px; min-width: 0; }
+.stage pre { max-height: 46vh; }
+.stats { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .8rem; }
+.stats b { font-family: var(--head); }
+
+footer { display: grid; gap: 8px; color: var(--muted); font-size: .82rem; border-top: 1px solid var(--line); padding-top: 18px; }
+footer .made { font-family: var(--head); font-weight: 700; color: var(--ink); font-size: .9rem; }
+</style>
+
+<div class="wrap">
+  <div class="ribbon">
+    <span><span class="stripes" aria-hidden="true"><i style="background:var(--red)"></i><i style="background:var(--blue)"></i><i style="background:var(--yellow)"></i></span>AI Engineer NYC 2026 · MLH hackathon</span>
+    <span>Powered by <span class="nim">Nimble</span> + <span class="gem">Gemini</span></span>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="kicker">Mala Alpha AI</div>
+      <h1 class="logo">Malalph<span>AI</span></h1>
+      <div class="tag">Turning talk into direction.</div>
+      <p class="pitch">Great ideas come from great data, and every day traders argue about the dollar in forums around the world. <b>MalalphAI</b> gathers that chatter, works out who said what and when, and cooks it into a probability for where USD is heading in 5, 22 and 66 days. Like a hot pot, you season it yourself: trust the chefs who've been right and turn down the ones who haven't.</p>
+    </div>
+    <div class="sponsors">
+      <a class="sp n" href="https://www.nimbleway.com" target="_blank" rel="noopener">
+        <small>Shopping powered by</small>
+        <span class="name nim">Nimble</span>
+        <p>Gets past bot walls and brings back live forum threads as clean markdown.</p>
+      </a>
+      <a class="sp g" href="https://ai.google.dev" target="_blank" rel="noopener">
+        <small>Tasting powered by</small>
+        <span class="name gem">Gemini API</span>
+        <p>Reads every comment, finds the real calls, and scores them as probabilities.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- LIVE RUN NUMBERS -->
+  <section>
+    <div class="runcap"><span class="real">Real run, 11 Oct 2026, ForexFactory</span><span>Nimble extract + Gemini structured output</span></div>
+    <div class="run">
+      <div><em class="nim">Nimble</em><b>5.6s</b><span>to fetch a Cloudflare-protected thread with the stealth browser</span></div>
+      <div><em class="nim">Nimble</em><b>30+</b><span>stories with live comments from one news page</span></div>
+      <div><em class="gem">Gemini</em><b>15 → 2</b><span>comments read, real dollar calls kept, each skip explained</span></div>
+      <div><em>Dedupe</em><b>4 → 1</b><span>same comments seen on 2 pages merged into 1 dish</span></div>
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section>
+    <div class="head">
+      <div class="kicker">How the kitchen works</div>
+      <h2>From forum chatter to a forecast in three stations</h2>
+      <p>Nimble does the shopping, Gemini does the tasting, and a small Bayesian pot does the cooking. Steps marked <span class="st live">live</span> ran on real data today. Steps marked <span class="st next">next</span> are designed and come next.</p>
+    </div>
+    <div class="flow">
+      <div class="lane n">
+        <header><h3>1 · Shop</h3><small>Nimble</small></header>
+        <div class="node"><h4>Your pantry <span class="st live">live</span></h4><p>You list the forums you trust: ForexFactory, r/Forex, BabyPips and more.</p></div>
+        <div class="down-arrow" aria-hidden="true">↓</div>
+        <div class="node"><h4>Find fresh threads <span class="st next">next</span></h4><p>Nimble Search with <code>time_range: day</code> and <code>include_domains</code> finds today's threads about each pair.</p></div>
+        <div class="down-arrow" aria-hidden="true">↓</div>
+        <div class="node"><h4>Fetch past the bot wall <span class="st live">live</span></h4><p>Nimble Extract with the <code>vx10</code> stealth browser waits for comments to load and returns the page as markdown.</p></div>
+        <div class="down-arrow" aria-hidden="true">↓</div>
+        <div class="node"><h4>Scale out <span class="st next">next</span></h4><p>Nimble Crawl follows <code>/news/\d+</code> thread links across a whole site in one job, on a schedule.</p></div>
+      </div>
+      <div class="lane g">
+        <header><h3>2 · Taste</h3><small>Gemini API</small></header>
+        <div class="node"><h4>Trim the page <span class="st live">live</span></h4><p>We keep the headline and comment thread and drop menus and ads, so Gemini reads only the conversation.</p></div>
+        <div class="down-arrow" aria-hidden="true">↓</div>
+        <div class="node"><h4>Read every comment <span class="st live">live</span></h4><p>Gemini returns JSON that matches a fixed schema: author, comment ID, time, pairs, and P(down / sideways / up) for 5, 22 and 66 days, with a one-line reason.</p></div>
+        <div class="down-arrow" aria-hidden="true">↓</div>
+        <div class="node"><h4>Skip the noise <span class="st live">live</span></h4><p>Jokes, politics and questions are dropped, each with a reason. In the live run 13 of 15 comments were set aside.</p></div>
+        <div class="down-arrow" aria-hidden="true">↓</div>
+        <div class="node"><h4>Spot the same take twice <span class="st next">next</span></h4><p>The comment ID catches repeats within a site. Gemini embeddings will catch the same view reposted on another forum.</p></div>
+      </div>
+      <div class="lane k">
+        <header><h3>3 · Cook &amp; serve</h3><small>MalalphAI</small></header>
+        <div class="node"><h4>Start from the broth <span class="st live">live</span></h4><p>Before anyone speaks: 16% down, 68% sideways, 16% up. That's a normal curve split at ±1σ.</p></div>
+        <div class="down-arrow" aria-hidden="true">↓</div>
+        <div class="node"><h4>Bayesian update <span class="st live">live</span></h4><p>Each dish nudges the pot by <code>chef weight × your trust × freshness</code>. Fresh comments count more.</p></div>
+        <div class="down-arrow" aria-hidden="true">↓</div>
+        <div class="node"><h4>pot.json <span class="st live">live</span></h4><p>One small file holds the outlook for 4 pairs × 3 horizons, updated after every shopping trip.</p></div>
+        <div class="down-arrow" aria-hidden="true">↓</div>
+        <div class="node"><h4>The buffet <span class="st live">live</span></h4><p>This page shows every dish, where it came from, and how much it moved the pot.</p></div>
+      </div>
+    </div>
+    <div class="loop"><b>↺ Scorekeeper</b><span>When a call's horizon passes, we check it against the real price move (up, down, or inside ±1σ). That updates the chef's hit rate, which feeds straight back into their weight.</span><span class="st next">next</span></div>
+  </section>
+
+  <!-- POT -->
+  <section>
+    <div class="pothead">
+      <div class="head">
+        <div class="kicker">The pot</div>
+        <h2>Where is the dollar heading?</h2>
+        <p>"Up" means USD strengthens. For example, USDJPY at 158 going higher means one dollar buys more yen. Sideways means the move stays within ±1σ for that horizon.</p>
+      </div>
+      <div class="toggle" role="group" aria-label="Which pot">
+        <button type="button" id="potDefault" aria-pressed="true">Default pot</button>
+        <button type="button" id="potMine" aria-pressed="false">My pot</button>
+      </div>
+    </div>
+    <div class="legend"><span style="--c:var(--down)">USD lower</span><span style="--c:var(--side)">Sideways (±1σ)</span><span style="--c:var(--up)">USD higher</span></div>
+    <div class="pots" id="pots"></div>
+    <p class="note" id="potMode"></p>
+  </section>
+
+  <!-- BUFFET -->
+  <section>
+    <div class="pothead">
+      <div class="head">
+        <div class="kicker">The buffet</div>
+        <h2>Ingredients from forums around the world</h2>
+        <p>Click a dish to see how it was made: the Nimble request, Nimble's output, what Gemini read from it, and how duplicates were merged. The green dish is real. The rest are examples.</p>
+      </div>
+      <div class="filters" id="filters"></div>
+    </div>
+    <div class="buffet" id="buffet"></div>
+  </section>
+
+  <!-- CHEFS -->
+  <section>
+    <div class="head">
+      <div class="kicker">Season to taste</div>
+      <h2>Every author is a chef. You pick whose cooking you trust.</h2>
+      <p>Chefs start at a 50% hit rate and earn or lose weight as their calls come due. Override any chef, or trust their USD-up calls more than their USD-down calls. Your changes cook <b>My pot</b>.</p>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Chef</th><th>Stall</th><th>Hit rate</th><th>Weight</th><th>Trust up-calls</th><th>Trust down-calls</th></tr></thead>
+        <tbody id="chefs"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- WHY SPONSORS -->
+  <section>
+    <div class="head">
+      <div class="kicker">Why these sponsors</div>
+      <h2>The two ingredients we couldn't cook without</h2>
+    </div>
+    <div class="why">
+      <div class="whycard n">
+        <h3>Shopping with <span class="nim">Nimble</span></h3>
+        <ul>
+          <li><b>vx10</b><span><strong>Gets past bot walls.</strong> ForexFactory sits behind Cloudflare. Nimble's stealth browser returned the full thread on the first try.</span></li>
+          <li><b>.md</b><span><strong>LLM-ready output.</strong> Pages come back as clean markdown with authors, times and permalinks intact, ready for Gemini.</span></li>
+          <li><b>1 API</b><span><strong>Search, Extract, Crawl, Map.</strong> Find fresh threads, fetch them, and scale to a whole forum without changing tools.</span></li>
+          <li><b>geo</b><span><strong>Ingredients from everywhere.</strong> Country and locale targeting reads Tokyo, London and Toronto forums the way local traders see them.</span></li>
+          <li><b>$1/1K</b><span><strong>Cheap to re-shop.</strong> Re-crawl every stall several times a day. The trial includes 5,000 free pages.</span></li>
+        </ul>
+      </div>
+      <div class="whycard g">
+        <h3>Tasting with the <span class="gem">Gemini API</span></h3>
+        <ul>
+          <li><b>schema</b><span><strong>Structured output.</strong> A JSON schema means every opinion comes back with the same fields, so it goes straight into the pot without parsing.</span></li>
+          <li><b>judgment</b><span><strong>Knows a call from a joke.</strong> Of 15 real comments, Gemini kept the 2 dollar calls and gave a reason for each of the 13 it skipped.</span></li>
+          <li><b>FX sense</b><span><strong>Understands pair direction.</strong> "Sell usd" becomes USD down on all four pairs, and "EUR/USD up" becomes USDEUR down.</span></li>
+          <li><b>calibrated</b><span><strong>Probabilities, not hype.</strong> Gemini starts from the 16/68/16 baseline and moves only as far as the text justifies.</span></li>
+          <li><b>embed</b><span><strong>Dedupe across sites (next).</strong> Gemini embeddings match the same view reposted on another forum.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANTRY + MATH -->
+  <section>
+    <div class="head">
+      <div class="kicker">Your pantry</div>
+      <h2>Add the forums you shop at</h2>
+    </div>
+    <div class="pantry">
+      <div class="panel">
+        <form class="addrow" id="addForm">
+          <input id="newUrl" type="url" placeholder="https://www.forexfactory.com/news" aria-label="Forum to add">
+          <button type="submit">Add stall</button>
+        </form>
+        <ul class="stalls" id="stalls"></ul>
+        <button class="primary" id="runBtn" type="button">Go shopping with Nimble</button>
+        <div class="runlog" id="runlog">Last real run, 11 Oct 2026 14:38 EDT: Nimble fetched forexfactory.com/news (vx10, 9.8s, 50,807 chars of markdown) and one story thread (5.6s). Gemini read both pages.</div>
+      </div>
+      <div class="panel math">
+        <div class="kicker">The recipe, in one line</div>
+        <p class="mono">log P(k) = log prior(k) + Σ wᵢ · log(qᵢ(k) / prior(k))</p>
+        <p>k is down, sideways or up. qᵢ is Gemini's reading of dish i, and wᵢ = chef weight × your up/down trust × freshness.</p>
+        <p>Freshness halves after 2 days for the 5-day call, 7 days for the 22-day call and 20 days for the 66-day call. Each chef's weight starts from a Beta(2,2) prior, so a new chef starts at 50%.</p>
+        <div class="kicker">pot.json</div>
+        <pre id="json"></pre>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="made">Built at AI Engineer NYC 2026 with <span class="nim">Nimble</span> and the <span class="gem">Gemini API</span>.</span>
+    <span>The green dish and the numbers in the "Real run" strip come from live Nimble and Gemini calls. Every other author, quote and number is example data. Forum comments are quoted from public ForexFactory threads. This is not trading advice.</span>
+  </footer>
+</div>
+
+<dialog id="receipt" aria-labelledby="rcTitle">
+  <div class="rc">
+    <div class="rc-head">
+      <div>
+        <div class="badges"><span class="pill n">Fetched by Nimble</span><span class="pill g">Read by Gemini</span></div>
+        <h3 id="rcTitle">Kitchen receipt</h3>
+        <p id="rcSub"></p>
+      </div>
+      <button type="button" id="rcClose">Close</button>
+    </div>
+    <div class="pipe" aria-hidden="true"><span class="n">Nimble Extract</span><i>→</i><span class="n">markdown</span><i>→</i><span class="g">Gemini</span><i>→</i><span>dedupe</span><i>→</i><span>pot</span></div>
+    <div class="tabs" role="tablist" id="rcTabs"></div>
+    <div class="stage" id="rcStage"></div>
+  </div>
+</dialog>
+
+<script type="application/json" id="live">{"nimble_story": {"request": {"method": "POST", "endpoint": "https://sdk.nimbleway.com/v2/extract", "body": {"url": "https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire", "driver": "vx10", "formats": ["markdown"], "browser_actions": [{"wait": 3000}]}}, "response": {"url": "https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire", "task_id": "b67e0864-d493-402c-a050-26cf53ab6495", "status": "success", "data": {"markdown": "# Trump: Effective immediately, there is an energy ceasefire in the war between Russia and Ukraine | Forex Factory\n\n…\n\n*   **Comments / Top**\n*   Subscribe\n*   Expand Replies\n\n    Collapse Replies\n\nComment Options\n\nSort Comments By:\n\nTop Newest Oldest\n\n|     |     |     |\n| --- | --- | --- |\n|     |     |     |\n|     |     |     |\n\nNon-English comments will be translated upon submission.\n\n[![](https://assets.faireconomy.media/nfs/customavatars/thumbs/medium/avatar99620_56.gif)](https://www.forexfactory.com/the*fool)\n\n[The Fool](https://www.forexfactory.com/the*fool)\n\n2 hr 9 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953478#post15953478)\n\nAttached Image (click to enlarge)\n\n[![Click to Enlarge\nName: screenshot.webp\nSize: 21 KB](https://www.forexfactory.com/attachment/image/5307782/thumbnail?d=1791736222 \"Click to Enlarge\nName: screenshot.webp\nSize: 21 KB\")](https://www.forexfactory.com/attachment/image/5307782?d=1791736222)\n\n0\n\n5\n\n[![](https://assets.faireconomy.media/nfs/customavatars/thumbs/medium/avatar812618_1.gif)](https://www.forexfactory.com/momofrmnyc)\n\n[Momofrmnyc](https://www.forexfactory.com/momofrmnyc)\n\n1 hr 21 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953491#post15953491)\n\nI mean I don’t think we ever claimed Trump to be the most honest individual.\n\nBut hey you got too feed fake optimism in the markets I suppose.\n\n0\n\n2\n\n[![](https://assets.faireconomy.media/nfs/customavatars/thumbs/medium/avatar1437607_2.gif)](https://www.forexfactory.com/polimini)\n\n[Polimini](https://www.forexfactory.com/polimini)\n\n1 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953534#post15953534)\n\nZelensky should just say thank you. Ungrateful mother f... /s\n\nReply  \n\nView 1 more reply to The Fool\n\nHide reply to The Fool\n\n[![](https://assets.faireconomy.media/nfs/customavatars/thumbs/medium/avatar185640_6.gif)](https://www.forexfactory.com/eqshack)\n\n[eqshack](https://www.forexfactory.com/eqshack)\n\n1 hr 46 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953482#post15953482)\n\nSell usd\n\nReply\n\n1\n\n1\n\nTrader#3861\n\n1 hr 38 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953485#post15953485)\n\nBut energy deal is done in USD\n\nReply  \n\n[![](https://assets.faireconomy.media/nfs/customavatars/thumbs/medium/avatar185640_6.gif)](https://www.forexfactory.com/eqshack)\n\n[eqshack](https://www.forexfactory.com/eqshack)\n\n5 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953531#post15953531)\n\nAnd...? Oil down - inflation down - no rate hike - dollar down - stocks up.\n\nReply  \n\n[![](https://assets.faireconomy.media/nfs/customavatars/thumbs/medium/avatar185640_6.gif)](https://www.forexfactory.com/eqshack)\n\n[eqshack](https://www.forexfactory.com/eqshack)\n\n4 min ago\n\n[Permalink](https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire/comment/15953532#post15953532)\n\nAka gold up\n\nReply  \n\nView 1 reply to eqshack\n\nHide reply to eqshack\n\nView 1 reply to Trader#3861\n\nHide reply to Trader#3861\n\nhttps://www.forexfactory.com/manmeetkaur\n\n… (trimmed for display)"}, "metadata": {"query_time": "2026-10-11T18:40:18.560Z", "query_duration": 5567, "response_parameters": {"input_url": "https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire"}, "driver": "vx10"}, "status_code": 200}, "full_markdown_chars": 20055}, "nimble_news": {"url": "https://www.forexfactory.com/news", "metadata": {"query_time": "2026-10-11T18:38:56.548Z", "query_duration": 9803, "response_parameters": {"input_url": "https://www.forexfactory.com/news"}, "driver": "vx10"}, "markdown_chars": 50807}, "gemini_story": {"opinions": [{"author": "eqshack", "quote": "Sell usd", "pairs": ["USDEUR", "USDJPY", "USDGBP", "USDCAD"], "outlook": {"5d": {"usd_down": 0.65, "sideways": 0.25, "usd_up": 0.1}, "22d": {"usd_down": 0.6, "sideways": 0.3, "usd_up": 0.1}, "66d": {"usd_down": 0.5, "sideways": 0.35, "usd_up": 0.15}}, "reason": "Author explicitly recommends selling the US dollar.", "comment_id": "15953482", "relative_time": "1 hr 46 min ago"}, {"author": "eqshack", "quote": "Oil down - inflation down - no rate hike - dollar down - stocks up.", "pairs": ["USDEUR", "USDJPY", "USDGBP", "USDCAD"], "outlook": {"5d": {"usd_down": 0.7, "sideways": 0.2, "usd_up": 0.1}, "22d": {"usd_down": 0.6, "sideways": 0.3, "usd_up": 0.1}, "66d": {"usd_down": 0.5, "sideways": 0.35, "usd_up": 0.15}}, "reason": "Author argues that lower energy prices lead to lower inflation and no rate hikes, driving the US dollar down.", "comment_id": "15953531", "relative_time": "5 min ago"}], "skipped": [{"author": "The Fool", "reason": "Posted an image attachment with no currency forecast."}, {"author": "Momofrmnyc", "reason": "Political comment without a specific currency view."}, {"author": "Polimini", "reason": "Sarcastic political comment."}, {"author": "Trader#3861", "reason": "General comment about energy transactions being in USD without an explicit directional call."}, {"author": "eqshack", "reason": "Comment 'Aka gold up' expresses a view on gold rather than the specified currency pairs."}, {"author": "Manmeetkaur", "reason": "Pure question."}, {"author": "Vancarbon", "reason": "Political commentary on news deflection techniques."}, {"author": "leila9", "reason": "Political opinion without a currency view."}, {"author": "martynaciesl", "reason": "Question regarding trading gold."}, {"author": "Mhdeldar", "reason": "Comment on the news story authenticity without a currency view."}, {"author": "xfpw", "reason": "Joke comment."}, {"author": "m.karkhane", "reason": "Joke comment."}, {"author": "Trader#AC40", "reason": "Political commentary regarding Donald Trump."}], "model": "gemini-3.5-flash", "source_url": "https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire", "source_task_id": "b67e0864-d493-402c-a050-26cf53ab6495", "fetched_at": "2026-10-11T18:40:18.560Z"}, "dedupe": {"key": "ForexFactory comment ID (from the permalink)", "readings": 4, "unique_comments": 2, "by_comment_id": {"15953482": [{"page": "story page", "author": "eqshack", "quote": "Sell usd", "model": "gemini-3.5-flash"}, {"page": "news page", "author": "eqshack", "quote": "Sell usd", "model": "gemini-3.8-flash"}], "15953531": [{"page": "story page", "author": "eqshack", "quote": "Oil down - inflation down - no rate hike - dollar down - stocks up.", "model": "gemini-3.5-flash"}, {"page": "news page", "author": "eqshack", "quote": "Oil down - inflation down - no rate hike - dollar down - stocks up.", "model": "gemini-3.8-flash"}]}, "result": "Same author, same thread, same view: merged into 1 dish. Probabilities are averaged across the story-page readings."}}</script>
+<script>
+const PAIRS = ["USDEUR", "USDJPY", "USDGBP", "USDCAD"];
+const H = ["5d", "22d", "66d"];
+const HALF = { "5d": 2, "22d": 7, "66d": 20 };
+const PRIOR = [0.16, 0.68, 0.16];
+const LIVE = JSON.parse(document.getElementById("live").textContent);
+
+let stalls = [
+  { url: "https://www.forexfactory.com/news", n: "1 real dish", real: true },
+  { url: "https://www.reddit.com/r/Forex", n: "example" },
+  { url: "https://forums.babypips.com", n: "example" },
+];
+
+const chefs = {
+  "eqshack":         { stall: "forexfactory", hits: [], real: true, w: null, up: 1, dn: 1 },
+  "pip_whisperer":   { stall: "forexfactory", hits: [1,1,0,1,1,1,0,1,1,0], w: null, up: 1, dn: 1 },
+  "LondonFixLarry":  { stall: "forexfactory", hits: [1,0,1,1,0,1,1,1,0,1], w: null, up: 1, dn: 1 },
+  "carry_trade_kat": { stall: "reddit",       hits: [0,1,0,0,1,0,1,0,0,1], w: null, up: 1, dn: 1 },
+  "LoonieTunes":     { stall: "babypips",     hits: [1,1,1,0,1,1,1,0,1,1], w: null, up: 1, dn: 1 },
+  "BoJ_watcher_88":  { stall: "forexfactory", hits: [1,0,0,1,1,0,1,1,0,0], w: null, up: 1, dn: 1 },
+  "newbie_scalper":  { stall: "reddit",       hits: [0,0,1,0,0],           w: null, up: 1, dn: 1 },
+};
+
+// Live dish: Gemini's two readings of eqshack's comments, merged (averaged) into one dish.
+const liveOps = LIVE.gemini_story.opinions;
+const avgQ = h => ["usd_down", "sideways", "usd_up"].map(k => liveOps.reduce((a, o) => a + o.outlook[h][k], 0) / liveOps.length);
+
+const dishes = [
+  { pair: "USD (all 4)", all: true, live: true, chef: "eqshack", ago: 0.07, dupes: ["forexfactory"], ing: "Fresh catch",
+    text: liveOps.map(o => o.quote).join(" … "),
+    q: Object.fromEntries(H.map(h => [h, avgQ(h)])) },
+  { pair: "USDJPY", chef: "BoJ_watcher_88", ago: 0.3, dupes: ["forexfactory", "reddit"], ing: "Wagyu slice",
+    text: "BoJ minutes lean hawkish. USDJPY at 158 looks heavy, and I see it back below 155 within two weeks.",
+    q: { "5d": [.45,.45,.10], "22d": [.50,.38,.12], "66d": [.35,.45,.20] } },
+  { pair: "USDJPY", chef: "carry_trade_kat", ago: 1.5, dupes: ["reddit"], ing: "Shiitake",
+    text: "Carry is still king. The rate gap is huge, so I'm buying dips in USDJPY into year end.",
+    q: { "5d": [.15,.55,.30], "22d": [.12,.45,.43], "66d": [.15,.40,.45] } },
+  { pair: "USDEUR", chef: "pip_whisperer", ago: 0.5, dupes: ["forexfactory"], ing: "Truffle shaving",
+    text: "ECB sounds done cutting. The euro grinds higher, so the dollar buys fewer euros over the next month.",
+    q: { "5d": [.25,.60,.15], "22d": [.45,.42,.13], "66d": [.40,.45,.15] } },
+  { pair: "USDEUR", chef: "LondonFixLarry", ago: 3, dupes: ["forexfactory", "babypips"], ing: "Rye crouton",
+    text: "Range trade on the euro until payrolls. Nothing to see here.",
+    q: { "5d": [.10,.80,.10], "22d": [.15,.70,.15], "66d": [.20,.60,.20] } },
+  { pair: "USDGBP", chef: "LondonFixLarry", ago: 0.8, dupes: ["forexfactory"], ing: "Rye crouton",
+    text: "Hot UK CPI means the BoE holds. Sterling squeezes up, so USDGBP drifts lower.",
+    q: { "5d": [.40,.50,.10], "22d": [.42,.45,.13], "66d": [.30,.50,.20] } },
+  { pair: "USDGBP", chef: "newbie_scalper", ago: 0.1, dupes: ["reddit"], ing: "Instant noodle",
+    text: "GBP is going to crash, mark my words!!! Dollar to the moon.",
+    q: { "5d": [.10,.40,.50], "22d": [.10,.40,.50], "66d": [.10,.40,.50] } },
+  { pair: "USDCAD", chef: "LoonieTunes", ago: 1, dupes: ["babypips", "forexfactory"], ing: "Maple tofu",
+    text: "Oil is bid and the BoC is on hold. The loonie strengthens and USDCAD heads lower.",
+    q: { "5d": [.35,.55,.10], "22d": [.48,.40,.12], "66d": [.45,.40,.15] } },
+  { pair: "USDCAD", chef: "carry_trade_kat", ago: 6, dupes: ["reddit"], ing: "Shiitake",
+    text: "USDCAD breakout coming. US data is too strong.",
+    q: { "5d": [.15,.50,.35], "22d": [.15,.45,.40], "66d": [.20,.45,.35] } },
+];
+
+let mine = false, filter = "All";
+const pct = x => Math.round(x * 100);
+const hitRate = c => (c.hits.reduce((a, b) => a + b, 0) + 2) / (c.hits.length + 4);
+const weight = c => (mine && c.w !== null) ? c.w : hitRate(c);
+
+function cook(pair, h) {
+  const lp = PRIOR.map(Math.log);
+  let n = 0;
+  for (const d of dishes) {
+    if (d.pair !== pair && !d.all) continue;
+    const c = chefs[d.chef], q = d.q[h];
+    const trust = mine ? (q[2] > q[0] ? c.up : c.dn) : 1;
+    const w = weight(c) * trust * Math.pow(0.5, d.ago / HALF[h]);
+    for (let k = 0; k < 3; k++) lp[k] += w * Math.log(q[k] / PRIOR[k]);
+    n++;
+  }
+  const m = Math.max(...lp), e = lp.map(v => Math.exp(v - m)), s = e.reduce((a, b) => a + b, 0);
+  return { p: e.map(v => v / s), n };
+}
+
+function bar(p, labels) {
+  const t = v => labels && v > .12 ? pct(v) + "%" : "";
+  return `<div class="bar"><i class="d" style="width:${p[0]*100}%">${t(p[0])}</i><i class="s" style="width:${p[1]*100}%">${t(p[1])}</i><i class="u" style="width:${p[2]*100}%">${t(p[2])}</i></div>`;
+}
+function callOf(p) {
+  if (p[2] - PRIOR[2] > .08 && p[2] > p[0]) return ["up", "USD up"];
+  if (p[0] - PRIOR[0] > .08 && p[0] > p[2]) return ["down", "USD down"];
+  return ["side", "Mostly sideways"];
+}
+
+function renderPots() {
+  const out = {};
+  document.getElementById("pots").innerHTML = PAIRS.map(pair => {
+    out[pair] = {};
+    let heat = 0, dishesN = 0;
+    const rows = H.map(h => {
+      const { p, n } = cook(pair, h);
+      dishesN = n;
+      out[pair][h] = { usd_down: +p[0].toFixed(3), sideways: +p[1].toFixed(3), usd_up: +p[2].toFixed(3) };
+      heat = Math.max(heat, Math.abs(p[2] - p[0]));
+      const [cls, txt] = callOf(p);
+      return `<div class="hz"><div class="row"><span class="mono">${h}</span><span class="call ${cls}">${txt}</span></div>${bar(p, true)}</div>`;
+    }).join("");
+    const chilis = Math.min(5, Math.max(1, Math.round(heat * 8)));
+    return `<article class="pot"><h3>${pair}<small>${dishesN} dishes</small></h3><div class="heat" title="How strongly the pot leans" aria-label="Heat ${chilis} of 5">${"🌶️".repeat(chilis)}<span class="muted" style="opacity:.35">${"🌶️".repeat(5 - chilis)}</span></div>${rows}</article>`;
+  }).join("");
+  document.getElementById("json").textContent = JSON.stringify({ updated: LIVE.gemini_story.fetched_at, pot: mine ? "mine" : "default", pairs: out }, null, 1);
+  document.getElementById("potMode").textContent = mine
+    ? "My pot: your chef weights and up/down trust are applied."
+    : "Default pot: every chef is weighted by their track record.";
+}
+
+function renderBuffet() {
+  const f = document.getElementById("filters");
+  f.innerHTML = ["All", ...PAIRS].map(p => `<button type="button" class="chip" aria-pressed="${p === filter}" data-f="${p}">${p}</button>`).join("");
+  f.querySelectorAll("button").forEach(b => b.onclick = () => { filter = b.dataset.f; renderBuffet(); });
+  document.getElementById("buffet").innerHTML = dishes.filter(d => filter === "All" || d.pair === filter || d.all).map(d => {
+    const i = dishes.indexOf(d);
+    const when = d.ago < 1 ? `${Math.max(1, Math.round(d.ago * 24))}h ago` : `${d.ago}d ago`;
+    const tri = H.map(h => `<span class="lbl">${h}</span>${bar(d.q[h], false)}`).join("");
+    const dupe = d.live
+      ? `<span class="dupe">2 comments, seen on 2 pages, merged into 1 dish</span>`
+      : (d.dupes.length > 1 ? `<span class="dupe">Seen on ${d.dupes.length} stalls (${d.dupes.join(", ")}), merged into 1</span>` : "");
+    return `<article class="dish${d.live ? " live" : ""}" tabindex="0" role="button" data-i="${i}" aria-label="Open the kitchen receipt for ${d.chef}">
+      <div class="badges">${d.live ? `<span class="real">Real · live from ForexFactory</span>` : `<span class="ex">Example</span>`}<span class="pill n">Nimble</span><span class="pill g">Gemini</span></div>
+      <div class="top"><span class="pair">${d.pair}</span><span class="ing">${d.ing}</span></div>
+      <p class="quote">“${d.text}”</p>
+      <div class="by"><span>by <b>${d.chef}</b></span><span>${when}</span><span>via ${d.dupes[0]}</span></div>
+      ${dupe}
+      <div class="tri">${tri}</div>
+      <span class="peek">See the kitchen receipt →</span>
+    </article>`;
+  }).join("");
+  document.querySelectorAll("#buffet .dish").forEach(el => {
+    el.onclick = () => openReceipt(+el.dataset.i);
+    el.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openReceipt(+el.dataset.i); } };
+  });
+}
+
+function renderChefs() {
+  document.getElementById("chefs").innerHTML = Object.entries(chefs).map(([name, c]) => {
+    const hr = hitRate(c), w = c.w === null ? hr : c.w;
+    const spark = c.hits.length ? c.hits.map(x => `<i class="${x ? "h" : ""}"></i>`).join("") : "";
+    return `<tr>
+      <td><b>${name}</b> ${c.real ? `<span class="real">real</span>` : ""}</td><td>${c.stall}</td>
+      <td><span class="mono">${pct(hr)}%</span>${spark ? `<span class="spark" aria-hidden="true">${spark}</span>` : ` <span class="muted">new chef</span>`}</td>
+      <td><input type="range" id="w-${name}" min="0" max="1.5" step="0.05" value="${w.toFixed(2)}" data-k="w" data-c="${name}" aria-label="Weight for ${name}"><span class="val">${w.toFixed(2)}</span></td>
+      <td><input type="range" id="u-${name}" min="0" max="2" step="0.1" value="${c.up}" data-k="up" data-c="${name}" aria-label="Trust in ${name}'s USD-up calls"><span class="val">${c.up.toFixed(1)}×</span></td>
+      <td><input type="range" id="d-${name}" min="0" max="2" step="0.1" value="${c.dn}" data-k="dn" data-c="${name}" aria-label="Trust in ${name}'s USD-down calls"><span class="val">${c.dn.toFixed(1)}×</span></td>
+    </tr>`;
+  }).join("");
+  document.querySelectorAll("#chefs input").forEach(inp => inp.oninput = () => {
+    chefs[inp.dataset.c][inp.dataset.k] = +inp.value;
+    inp.nextElementSibling.textContent = inp.dataset.k === "w" ? (+inp.value).toFixed(2) : (+inp.value).toFixed(1) + "×";
+    setMine(true);
+  });
+}
+
+function setMine(v) {
+  mine = v;
+  document.getElementById("potDefault").setAttribute("aria-pressed", String(!v));
+  document.getElementById("potMine").setAttribute("aria-pressed", String(v));
+  renderPots();
+}
+
+function renderStalls() {
+  document.getElementById("stalls").innerHTML = stalls.map(s =>
+    `<li><span class="dot ${s.real ? "" : "idle"}"></span><span class="url">${s.url}</span><span class="n">${s.n}</span></li>`).join("");
+}
+
+/* ---------- Kitchen receipt ---------- */
+function receiptFor(d) {
+  if (d.live) {
+    const N = LIVE.nimble_story, m = N.response.metadata;
+    const stats = `<div class="stats"><span>status <b>${N.response.status_code}</b></span><span>driver <b>${m.driver}</b> (stealth browser)</span><span>fetched in <b>${(m.query_duration / 1000).toFixed(1)}s</b></span><span>at <b>${m.query_time.slice(0, 16).replace("T", " ")} UTC</b></span><span>full page <b>${N.full_markdown_chars.toLocaleString()}</b> chars of markdown</span></div>`;
+    return [
+      { label: "Nimble output", real: "nimble", cap: "Nimble's real response from ForexFactory. The comment thread arrives as markdown with each author, a relative time and a permalink.", extra: stats, json: N.response },
+      { label: "Nimble request", real: "nimble", cap: "The exact call we sent. The 3-second wait lets the comments load before Nimble captures the page.", json: N.request },
+      { label: "Gemini reads it", real: "gemini", cap: `Gemini's real structured output (${LIVE.gemini_story.model}). It kept ${LIVE.gemini_story.opinions.length} dollar calls and explained each of the ${LIVE.gemini_story.skipped.length} comments it skipped.`, json: LIVE.gemini_story },
+      { label: "Dedupe", real: "both", cap: "The same two comments also appeared on the ForexFactory news page, which Nimble fetched separately. Matching comment IDs collapse 4 readings into 1 dish.", json: LIVE.dedupe },
+      { label: "Into the pot", cap: "This is a call on the dollar itself, so it seasons all four pots.", json: H.map(h => ({ horizon: h, gemini_merged: { usd_down: +d.q[h][0].toFixed(3), sideways: +d.q[h][1].toFixed(3), usd_up: +d.q[h][2].toFixed(3) }, chef_weight: +weight(chefs.eqshack).toFixed(2), freshness: +Math.pow(0.5, d.ago / HALF[h]).toFixed(2) })) },
+    ];
+  }
+  const url = `https://www.${d.dupes[0] === "reddit" ? "reddit.com/r/Forex/comments/…" : d.dupes[0] === "babypips" ? "forums.babypips.com/t/…" : "forexfactory.com/news/…"}`;
+  return [
+    { label: "Nimble output", cap: "An example dish. Real dishes show Nimble's full response here, like the green one.", json: { url, status: "success", data: { markdown: `**${d.chef}** · ${d.ago < 1 ? Math.max(1, Math.round(d.ago * 24)) + " hr ago" : d.ago + " days ago"}\n\n${d.text}` }, metadata: { driver: "vx10" }, status_code: 200 } },
+    { label: "Gemini reads it", cap: "The same schema Gemini filled for the real dish.", json: { author: d.chef, pairs: [d.pair], quote: d.text, outlook: Object.fromEntries(H.map(h => [h, { usd_down: d.q[h][0], sideways: d.q[h][1], usd_up: d.q[h][2] }])) } },
+    { label: "Dedupe", cap: "Same author and same view across stalls count once.", json: { seen_on: d.dupes, kept: 1 } },
+  ];
+}
+
+let rcTab = 0;
+function openReceipt(i) {
+  const d = dishes[i], tabs = receiptFor(d);
+  rcTab = 0;
+  document.getElementById("rcTitle").textContent = `${d.pair} · ${d.chef}`;
+  document.getElementById("rcSub").textContent = `“${d.text}”`;
+  const draw = () => {
+    document.getElementById("rcTabs").innerHTML = tabs.map((t, k) => `<button type="button" role="tab" aria-selected="${k === rcTab}" data-k="${k}">${t.label}</button>`).join("");
+    document.querySelectorAll("#rcTabs button").forEach(b => b.onclick = () => { rcTab = +b.dataset.k; draw(); });
+    const t = tabs[rcTab];
+    const src = { nimble: "Real Nimble API data", gemini: "Real Gemini API output", both: "Real Nimble + Gemini data" }[t.real];
+    const foot = t.real
+      ? `<p class="note"><span class="real">${src}</span> Saved from live calls on 11 Oct 2026. Long markdown is trimmed to the comment thread for display.</p>`
+      : `<p class="note"><span class="ex">Example</span></p>`;
+    const st = document.getElementById("rcStage");
+    st.innerHTML = `<p class="note">${t.cap}</p>${t.extra || ""}<pre></pre>${foot}`;
+    st.querySelector("pre").textContent = JSON.stringify(t.json, null, 2);
+  };
+  draw();
+  const dlg = document.getElementById("receipt");
+  if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
+}
+document.getElementById("rcClose").onclick = () => document.getElementById("receipt").close();
+document.getElementById("receipt").addEventListener("click", e => { if (e.target.id === "receipt") e.target.close(); });
+
+document.getElementById("addForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const v = document.getElementById("newUrl").value.trim();
+  if (!v) return;
+  stalls.push({ url: v, n: "queued for next run" });
+  document.getElementById("newUrl").value = "";
+  renderStalls();
+});
+document.getElementById("runBtn").onclick = () => {
+  const log = document.getElementById("runlog");
+  const lines = [`Nimble: shopping ${stalls.length} stalls with the vx10 stealth browser…`];
+  log.textContent = lines.join("\n");
+  ["Nimble: pages returned as markdown", "Gemini: reading comments into structured opinions", "Dedupe: merging repeats by comment ID", "Pot: updated (demo replay of the 11 Oct run)"]
+    .forEach((s, i) => setTimeout(() => { lines.push(s); log.textContent = lines.join("\n"); }, 500 * (i + 1)));
+};
+document.getElementById("potDefault").onclick = () => setMine(false);
+document.getElementById("potMine").onclick = () => setMine(true);
+
+renderStalls(); renderPots(); renderBuffet(); renderChefs();
+</script>
+
+</body>
+</html>

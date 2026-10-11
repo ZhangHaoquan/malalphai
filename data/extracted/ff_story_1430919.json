@@ -1,0 +1,122 @@
+{
+  "opinions": [
+    {
+      "author": "eqshack",
+      "quote": "Sell usd",
+      "pairs": [
+        "USDEUR",
+        "USDJPY",
+        "USDGBP",
+        "USDCAD"
+      ],
+      "outlook": {
+        "5d": {
+          "usd_down": 0.65,
+          "sideways": 0.25,
+          "usd_up": 0.1
+        },
+        "22d": {
+          "usd_down": 0.6,
+          "sideways": 0.3,
+          "usd_up": 0.1
+        },
+        "66d": {
+          "usd_down": 0.5,
+          "sideways": 0.35,
+          "usd_up": 0.15
+        }
+      },
+      "reason": "Author explicitly recommends selling the US dollar.",
+      "comment_id": "15953482",
+      "relative_time": "1 hr 46 min ago"
+    },
+    {
+      "author": "eqshack",
+      "quote": "Oil down - inflation down - no rate hike - dollar down - stocks up.",
+      "pairs": [
+        "USDEUR",
+        "USDJPY",
+        "USDGBP",
+        "USDCAD"
+      ],
+      "outlook": {
+        "5d": {
+          "usd_down": 0.7,
+          "sideways": 0.2,
+          "usd_up": 0.1
+        },
+        "22d": {
+          "usd_down": 0.6,
+          "sideways": 0.3,
+          "usd_up": 0.1
+        },
+        "66d": {
+          "usd_down": 0.5,
+          "sideways": 0.35,
+          "usd_up": 0.15
+        }
+      },
+      "reason": "Author argues that lower energy prices lead to lower inflation and no rate hikes, driving the US dollar down.",
+      "comment_id": "15953531",
+      "relative_time": "5 min ago"
+    }
+  ],
+  "skipped": [
+    {
+      "author": "The Fool",
+      "reason": "Posted an image attachment with no currency forecast."
+    },
+    {
+      "author": "Momofrmnyc",
+      "reason": "Political comment without a specific currency view."
+    },
+    {
+      "author": "Polimini",
+      "reason": "Sarcastic political comment."
+    },
+    {
+      "author": "Trader#3861",
+      "reason": "General comment about energy transactions being in USD without an explicit directional call."
+    },
+    {
+      "author": "eqshack",
+      "reason": "Comment 'Aka gold up' expresses a view on gold rather than the specified currency pairs."
+    },
+    {
+      "author": "Manmeetkaur",
+      "reason": "Pure question."
+    },
+    {
+      "author": "Vancarbon",
+      "reason": "Political commentary on news deflection techniques."
+    },
+    {
+      "author": "leila9",
+      "reason": "Political opinion without a currency view."
+    },
+    {
+      "author": "martynaciesl",
+      "reason": "Question regarding trading gold."
+    },
+    {
+      "author": "Mhdeldar",
+      "reason": "Comment on the news story authenticity without a currency view."
+    },
+    {
+      "author": "xfpw",
+      "reason": "Joke comment."
+    },
+    {
+      "author": "m.karkhane",
+      "reason": "Joke comment."
+    },
+    {
+      "author": "Trader#AC40",
+      "reason": "Political commentary regarding Donald Trump."
+    }
+  ],
+  "model": "gemini-3.5-flash",
+  "source_url": "https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire",
+  "source_task_id": "b67e0864-d493-402c-a050-26cf53ab6495",
+  "fetched_at": "2026-10-11T18:40:18.560Z"
+}

@@ -1,0 +1,109 @@
+{
+  "opinions": [
+    {
+      "author": "eqshack",
+      "quote": "Sell usd",
+      "pairs": [
+        "USDEUR",
+        "USDJPY",
+        "USDGBP",
+        "USDCAD"
+      ],
+      "outlook": {
+        "5d": {
+          "usd_down": 0.35,
+          "sideways": 0.53,
+          "usd_up": 0.12
+        },
+        "22d": {
+          "usd_down": 0.3,
+          "sideways": 0.56,
+          "usd_up": 0.14
+        },
+        "66d": {
+          "usd_down": 0.24,
+          "sideways": 0.62,
+          "usd_up": 0.14
+        }
+      },
+      "reason": "Directly recommends selling the US dollar following news of an energy ceasefire.",
+      "comment_id": "15953482"
+    },
+    {
+      "author": "eqshack",
+      "quote": "Oil down - inflation down - no rate hike - dollar down - stocks up.",
+      "pairs": [
+        "USDEUR",
+        "USDJPY",
+        "USDGBP",
+        "USDCAD"
+      ],
+      "outlook": {
+        "5d": {
+          "usd_down": 0.35,
+          "sideways": 0.53,
+          "usd_up": 0.12
+        },
+        "22d": {
+          "usd_down": 0.3,
+          "sideways": 0.56,
+          "usd_up": 0.14
+        },
+        "66d": {
+          "usd_down": 0.24,
+          "sideways": 0.62,
+          "usd_up": 0.14
+        }
+      },
+      "reason": "Anticipates the US dollar falling as lower oil prices reduce inflation and rate hike chances.",
+      "comment_id": "15953531",
+      "relative_time": "4 min ago"
+    }
+  ],
+  "skipped": [
+    {
+      "author": "The Fool",
+      "reason": "Posts images and humorous commentary without currency directional forecasts."
+    },
+    {
+      "author": "Momofrmnyc",
+      "reason": "Political commentary without any currency forecast."
+    },
+    {
+      "author": "aboodmash",
+      "reason": "Commentary on Treasury issuance without a currency view."
+    },
+    {
+      "author": "Trader#FEA8",
+      "reason": "Commentary on gold rather than target currency pairs."
+    },
+    {
+      "author": "Trader#0E10",
+      "reason": "Political insult without any currency view."
+    },
+    {
+      "author": "chaoshydra",
+      "reason": "General negative commentary on Europe without a specific currency forecast."
+    },
+    {
+      "author": "Schultz",
+      "reason": "Discussion of French debt and bond vigilantes without a currency outlook."
+    },
+    {
+      "author": "Vancarbon",
+      "reason": "Commentary on French politics, wealth inequality, and other users without currency views."
+    },
+    {
+      "author": "Emypeta",
+      "reason": "Pure question about the Australian dollar without a forecast."
+    },
+    {
+      "author": "ffghost",
+      "reason": "Commentary on Elon Musk's net worth without a currency view."
+    }
+  ],
+  "model": "gemini-3.8-flash",
+  "source_url": "https://www.forexfactory.com/news",
+  "source_task_id": "229c5255-bf8a-4c3f-8601-a5df527d221b",
+  "fetched_at": "2026-10-11T18:38:56.548Z"
+}
