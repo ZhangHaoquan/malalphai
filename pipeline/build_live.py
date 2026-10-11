@@ -20,6 +20,13 @@ COMMENT = re.compile(
 DROP = re.compile(r"^(Reply|\d+|View \d+ (more )?repl.*|Hide repl.*|Collapse Replies|Expand Replies)?$")
 
 
+def fx_text(t: str) -> str:
+    """Gemini reasons use internal pair keys; show market names instead."""
+    for k, v in (("USDEUR", "USD vs EUR"), ("USDGBP", "USD vs GBP"), ("USDJPY", "USD/JPY"), ("USDCAD", "USD/CAD")):
+        t = t.replace(k, v)
+    return t
+
+
 def absolute(rel: str, fetched: datetime) -> str:
     d = re.search(r"(\d+) day", rel)
     h = re.search(r"(\d+) hr", rel)
@@ -90,7 +97,7 @@ for raw_path in sorted(glob.glob(f"{ROOT}/data/raw/ff_story_*.json")):
         readings += 1
         c = by_id.get(o.get("comment_id"))
         if c:
-            c["g"] = {"kept": True, "pairs": o["pairs"], "outlook": o["outlook"], "reason": o["reason"]}
+            c["g"] = {"kept": True, "pairs": o["pairs"], "outlook": o["outlook"], "reason": fx_text(o["reason"])}
         key = f"{sid}/{o['author']}"  # one dish per author per thread
         d = dishes.setdefault(key, {"key": key, "story": sid, "author": o["author"], "comment_ids": [], "quotes": [], "pairs": set(),
                                     "outlooks": [], "reasons": [], "at": None})
@@ -103,12 +110,12 @@ for raw_path in sorted(glob.glob(f"{ROOT}/data/raw/ff_story_*.json")):
         d["at"] = max(d["at"] or at, at)
     for c in thread:
         if "g" not in c and c["author"] in skipped:
-            c["g"] = {"kept": False, "reason": " / ".join(dict.fromkeys(skipped[c["author"]]))}
+            c["g"] = {"kept": False, "reason": fx_text(" / ".join(dict.fromkeys(skipped[c["author"]])))}
     if not thread:  # fall back to Gemini's own record of who said what
         thread = [{"id": o.get("comment_id") or str(i), "author": o["author"], "relative": o.get("relative_time", ""),
                    "at": raw["metadata"]["query_time"][:16] + "Z", "text": o["quote"],
-                   "g": {"kept": True, "pairs": o["pairs"], "outlook": o["outlook"], "reason": o["reason"]}} for i, o in enumerate(g["opinions"])]
-    title = re.sub(r" \| Page \d+", "", md[: md.find("\n")].replace(" | Forex Factory", "")).strip().lstrip("# ")
+                   "g": {"kept": True, "pairs": o["pairs"], "outlook": o["outlook"], "reason": fx_text(o["reason"])}} for i, o in enumerate(g["opinions"])]
+    title = re.sub(r" \| Page (\d+)", r" · p.\1", md[: md.find("\n")].replace(" | Forex Factory", "")).strip().lstrip("# ")
     tr = g.get("trace") or {}
     site = "r/Forex" if sid.startswith("r") else "ForexFactory"
     url = raw["url"].replace("/.rss?limit=50", "/").replace("/.rss", "/")
@@ -131,7 +138,7 @@ for d in dishes.values():
     q = {h: [sum(o[h][k] for o in d["outlooks"]) / len(d["outlooks"]) for k in KEYS] for h in ("5d", "22d", "66d")}
     dish_list.append({"key": d["key"], "story": d["story"], "author": d["author"], "comment_ids": d["comment_ids"],
                       "quote": " … ".join(dict.fromkeys(d["quotes"])), "pairs": sorted(d["pairs"]), "q": q,
-                      "reason": d["reasons"][-1], "at": d["at"]})
+                      "reason": fx_text(d["reasons"][-1]), "at": d["at"]})
 dish_list.sort(key=lambda d: d["at"], reverse=True)
 
 news_raw = json.load(open(f"{ROOT}/data/raw/ff_news_vx10.json"))

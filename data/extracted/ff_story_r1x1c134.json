@@ -1,0 +1,58 @@
+{
+ "opinions": [],
+ "skipped": [
+  {
+   "author": "robertbrown0427",
+   "reason": "Post is about GBPCAD cross rate, which is not among the target pairs USDEUR, USDJPY, USDGBP, USDCAD."
+  },
+  {
+   "author": "rforex-modtools",
+   "reason": "Automated mod comment discussing technical analysis in general without a currency view."
+  },
+  {
+   "author": "beninvestments",
+   "reason": "Comment is about GBPCAD cross rate, which is not among the target pairs USDEUR, USDJPY, USDGBP, USDCAD."
+  },
+  {
+   "author": "beninvestments",
+   "reason": "Comment is about GBPCAD cross rate, which is not among the target pairs USDEUR, USDJPY, USDGBP, USDCAD."
+  },
+  {
+   "author": "Fabulous-Will-6316",
+   "reason": "Comment is about GBPCAD cross rate, which is not among the target pairs USDEUR, USDJPY, USDGBP, USDCAD."
+  },
+  {
+   "author": "robertbrown0427",
+   "reason": "A polite acknowledgment lacking any currency view."
+  }
+ ],
+ "model": "gemini-3.5-flash-lite",
+ "source_url": "https://www.reddit.com/r/Forex/comments/1x1c134/gbp_cad_short/.rss",
+ "source_task_id": "920d0581-ccc1-414f-93bf-105813ad6bfe",
+ "fetched_at": "2026-10-11T19:48:18.867Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 154
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 429,
+    "ms": 295
+   },
+   {
+    "model": "gemini-3.5-flash-lite",
+    "status": 200,
+    "ms": 1281
+   }
+  ],
+  "response_id": "FOnLatPCJbuo1MkPkejr6A8",
+  "input_chars": 2006,
+  "markdown_sha256": "5c2c262905433ceee0bee4d7088474e0e6acfc28af262d9eda79c6f230d96574",
+  "prompt_tokens": 1010,
+  "output_tokens": 236,
+  "thinking_tokens": null
+ }
+}

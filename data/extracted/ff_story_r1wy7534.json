@@ -1,0 +1,69 @@
+{
+ "opinions": [
+  {
+   "author": "tusharkapoor19",
+   "quote": "EURUSD is on bearish rally It is not possible for even finding long setups",
+   "pairs": [
+    "USDEUR"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    },
+    "22d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    },
+    "66d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    }
+   },
+   "reason": "The user mentions a bearish rally on EURUSD but provides mixed terminology, keeping outlook neutral.",
+   "comment_id": "pe6l0rs"
+  }
+ ],
+ "skipped": [
+  {
+   "author": "Yahfet_Llamada",
+   "reason": "The post expresses frustration about price action and a missed trade without a forward-looking directional prediction."
+  },
+  {
+   "author": "rocinante1882",
+   "reason": "The comment mentions EUR, AUD, and NZD rallies but does not clearly specify a view on USDEUR, USDJPY, USDGBP, or USDCAD."
+  }
+ ],
+ "model": "gemini-3.5-flash-lite",
+ "source_url": "https://www.reddit.com/r/Forex/comments/1wy7534/damn_eurusd_blew_past_13500s_weekly_resistance/.rss",
+ "source_task_id": "1f69dff7-f127-4500-a0ab-47fc77d244e2",
+ "fetched_at": "2026-10-11T19:48:21.006Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 811
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 429,
+    "ms": 158
+   },
+   {
+    "model": "gemini-3.5-flash-lite",
+    "status": 200,
+    "ms": 1370
+   }
+  ],
+  "response_id": "9OjLaoioMK2u_PUPk7_C4A0",
+  "input_chars": 858,
+  "markdown_sha256": "9d1bb4faf5afc2eee67a0849a0f1663b9d5dc59c4be6c2a184fecf39fe6d94b4",
+  "prompt_tokens": 671,
+  "output_tokens": 373,
+  "thinking_tokens": null
+ }
+}

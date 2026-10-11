@@ -1,0 +1,38 @@
+{
+ "opinions": [],
+ "skipped": [
+  {
+   "author": "Newsstand",
+   "reason": "The page contains a news article and metadata but no user comments or currency outlook discussions."
+  }
+ ],
+ "model": "gemini-3.5-flash-lite",
+ "source_url": "https://www.forexfactory.com/news/1430808-euro-falls-set-for-fifth-straight-weekly-drop",
+ "source_task_id": "b5c13f7d-9e78-4a46-a13b-ed572f4544c3",
+ "fetched_at": "2026-10-11T19:44:49.190Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 136
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 429,
+    "ms": 156
+   },
+   {
+    "model": "gemini-3.5-flash-lite",
+    "status": 200,
+    "ms": 1065
+   }
+  ],
+  "response_id": "FOnLaq7xJaDSjMcP_Ouh8AM",
+  "input_chars": 7619,
+  "markdown_sha256": "20990286b3fbd4e410889fbdedf761d1bb4072b1d06b49669ae1de0b4719ae6e",
+  "prompt_tokens": 2999,
+  "output_tokens": 57,
+  "thinking_tokens": null
+ }
+}

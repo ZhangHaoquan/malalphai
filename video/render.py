@@ -68,18 +68,22 @@ def main():
     def page_shot(name, suffix, w, h, crop):
         chrome_shot(url + suffix, f"{OUT}/{name}_full.png", w, h + 200)
         run(FFMPEG, "-y", "-i", f"{OUT}/{name}_full.png", "-vf", f"crop={crop}", f"{OUT}/{name}.png")
-    page_shot("shot_pot", "#pot-section", 1440, 820, "1440:810:0:0")
-    page_shot("shot_pulse", "#pulse-section", 1440, 820, "1440:810:0:0")
+    page_shot("shot_pot", "?only=pot-section", 1100, 820, "1100:560:0:0")
+    page_shot("shot_pulse", "?only=pulse-section", 980, 820, "980:400:0:0")
     for tab in ("thread", "trace", "lineage"):
-        page_shot(f"shot_{tab}", "#" + tab, 1000, 900, "984:700:8:20")
+        page_shot(f"shot_{tab}", "#" + tab, 1000, 700, "976:668:12:16")
     chefs = {}
     for d in LIVE["dishes"]:
         chefs[d["author"]] = chefs.get(d["author"], 0) + 1
     top = sorted(chefs, key=chefs.get, reverse=True)
-    season = ",".join([f"{top[0]}:1.5:2:2"] + [f"{a}:0:1:1" for a in top[1:3]]) if top else ""
-    page_shot("shot_default", "#pot-section", 1100, 620, "1100:600:0:0")
-    page_shot("shot_mine", f"?season={season}#pot-section", 1100, 620, "1100:600:0:0")
+    boost = next((a for a in top if a != "eqshack"), top[0])
+    season = f"eqshack:0:1:1,{boost}:1.5:2:2"  # mute the all-pairs dollar bear, back the busiest chef
+    page_shot("shot_default", "?only=pot-section", 900, 620, "900:330:0:0")
+    page_shot("shot_mine", f"?only=pot-section&season={season}", 900, 620, "900:330:0:0")
 
+    for f in os.listdir(OUT):
+        if re.match(r"[psv]\d\d\.", f):
+            os.remove(f"{OUT}/{f}")
     segs = []
     for i, (scene, step, voice, line) in enumerate(beats()):
         png, aiff, mp4 = f"{OUT}/p{i:02d}.png", f"{OUT}/v{i:02d}.aiff", f"{OUT}/s{i:02d}.mp4"

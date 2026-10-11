@@ -1,0 +1,58 @@
+{
+ "opinions": [],
+ "skipped": [
+  {
+   "author": "Whole-Green1381",
+   "reason": "Discusses gold (XAUUSD) longs, not one of the specified pairs."
+  },
+  {
+   "author": "rforex-modtools",
+   "reason": "Moderator comment providing information on technical analysis and price action."
+  },
+  {
+   "author": "mmaJay19",
+   "reason": "Congratulatory remark on a trade, no currency outlook."
+  },
+  {
+   "author": "Basic_Football999",
+   "reason": "Comment about win rates, no currency view."
+  },
+  {
+   "author": "Whole-Green1381",
+   "reason": "Defensive reply about trade sample size, no currency view."
+  },
+  {
+   "author": "StatisticalSock",
+   "reason": "Dismissive comment, no currency view."
+  }
+ ],
+ "model": "gemini-3.5-flash-lite",
+ "source_url": "https://www.reddit.com/r/Forex/comments/1x12ld6/xauusd_longs_today/.rss",
+ "source_task_id": "cd13b66e-2a0d-40f0-86a5-e9672ec970a8",
+ "fetched_at": "2026-10-11T19:48:19.981Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 816
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 429,
+    "ms": 242
+   },
+   {
+    "model": "gemini-3.5-flash-lite",
+    "status": 200,
+    "ms": 1239
+   }
+  ],
+  "response_id": "9ejLarT7Bbn3jrEPjunCIA",
+  "input_chars": 1261,
+  "markdown_sha256": "b0bc1d635364672454c8b4a413959ebbd0c98f6139044e4a5fdb5d0eb41b7835",
+  "prompt_tokens": 818,
+  "output_tokens": 236,
+  "thinking_tokens": null
+ }
+}

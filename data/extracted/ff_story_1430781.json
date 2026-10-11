@@ -1,0 +1,38 @@
+{
+ "opinions": [],
+ "skipped": [
+  {
+   "author": "Trader#601D",
+   "reason": "Comment only says GOOD DAY with no currency view."
+  }
+ ],
+ "model": "gemini-3.5-flash-lite",
+ "source_url": "https://www.forexfactory.com/news/1430781-trump-forms-committee-to-investigate-mortgage-fraud-allegations",
+ "source_task_id": "c3f1ae27-cacc-4d0a-9119-4fd841d6495c",
+ "fetched_at": "2026-10-11T19:44:53.869Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 193
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 429,
+    "ms": 944
+   },
+   {
+    "model": "gemini-3.5-flash-lite",
+    "status": 200,
+    "ms": 1332
+   }
+  ],
+  "response_id": "l-nLas-mBMyY_uMP2cziyAE",
+  "input_chars": 7597,
+  "markdown_sha256": "5144519b602015bea008152a461b86b2e89b03739bc04bc48a8fe2b812d26f0f",
+  "prompt_tokens": 2875,
+  "output_tokens": 54,
+  "thinking_tokens": null
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "opinions": [],
+ "skipped": [
+  {
+   "author": "Trader#5C92",
+   "reason": "Comment simply says ok with no currency view."
+  },
+  {
+   "author": "Trader#6679",
+   "reason": "Asks a pure question about shares dropping with no currency view."
+  },
+  {
+   "author": "Trader#BD72",
+   "reason": "Conspiracy comment about a manufactured hurricane without any currency view."
+  },
+  {
+   "author": "Trader#9522",
+   "reason": "Reply mocking another user without any currency view."
+  }
+ ],
+ "model": "gemini-3.5-flash-lite",
+ "source_url": "https://www.forexfactory.com/news/1430889-us-authorizes-strategic-petroleum-reserve-exchange-on-hurricane",
+ "source_task_id": "a99cfffa-3a7a-4385-8aff-f99f968e11d7",
+ "fetched_at": "2026-10-11T19:44:42.099Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 266
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 429,
+    "ms": 712
+   },
+   {
+    "model": "gemini-3.5-flash-lite",
+    "status": 200,
+    "ms": 1463
+   }
+  ],
+  "response_id": "tOnLaufMCbyd9MoPn9rYsAY",
+  "input_chars": 6801,
+  "markdown_sha256": "0de37a94709231104c0bc73eaabe2c80dff3763d6282c7d2cb3da9f9f96bc204",
+  "prompt_tokens": 2802,
+  "output_tokens": 161,
+  "thinking_tokens": null
+ }
+}

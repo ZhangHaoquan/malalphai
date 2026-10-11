@@ -1,0 +1,70 @@
+{
+ "opinions": [],
+ "skipped": [
+  {
+   "author": "The Fool",
+   "reason": "Joke or non-specific comment about the AI bubble."
+  },
+  {
+   "author": "The Doji",
+   "reason": "General speculation about AI without a currency view."
+  },
+  {
+   "author": "Plethunous",
+   "reason": "Low-substance comment dismissing news."
+  },
+  {
+   "author": "leila9",
+   "reason": "Stock market comment on NVIDIA without explicit currency impact."
+  },
+  {
+   "author": "Trader#1322",
+   "reason": "Stock market and company valuation discussion without a currency direction."
+  },
+  {
+   "author": "Trader#4F0F",
+   "reason": "Non-substantive exclamation."
+  },
+  {
+   "author": "Trader#764E",
+   "reason": "General market sentiment about buyers and sellers without specific currency pair mention."
+  },
+  {
+   "author": "Trader#EF9A",
+   "reason": "Brief reference to Michael Burry without a currency view."
+  },
+  {
+   "author": "Newsstand",
+   "reason": "Factual news article summary regarding USD/JPY outlook and inflation without personal opinion."
+  }
+ ],
+ "model": "gemini-3.5-flash-lite",
+ "source_url": "https://www.forexfactory.com/news/1430804-usd-this-week-we-got-a-sneak-peak-at",
+ "source_task_id": "7281b78d-02c1-4280-a403-c5b41dc29708",
+ "fetched_at": "2026-10-11T19:44:47.703Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 243
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 429,
+    "ms": 683
+   },
+   {
+    "model": "gemini-3.5-flash-lite",
+    "status": 200,
+    "ms": 2036
+   }
+  ],
+  "response_id": "NenLavHDFrqYjMcPqs_twAY",
+  "input_chars": 12404,
+  "markdown_sha256": "a529c468c3e08e250e5f0e70039490505236570bc9dcda03083a60a5eba59af7",
+  "prompt_tokens": 4823,
+  "output_tokens": 323,
+  "thinking_tokens": null
+ }
+}

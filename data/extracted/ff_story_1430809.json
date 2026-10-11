@@ -1,0 +1,38 @@
+{
+ "opinions": [],
+ "skipped": [
+  {
+   "author": "Trader#4C24",
+   "reason": "Comment is just a short exclamation 'Wow' without a currency view."
+  }
+ ],
+ "model": "gemini-3.5-flash-lite",
+ "source_url": "https://www.forexfactory.com/news/1430809-job-losses-concentrated-among-young-canadians-in-september",
+ "source_task_id": "418f9abe-a504-45fd-8bd9-ef993685a4a5",
+ "fetched_at": "2026-10-11T19:44:48.801Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 914
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 429,
+    "ms": 910
+   },
+   {
+    "model": "gemini-3.5-flash-lite",
+    "status": 200,
+    "ms": 1469
+   }
+  ],
+  "response_id": "V-nLao2AEJfy-8YPx9rQiQo",
+  "input_chars": 8013,
+  "markdown_sha256": "c5bdfffd49d69243681453e0befba0d78e7a7f5032ece8a2d23b832b0990e783",
+  "prompt_tokens": 3161,
+  "output_tokens": 58,
+  "thinking_tokens": null
+ }
+}

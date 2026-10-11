@@ -1,0 +1,33 @@
+{
+ "opinions": [],
+ "skipped": [],
+ "model": "gemini-3.5-flash-lite",
+ "source_url": "https://www.forexfactory.com/news/1430782-6-yields-next-will-stonks-handle-it",
+ "source_task_id": "8cdb8f9f-25f8-49b2-8735-0ddc74fe16fa",
+ "fetched_at": "2026-10-11T19:44:53.180Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 239
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 429,
+    "ms": 224
+   },
+   {
+    "model": "gemini-3.5-flash-lite",
+    "status": 200,
+    "ms": 1167
+   }
+  ],
+  "response_id": "VOnLar2WG7LAjMcPsKnzqA0",
+  "input_chars": 7855,
+  "markdown_sha256": "d8a0671e3f61f665275e4cec32ac61e89afc9d8858b7acebd8225c6606a6b1c9",
+  "prompt_tokens": 3029,
+  "output_tokens": 16,
+  "thinking_tokens": null
+ }
+}
