@@ -29,21 +29,22 @@ Great ideas come from great data. Every day, thousands of traders post their vie
 
 | Step | Result |
 | --- | --- |
-| Nimble Extract, `vx10` stealth browser | ForexFactory (Cloudflare-protected) fetched in 5.6s for a thread and 9.8s for the news page, giving 70K chars of markdown |
-| Comments parsed from Nimble's markdown | 18, each with author, time and comment ID |
-| Gemini (`gemini-3.8-flash`, JSON schema) | 2 dollar calls kept, the rest skipped with reasons. 6.1K tokens in, 0.9K out |
-| Dedupe by comment ID | Same 2 comments found on both pages, so 4 readings became 1 dish |
-| Pot | 4 pairs × 3 horizons updated |
+| **Nimble Search** (`include_domains: forexfactory.com`) | 4 searches found the long-running USD/JPY, USD/CAD, EUR/USD and GBP/USD trading threads |
+| **Nimble Extract** (`vx10` stealth browser, 3s wait) | 37 pages from Cloudflare-protected ForexFactory (news, story threads, forums) plus r/Forex's official RSS feeds (`vx6`). 519K chars of markdown, every page HTTP 200, median 5.7s per page, run in parallel |
+| Comments parsed from Nimble's markdown | 235, each with author, time and permalink ID |
+| **Gemini** (`responseSchema`, Flash, falling back to Flash-Lite on 429/503) | 36 currency calls kept, every skip explained. 148K tokens in, 16K out, median 3.7s per thread |
+| Dedupe | Comment IDs merge repeats: 38 readings became 28 dishes |
+| Pot | 4 pairs × 3 horizons, with every number traceable to its source comment |
 
-Example: **eqshack** wrote *"Sell usd … Oil down - inflation down - no rate hike - dollar down - stocks up."* Gemini read it as USD-bearish on all four pairs.
+Example: **eqshack** on ForexFactory wrote *"Sell usd … Oil down - inflation down - no rate hike - dollar down - stocks up."* Gemini read it as USD-bearish on all four pairs: *"Expects lower oil and inflation to prevent rate hikes and push the dollar down."*
 
 ## How the kitchen works
 
 ```mermaid
 flowchart LR
   subgraph Shop["1 · Shop — Nimble"]
-    P[Pantry of forums] --> S[Nimble Search<br/>fresh threads · next]
-    S --> E[Nimble Extract<br/>vx10 stealth + wait → markdown]
+    P[Pantry of forums] --> S[Nimble Search<br/>find FX forum threads]
+    S --> E[Nimble Extract<br/>vx10 stealth + wait, vx6 for RSS → markdown]
     P --> E
     E -.-> C[Nimble Crawl<br/>whole forums · next]
   end
@@ -60,6 +61,8 @@ flowchart LR
 ```
 
 **Update rule:** `log P(k) = log prior(k) + Σ wᵢ · log(qᵢ(k) / prior(k))`, where `wᵢ = chef weight × trust(up|down) × 0.5^(age / half-life)`. The half-lives are 2, 7 and 20 days for the 5d, 22d and 66d horizons. A chef's weight starts from a Beta(2,2) prior on their hit rate.
+
+Forum posts echo each other, so each pot's weights are scaled so they never add up to more than 3 independent voices, and no single post counts as more than one. That keeps a pile-on from looking like certainty.
 
 **Pair convention:** USDJPY = yen per dollar (≈158). "Up" always means the USD strengthens.
 
@@ -81,28 +84,26 @@ flowchart LR
 ## Run it
 
 ```bash
-cp .env.example .env   # add NIMBLE_API_KEY and GEMINI_API_KEY
-# 1. Fetch a thread with Nimble
-curl -s -X POST https://sdk.nimbleway.com/v2/extract \
-  -H "Authorization: Bearer $NIMBLE_API_KEY" -H 'Content-Type: application/json' \
-  -d '{"url":"https://www.forexfactory.com/news/1430919-trump-effective-immediately-there-is-an-energy-ceasefire","driver":"vx10","formats":["markdown"],"browser_actions":[{"wait":3000}]}' \
-  > data/raw/ff_story_1430919.json
-# 2. Read it with Gemini
-python3 pipeline/gemini_extract.py data/raw/ff_story_1430919.json > data/extracted/ff_story_1430919.json
-# 3. Rebuild the page
-python3 pipeline/build_live.py   # writes docs/index.html
+cp .env.example .env              # add NIMBLE_API_KEY and GEMINI_API_KEY
+python3 pipeline/shop.py 30       # Nimble: FF news page + every FX story / commented thread, then Gemini
+python3 pipeline/reddit.py        # Nimble: r/Forex official RSS feeds, then Gemini
+python3 pipeline/taste_queue.py   # Gemini: read anything not yet read, gently (rate limits)
+python3 pipeline/build_live.py    # build docs/index.html
+python3 video/render.py           # optional: render the comic demo video
 ```
 
 ## Repo
 
+- `pipeline/shop.py`, `pipeline/reddit.py`: Nimble shopping (Extract, with the stealth `vx10` or fast `vx6` driver).
 - `pipeline/gemini_extract.py`: Nimble markdown → Gemini structured opinions, with retries, model fallback and a trace (latency, tokens, response ID, source hash).
+- `data/search/`: Nimble Search results used to find the forum threads.
 - `pipeline/build_live.py`: parses the thread, joins it with Gemini's output, dedupes, and builds the page.
 - `data/raw/`: saved Nimble responses. `data/extracted/`: saved Gemini output.
 - `docs/index.html`: the demo page (GitHub Pages).
 
 ## What's next
 
-Nimble Search and Crawl on a schedule, more forums (Reddit, BabyPips, local-language boards via geo-targeting), Gemini embeddings to match reposts across sites, and the scorekeeper that grades each chef once their horizon passes.
+Nimble Crawl on a schedule, more forums (BabyPips, local-language boards via geo-targeting), Gemini embeddings to match reposts across sites, and the scorekeeper that grades each chef once their horizon passes.
 
 ---
 
