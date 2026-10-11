@@ -577,10 +577,10 @@ function exampleView(d) {
 }
 
 let rcTab = 0;
-function openReceipt(i) {
+function openReceipt(i, tab = 0) {
   const d = dishes[i];
   const tabs = d.live ? [["Thread", threadView], ["Trace", traceView], ["Lineage", lineageView], ["Raw JSON", rawView]] : [["Details", () => exampleView(d)]];
-  rcTab = 0; rawSel = 0;
+  rcTab = tab; rawSel = 0;
   document.getElementById("rcTitle").textContent = `${d.pair} · ${d.chef}`;
   document.getElementById("rcSub").textContent = `“${d.text}”`;
   const draw = () => {
@@ -607,4 +607,7 @@ document.getElementById("potDefault").onclick = () => setMine(false);
 document.getElementById("potMine").onclick = () => setMine(true);
 
 renderSide(); renderPots(); renderBuffet(); renderChefs();
+// Deep links: #thread, #trace, #lineage, #raw open the real dish's receipt on that tab.
+const DEEP = { thread: 0, trace: 1, lineage: 2, raw: 3 };
+if (location.hash.slice(1) in DEEP) openReceipt(0, DEEP[location.hash.slice(1)]);
 </script>
