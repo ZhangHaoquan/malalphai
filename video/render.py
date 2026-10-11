@@ -12,7 +12,6 @@ OUT = f"{HERE}/out"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 FFMPEG = "/opt/homebrew/bin/ffmpeg"
 FFPROBE = "/opt/homebrew/bin/ffprobe"
-SITE = "https://zhanghaoquan.github.io/malalphai/"
 
 NARR, MAX, CLAUDE = "Daniel", "Eddy (English (US))", "Flo (English (US))"
 NAME = "Mahlalf A.I."

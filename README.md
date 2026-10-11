@@ -53,7 +53,7 @@ flowchart LR
     G --> D[Dedupe<br/>one dish per author per thread]
   end
   subgraph Cook["3 · Cook & serve"]
-    B[Bayesian pot<br/>prior 16/68/16] --> J[pot.json] --> W[Buffet page]
+    B[Bayesian pot<br/>prior 16/68/16 · evidence cap] --> W[Buffet page]
   end
   E --> T
   D --> B
@@ -89,7 +89,8 @@ python3 pipeline/shop.py 30       # Nimble: FF news page + every FX story / comm
 python3 pipeline/reddit.py        # Nimble: r/Forex official RSS feeds, then Gemini
 python3 pipeline/taste_queue.py   # Gemini: read anything not yet read, gently (rate limits)
 python3 pipeline/build_live.py    # build docs/index.html
-python3 video/render.py           # optional: render the comic demo video
+python3 video/render.py           # optional: product screenshots + long comic cut
+python3 video/render60.py         # optional: 60s cut narrated with Gemini text-to-speech
 ```
 
 ## Repo
@@ -99,7 +100,8 @@ python3 video/render.py           # optional: render the comic demo video
 - `data/search/`: Nimble Search results used to find the forum threads.
 - `pipeline/build_live.py`: parses the thread, joins it with Gemini's output, dedupes, and builds the page.
 - `data/raw/`: saved Nimble responses. `data/extracted/`: saved Gemini output.
-- `docs/index.html`: the demo page (GitHub Pages).
+- `docs/index.html`: the demo page (GitHub Pages). `mockup/index.html` is its source.
+- `video/`: the comic demo video. Panels are HTML (`comic.html`), and the narration is Gemini TTS (`gemini-3.8-flash-tts`).
 
 ## What's next
 
