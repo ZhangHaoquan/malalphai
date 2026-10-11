@@ -103,9 +103,22 @@ python3 video/render60.py         # optional: 60s cut narrated with Gemini text-
 - `docs/index.html`: the demo page (GitHub Pages). `mockup/index.html` is its source.
 - `video/`: the comic demo video. Panels are HTML (`comic.html`), and the narration is Gemini TTS (`gemini-3.8-flash-tts`).
 
-## What's next
+## From demo to always-on
 
-Nimble Crawl on a schedule, more forums (BabyPips, local-language boards via geo-targeting), Gemini embeddings to match reposts across sites, and the scorekeeper that grades each chef once their horizon passes.
+**Today:** a batch pipeline we ran live during the hackathon. Results are JSON in git and the page is static HTML on GitHub Pages. The "Add" box on the page doesn't do anything yet. Reading a new site is already mostly generic: Nimble returns markdown for any site, and Gemini extracts calls from any markdown. Only the Thread receipt view uses site-specific parsers, and every other site falls back to Gemini's own record of who said what.
+
+**Making it continuous (a few hours, no new infrastructure):**
+1. **Schedule:** a GitHub Actions cron (for example hourly) runs shop → read → build → commit `docs/`. Keys go in Actions secrets.
+2. **Add sites on the fly:** a `sources.yaml` list of URLs and Nimble settings. The page's "Add" opens a prefilled pull request, or calls a small serverless endpoint. Nimble Map/Crawl discovers threads on the new site, and Extract → Gemini works unchanged.
+3. **Idempotent runs:** opinions are keyed by site + comment ID and updated in place, so re-shopping never double-counts.
+4. **Cost:** about 50 pages an hour is roughly $1.20 a day of Nimble at listed prices. Gemini runs through the existing queue with backoff and a Flash → Flash-Lite fallback.
+
+**Making it real:**
+5. **Scorekeeper:** fetch daily FX closes and σ per horizon, then grade each call (up, down, or inside ±1σ) once its 5, 22 or 66 days pass. Hit rates then become author weights.
+6. **Storage:** a time-series Postgres such as Tiger Data for opinions, prices and pot snapshots, with rolling aggregates per pair and per author. Snowflake (Cortex + Streamlit) fits if a bank wants this inside its own warehouse.
+7. **More stalls:** BabyPips and local-language forums via Nimble geo-targeting, and Gemini embeddings to match the same view reposted across sites.
+
+The hard parts, getting past bot walls and telling a real call from noise, are what Nimble and Gemini already do in the demo.
 
 ---
 
