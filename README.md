@@ -33,7 +33,7 @@ Great ideas come from great data. Every day, thousands of traders post their vie
 | **Nimble Extract** (`vx10` stealth browser, 3s wait) | 37 pages from Cloudflare-protected ForexFactory (news, story threads, forums) plus r/Forex's official RSS feeds (`vx6`). 519K chars of markdown, every page HTTP 200, median 5.7s per page, run in parallel |
 | Comments parsed from Nimble's markdown | 235, each with author, time and permalink ID |
 | **Gemini** (`responseSchema`, Flash, falling back to Flash-Lite on 429/503) | 36 currency calls kept, every skip explained. 148K tokens in, 16K out, median 3.7s per thread |
-| Dedupe | Comment IDs merge repeats: 38 readings became 28 dishes |
+| Dedupe | Repeats merge into one dish per author per thread: 36 calls became 28 dishes |
 | Pot | 4 pairs × 3 horizons, with every number traceable to its source comment |
 
 Example: **eqshack** on ForexFactory wrote *"Sell usd … Oil down - inflation down - no rate hike - dollar down - stocks up."* Gemini read it as USD-bearish on all four pairs: *"Expects lower oil and inflation to prevent rate hikes and push the dollar down."*
@@ -50,7 +50,7 @@ flowchart LR
   end
   subgraph Taste["2 · Taste — Gemini API"]
     T[Trim to comments] --> G[Gemini structured output<br/>author · time · pairs · P down/side/up × 5d/22d/66d]
-    G --> D[Dedupe<br/>comment ID · embeddings next]
+    G --> D[Dedupe<br/>one dish per author per thread]
   end
   subgraph Cook["3 · Cook & serve"]
     B[Bayesian pot<br/>prior 16/68/16] --> J[pot.json] --> W[Buffet page]
@@ -107,4 +107,4 @@ Nimble Crawl on a schedule, more forums (BabyPips, local-language boards via geo
 
 ---
 
-Built at **AI Engineer NYC 2026** (MLH). Forum quotes come from public ForexFactory threads. This is not trading advice.
+Built at **AI Engineer NYC 2026** (MLH). Forum quotes come from public ForexFactory threads and the official r/Forex RSS feed. This is not trading advice.

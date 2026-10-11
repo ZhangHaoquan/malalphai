@@ -9,7 +9,7 @@ import os
 import re
 from datetime import datetime, timedelta
 
-ROOT = __file__.rsplit("/pipeline/", 1)[0]
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FLAGSHIP = "1430919"
 
 COMMENT = re.compile(
@@ -129,7 +129,6 @@ news_seen = 0
 for p in ("data/extracted/ff_news.json",):
     if os.path.exists(f"{ROOT}/{p}"):
         for o in json.load(open(f"{ROOT}/{p}"))["opinions"]:
-            readings += 1
             news_seen += 1
 
 KEYS = ("usd_down", "sideways", "usd_up")
@@ -141,7 +140,7 @@ for d in dishes.values():
                       "reason": fx_text(d["reasons"][-1]), "at": d["at"]})
 dish_list.sort(key=lambda d: d["at"], reverse=True)
 
-news_raw = json.load(open(f"{ROOT}/data/raw/ff_news_vx10.json"))
+news_raw = json.load(open(f"{ROOT}/data/raw/ff_news_latest.json"))
 flag = json.load(open(f"{ROOT}/data/raw/ff_story_{FLAGSHIP}.json"))
 fmd = flag["data"]["markdown"]
 excerpt = fmd[: fmd.find("\n")] + "\n\n…\n\n" + fmd[fmd.find("*   **Comments"): fmd.find("*   **Comments") + 2500] + "\n\n… (trimmed for display)"
@@ -166,7 +165,7 @@ live = {
     "searches": searches,
     "grade5d": trading_days_after(last_fetch, 5),
     "grade22d": trading_days_after(last_fetch, 22),
-    "news": {"url": news_raw["url"], "task_id": news_raw["task_id"], "meta": news_raw["metadata"], "chars": len(news_raw["data"]["markdown"])},
+    "news": {"url": news_raw["url"], "task_id": news_raw["task_id"], "meta": news_raw["metadata"], "status_code": news_raw["status_code"], "chars": len(news_raw["data"]["markdown"])},
     "stories": stories,
     "dishes": dish_list,
     "funnel": {"pages": len(glob.glob(f"{ROOT}/data/raw/ff_story_*.json")) + 2 + len(glob.glob(f"{ROOT}/data/raw/ff_forums.json")), "pages_read": len(stories), "markdown_chars": sum(s["chars"] for s in stories) + len(news_raw["data"]["markdown"]),

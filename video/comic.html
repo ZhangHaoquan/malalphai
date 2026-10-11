@@ -37,6 +37,9 @@ html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; backgro
   background: repeating-linear-gradient(0deg, transparent 0 66px, var(--ink) 66px 72px), repeating-linear-gradient(90deg, #c0533a 0 124px, var(--ink) 124px 130px); border: 8px solid var(--ink); }
 .wall::after { content: "BOT WALL"; position: absolute; top: 40%; left: -40px; right: -40px; text-align: center; font-family: "Bangers", sans-serif; font-size: 60px; color: #fff; -webkit-text-stroke: 3px var(--ink); transform: rotate(-90deg); }
 .hidden { visibility: hidden; }
+.capbar { position: absolute; left: 24px; right: 24px; top: 966px; padding: 14px 20px 10px; background: var(--ink); text-align: center; z-index: 20; white-space: nowrap;
+  font-family: "Bangers", Impact, sans-serif; font-size: 58px; letter-spacing: .03em; line-height: 1; color: #fff; }
+.capbar b { color: var(--yellow); }
 </style>
 </head>
 <body>
@@ -153,6 +156,7 @@ const scenes = {
     </div>`,
 };
 document.getElementById("f").innerHTML = scenes[scene];
+if (q.get("cap")) document.body.insertAdjacentHTML("beforeend", `<div class="capbar">${q.get("cap").replace(/\*([^*]+)\*/g, "<b>$1</b>")}</div>`);
 </script>
 </body>
 </html>

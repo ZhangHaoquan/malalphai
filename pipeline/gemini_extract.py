@@ -75,10 +75,11 @@ def extract(nimble_result: dict) -> dict:
                 out, used = json.load(r), model
                 attempts.append({"model": model, "status": 200, "ms": round((time.time() - t0) * 1000)})
                 break
-        except urllib.error.HTTPError as e:
-            attempts.append({"model": model, "status": e.code, "ms": round((time.time() - t0) * 1000)})
-            print(f"{model}: HTTP {e.code}, retrying", file=sys.stderr)
-            time.sleep(15 if e.code == 429 else 3)
+        except (urllib.error.URLError, TimeoutError) as e:
+            code = getattr(e, "code", 0)
+            attempts.append({"model": model, "status": code, "ms": round((time.time() - t0) * 1000)})
+            print(f"{model}: {code or e}, retrying", file=sys.stderr)
+            time.sleep(15 if code == 429 else 3)
     if out is None:
         raise SystemExit("Gemini unavailable after retries")
     result = json.loads(out["candidates"][0]["content"]["parts"][0]["text"])
