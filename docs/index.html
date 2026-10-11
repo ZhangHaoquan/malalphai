@@ -578,7 +578,11 @@ function renderSide() {
   const ok200 = LIVE.stories.filter(s => s.status_code === 200).length + (LIVE.news.status_code === 200 ? 1 : 0);
   document.getElementById("asof").textContent = `Last shopped ${date}`;
   document.getElementById("runDate").textContent = new Date(NOW).toISOString().slice(0, 10);
-  document.getElementById("runline").innerHTML = `${byNimble()} <b>${F.pages}</b> pages (${(F.markdown_chars / 1000).toFixed(0)}K chars) from ForexFactory and r/Forex, plus <b>${LIVE.searches.length}</b> searches → ${byGemini()} read <b>${F.comments}</b> comments and found <b>${F.opinions}</b> currency calls → deduped to <b>${F.dishes}</b> dish${F.dishes === 1 ? "" : "es"} in the pot.`;
+  const reads = PAIRS.map(p => { const r = cook(p, "22d", false); return { p, skew: Math.round((r.p[2] - r.p[0]) * 100) }; }).sort((a, b) => Math.abs(b.skew) - Math.abs(a.skew));
+  const vs = p => p.slice(3);
+  const lean = reads.filter(r => Math.abs(r.skew) >= 5).map(r => `<b class="skew ${r.skew > 0 ? "up" : "down"}">USD ${r.skew > 0 ? "up" : "down"} vs ${vs(r.p)} (${r.skew > 0 ? "+" : ""}${r.skew}pp)</b>`);
+  const flat = reads.filter(r => Math.abs(r.skew) < 5).map(r => vs(r.p));
+  document.getElementById("runline").innerHTML = `<b>Today's read, 22 days out:</b> the crowd leans ${lean.join(", ") || "nowhere strongly"}${flat.length ? `, and is balanced vs ${flat.join(" and ")}` : ""}. Based on <b>${F.opinions}</b> calls by <b>${Object.keys(chefs).length}</b> traders across ${LIVE.stories.length} live threads.`;
   const steps = [["Pages fetched", F.pages, "var(--nimble)"], ["Comments parsed", F.comments, "var(--nimble)"], ["Currency calls", F.opinions, "var(--gem)"], ["Dishes after dedupe", F.dishes, "var(--red)"]];
   const fmx = Math.max(...steps.map(s => s[1]));
   document.getElementById("funnel").innerHTML = steps.map(([l, v, c], i) => `<div class="fstep"><span>${l}</span><b>${v}${i === 2 ? ` <span class="muted">(${pct(v / Math.max(1, F.comments))}%)</span>` : ""}</b><span class="t"><i style="width:${Math.max(2, v / fmx * 100)}%;--c:${c}"></i></span></div>`).join("");
