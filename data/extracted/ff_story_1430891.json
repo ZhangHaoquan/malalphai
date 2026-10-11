@@ -1,0 +1,59 @@
+{
+ "opinions": [],
+ "skipped": [
+  {
+   "author": "chaoshydra",
+   "reason": "General economic and political commentary about Europe without a specific currency forecast."
+  },
+  {
+   "author": "Vancarbon",
+   "reason": "Comment on French governance and systemic flaws without a currency view."
+  },
+  {
+   "author": "Schultz",
+   "reason": "Discussion of fiscal policy and bond market mechanics without a currency view."
+  },
+  {
+   "author": "Eren10",
+   "reason": "Speculation on debt sellers mentioning EUR/JPY without a clear directional forecast for USD pairs."
+  },
+  {
+   "author": "BruceFxGold",
+   "reason": "Focuses on gold trading and safe-haven flows rather than currency pair outlooks."
+  }
+ ],
+ "model": "gemini-3.5-flash",
+ "source_url": "https://www.forexfactory.com/news/1430891-whos-selling-french-debt",
+ "source_task_id": "2da84cf6-f1d4-45db-8f53-2bbad5c853bf",
+ "fetched_at": "2026-10-11T19:39:47.559Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 503,
+    "ms": 62695
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 503,
+    "ms": 13708
+   },
+   {
+    "model": "gemini-3.8-flash",
+    "status": 503,
+    "ms": 120782
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 200,
+    "ms": 23126
+   }
+  ],
+  "response_id": "6ubLasbxK5iK-sAP_7e_sQ0",
+  "input_chars": 9125,
+  "markdown_sha256": "47fcd2a2a44234d36ce402d0cbd8eb17ebe9d61659cadf53fd9158c9fe07b262",
+  "prompt_tokens": 3392,
+  "output_tokens": 126,
+  "thinking_tokens": 4415
+ }
+}

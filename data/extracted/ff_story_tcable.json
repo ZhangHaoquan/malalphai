@@ -1,0 +1,124 @@
+{
+ "opinions": [
+  {
+   "author": "Headland",
+   "quote": "The t/f is still in a multi-month horizontal channel range.",
+   "pairs": [
+    "USDGBP"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    },
+    "22d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    },
+    "66d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    }
+   },
+   "reason": "The market is described as being in a horizontal channel range.",
+   "comment_id": "15952975",
+   "relative_time": "34 hr ago"
+  },
+  {
+   "author": "Forgediron",
+   "quote": "The range is likely to continue until this war ends IMO.",
+   "pairs": [
+    "USDGBP"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    },
+    "22d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    },
+    "66d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    }
+   },
+   "reason": "Expects the range-bound condition to persist.",
+   "comment_id": "15953219",
+   "relative_time": "22 hr ago"
+  },
+  {
+   "author": "Pat Chiko",
+   "quote": "LONG Scalping set up on pullback",
+   "pairs": [
+    "USDGBP"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.1,
+     "sideways": 0.3,
+     "usd_up": 0.6
+    },
+    "22d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    },
+    "66d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    }
+   },
+   "reason": "A long setup implies a short-term rise for the pair.",
+   "comment_id": "15953459",
+   "relative_time": "4 hr ago"
+  }
+ ],
+ "skipped": [
+  {
+   "author": "TooSlow",
+   "reason": "Is a question about Asian Session breakouts."
+  },
+  {
+   "author": "Waveskierrob",
+   "reason": "Contains only an image with no currency view text."
+  }
+ ],
+ "model": "gemini-3.5-flash-lite",
+ "source_url": "https://www.forexfactory.com/thread/post/15953459",
+ "source_task_id": "77a81972-cc53-4580-8ce5-634c94a58f99",
+ "fetched_at": "2026-10-11T19:45:20.029Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 140
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 429,
+    "ms": 122
+   },
+   {
+    "model": "gemini-3.5-flash-lite",
+    "status": 200,
+    "ms": 2313
+   }
+  ],
+  "response_id": "a-jLasHYF7TWjMcPr869mQ0",
+  "input_chars": 16472,
+  "markdown_sha256": "791bbedcf3ccc4669165e2202b864157ab0fb85349485005217ecae59b6c6f30",
+  "prompt_tokens": 6820,
+  "output_tokens": 824,
+  "thinking_tokens": null
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "opinions": [],
+ "skipped": [
+  {
+   "author": "Vancarbon",
+   "reason": "Commentary on geopolitics without any currency view."
+  },
+  {
+   "author": "newtradwr202",
+   "reason": "Personal trading reflection without any forecast on currency pairs."
+  },
+  {
+   "author": "Trader#23EB",
+   "reason": "Political comment without a currency view."
+  },
+  {
+   "author": "m.karkhane",
+   "reason": "Political commentary and discussion on oil and shipping without a currency view."
+  },
+  {
+   "author": "Trader#D632",
+   "reason": "Political commentary and banter without a currency view."
+  },
+  {
+   "author": "Trader#C5C8",
+   "reason": "Vague market comment without a specific currency view."
+  },
+  {
+   "author": "Trader#425F",
+   "reason": "Political remark without a currency view."
+  }
+ ],
+ "model": "gemini-3.8-flash",
+ "source_url": "https://www.forexfactory.com/news/1430921-hormuz-attacks-intensify-as-efforts-to-end-war",
+ "source_task_id": "a3cc64e7-93c4-4e9f-b2b2-2e6dbd9fbe9c",
+ "fetched_at": "2026-10-11T19:39:47.506Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 503,
+    "ms": 2169
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 503,
+    "ms": 1045
+   },
+   {
+    "model": "gemini-3.8-flash",
+    "status": 200,
+    "ms": 24652
+   }
+  ],
+  "response_id": "IubLaoLZKZTU-sAPzbCmiQE",
+  "input_chars": 9402,
+  "markdown_sha256": "ef3b6b20ecd1f5174f90bd817619e71811a5e04922a4ca1584b9d5b062b2884b",
+  "prompt_tokens": 3809,
+  "output_tokens": 255,
+  "thinking_tokens": 696
+ }
+}

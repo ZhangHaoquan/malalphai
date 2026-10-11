@@ -1,0 +1,28 @@
+{
+ "opinions": [],
+ "skipped": [
+  {
+   "author": "Trader#DF65",
+   "reason": "Single-word comment with no currency outlook or directional view."
+  }
+ ],
+ "model": "gemini-3.8-flash",
+ "source_url": "https://www.forexfactory.com/news/1430895-british-pound-november-bank-of-england-rate-hike",
+ "source_task_id": "1c294e46-af80-4815-98bd-af14197e89f6",
+ "fetched_at": "2026-10-11T19:44:42.125Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 200,
+    "ms": 38601
+   }
+  ],
+  "response_id": "P-fLarSjH6ywsOIPrsXSqQQ",
+  "input_chars": 6376,
+  "markdown_sha256": "f5b28fa616cc137d65384368ea4d2ccfe29f381e26f6a368775948ffae348950",
+  "prompt_tokens": 2587,
+  "output_tokens": 30,
+  "thinking_tokens": 335
+ }
+}

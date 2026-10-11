@@ -1,0 +1,182 @@
+{
+ "opinions": [
+  {
+   "author": "BeAMouseDeer",
+   "quote": "Im still long on the same setup as yesterday",
+   "pairs": [
+    "USDJPY"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.2,
+     "sideways": 0.5,
+     "usd_up": 0.3
+    },
+    "22d": {
+     "usd_down": 0.2,
+     "sideways": 0.5,
+     "usd_up": 0.3
+    },
+    "66d": {
+     "usd_down": 0.2,
+     "sideways": 0.6,
+     "usd_up": 0.2
+    }
+   },
+   "reason": "The trader maintains a long position anticipating higher targets.",
+   "comment_id": "15945560",
+   "relative_time": "Oct 6, 2026 6:31pm"
+  },
+  {
+   "author": "FromMyDesk",
+   "quote": "Also in buy trades: 158.104 158 161",
+   "pairs": [
+    "USDJPY"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.2,
+     "sideways": 0.5,
+     "usd_up": 0.3
+    },
+    "22d": {
+     "usd_down": 0.2,
+     "sideways": 0.5,
+     "usd_up": 0.3
+    },
+    "66d": {
+     "usd_down": 0.2,
+     "sideways": 0.6,
+     "usd_up": 0.2
+    }
+   },
+   "reason": "The trader reports being in active buy positions.",
+   "comment_id": "15945571",
+   "relative_time": "Oct 6, 2026 6:48pm"
+  },
+  {
+   "author": "BeAMouseDeer",
+   "quote": "Now reversed to small shorts",
+   "pairs": [
+    "USDJPY"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.3,
+     "sideways": 0.5,
+     "usd_up": 0.2
+    },
+    "22d": {
+     "usd_down": 0.3,
+     "sideways": 0.5,
+     "usd_up": 0.2
+    },
+    "66d": {
+     "usd_down": 0.2,
+     "sideways": 0.6,
+     "usd_up": 0.2
+    }
+   },
+   "reason": "The trader has reversed position and gone short.",
+   "comment_id": "15947525",
+   "relative_time": "Oct 7, 2026 3:25pm"
+  },
+  {
+   "author": "BeAMouseDeer",
+   "quote": "Conclusion: I reversed again to LONGS, 158.21, SL ~157.80, targets again @160.20.",
+   "pairs": [
+    "USDJPY"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.2,
+     "sideways": 0.5,
+     "usd_up": 0.3
+    },
+    "22d": {
+     "usd_down": 0.2,
+     "sideways": 0.5,
+     "usd_up": 0.3
+    },
+    "66d": {
+     "usd_down": 0.2,
+     "sideways": 0.6,
+     "usd_up": 0.2
+    }
+   },
+   "reason": "The trader reversed back to long positions with higher targets.",
+   "comment_id": "15948630",
+   "relative_time": "Oct 8, 2026 6:45am"
+  },
+  {
+   "author": "sakimer",
+   "quote": "Today, I opened a short position only to see a sudden reversal that hit my stop-loss",
+   "pairs": [
+    "USDJPY"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.3,
+     "sideways": 0.5,
+     "usd_up": 0.2
+    },
+    "22d": {
+     "usd_down": 0.3,
+     "sideways": 0.5,
+     "usd_up": 0.2
+    },
+    "66d": {
+     "usd_down": 0.2,
+     "sideways": 0.6,
+     "usd_up": 0.2
+    }
+   },
+   "reason": "The trader opened a short position expecting a downward move.",
+   "comment_id": "15951390",
+   "relative_time": "Oct 9, 2026 7:31am"
+  }
+ ],
+ "skipped": [
+  {
+   "author": "adam-",
+   "reason": "Expresses a general emotional desire for a bear market without a concrete actionable currency pair outlook or setup."
+  },
+  {
+   "author": "FX.Knight",
+   "reason": "Posts only images/charts with no accompanying text or currency view."
+  },
+  {
+   "author": "bel3ouchi",
+   "reason": "Merely states a trading style (trade with no stop loss) without a specific directional view."
+  }
+ ],
+ "model": "gemini-3.5-flash-lite",
+ "source_url": "https://www.forexfactory.com/thread/5505-usdjpy-discussion?page=4682",
+ "source_task_id": "ebdb83a6-fc3c-4c96-8aba-aa7e0601ea01",
+ "fetched_at": "2026-10-11T19:48:22.125Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 154
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 429,
+    "ms": 179
+   },
+   {
+    "model": "gemini-3.5-flash-lite",
+    "status": 200,
+    "ms": 3621
+   }
+  ],
+  "response_id": "jejLaq21Ici11MkP-_7A8Q8",
+  "input_chars": 33019,
+  "markdown_sha256": "859d1e1f839c1197dc547d8e5fb4e938c0b75256278180af570a076b52e79676",
+  "prompt_tokens": 13502,
+  "output_tokens": 1436,
+  "thinking_tokens": null
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "opinions": [
+  {
+   "author": "MrAnonymous",
+   "quote": "get ready for a short trade because UJ is near a supply zone...on d1 timeframe",
+   "pairs": [
+    "USDJPY"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.65,
+     "sideways": 0.25,
+     "usd_up": 0.1
+    },
+    "22d": {
+     "usd_down": 0.55,
+     "sideways": 0.35,
+     "usd_up": 0.1
+    },
+    "66d": {
+     "usd_down": 0.45,
+     "sideways": 0.45,
+     "usd_up": 0.1
+    }
+   },
+   "reason": "Expecting a short trade due to supply zone on the daily timeframe.",
+   "comment_id": "15953037",
+   "relative_time": "31 hr ago"
+  }
+ ],
+ "skipped": [
+  {
+   "author": "FromMyDesk",
+   "reason": "Shows a chart trade setup and generic quote without explicit directional expectation."
+  },
+  {
+   "author": "FX.Knight",
+   "reason": "Only posted chart images with no commentary or directional view."
+  },
+  {
+   "author": "setumilemokg",
+   "reason": "Pure question asking who is in on long-term buys."
+  }
+ ],
+ "model": "gemini-3.5-flash-lite",
+ "source_url": "https://www.forexfactory.com/thread/post/15953344",
+ "source_task_id": "c6998fd9-b820-4edf-9ada-fefdca14ecd1",
+ "fetched_at": "2026-10-11T19:46:35.974Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 134
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 429,
+    "ms": 157
+   },
+   {
+    "model": "gemini-3.5-flash-lite",
+    "status": 200,
+    "ms": 2132
+   }
+  ],
+  "response_id": "r-jLatTMGtyNjMcP0sOL4AM",
+  "input_chars": 12718,
+  "markdown_sha256": "5905ca85e0414f048058317ea26050045fcc597ce8a7e523cde1887ef1811a9e",
+  "prompt_tokens": 5384,
+  "output_tokens": 380,
+  "thinking_tokens": null
+ }
+}

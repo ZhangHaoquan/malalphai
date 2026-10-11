@@ -1,0 +1,207 @@
+{
+ "opinions": [
+  {
+   "author": "Js3mwtRc",
+   "quote": "Resistance at 1.1263/77 is keeping price below the weekly pivot for now and should continue to hold unless buyers manage a breakthrough.",
+   "pairs": [
+    "USDEUR"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.2,
+     "sideways": 0.6,
+     "usd_up": 0.2
+    },
+    "22d": {
+     "usd_down": 0.22,
+     "sideways": 0.56,
+     "usd_up": 0.22
+    },
+    "66d": {
+     "usd_down": 0.24,
+     "sideways": 0.52,
+     "usd_up": 0.24
+    }
+   },
+   "reason": "Resistance holding below weekly pivot implies a steady or slightly upward USD bias against EUR.",
+   "comment_id": "15948575",
+   "relative_time": "Oct 8, 2026"
+  },
+  {
+   "author": "Billy200",
+   "quote": "if we break above that level we could expect some short term Longs, but overall still a bearish market.",
+   "pairs": [
+    "USDEUR"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.15,
+     "sideways": 0.5,
+     "usd_up": 0.35
+    },
+    "22d": {
+     "usd_down": 0.18,
+     "sideways": 0.6,
+     "usd_up": 0.22
+    },
+    "66d": {
+     "usd_down": 0.2,
+     "sideways": 0.62,
+     "usd_up": 0.18
+    }
+   },
+   "reason": "Overall bearish market for EUR means bullish for USD.",
+   "comment_id": "15949470",
+   "relative_time": "Oct 8, 2026"
+  },
+  {
+   "author": "johncen",
+   "quote": "We pretty much go sideways after the drop on Monday",
+   "pairs": [
+    "USDEUR"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.1,
+     "sideways": 0.8,
+     "usd_up": 0.1
+    },
+    "22d": {
+     "usd_down": 0.15,
+     "sideways": 0.7,
+     "usd_up": 0.15
+    },
+    "66d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    }
+   },
+   "reason": "Explicitly expects sideways price action after a drop.",
+   "comment_id": "15950793",
+   "relative_time": "Oct 8, 2026"
+  },
+  {
+   "author": "johncen",
+   "quote": "Trend is down but i would still want to retest monthly/quarterly open before maybe heading back down",
+   "pairs": [
+    "USDEUR"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.3,
+     "sideways": 0.4,
+     "usd_up": 0.3
+    },
+    "22d": {
+     "usd_down": 0.25,
+     "sideways": 0.5,
+     "usd_up": 0.25
+    },
+    "66d": {
+     "usd_down": 0.2,
+     "sideways": 0.6,
+     "usd_up": 0.2
+    }
+   },
+   "reason": "Expecting a retest higher before resuming the downward trend in EURUSD.",
+   "comment_id": "15951689",
+   "relative_time": "Oct 9, 2026"
+  }
+ ],
+ "skipped": [
+  {
+   "author": "SmartMoneyOg",
+   "reason": "Discussing gold (XAU) and off-topic chat rather than covered currency pairs."
+  },
+  {
+   "author": "SmartMoneyOg",
+   "reason": "Discussing gold entry zones."
+  },
+  {
+   "author": "SmartMoneyOg",
+   "reason": "Discussing gold shorts and liquidity areas."
+  },
+  {
+   "author": "SmartMoneyOg",
+   "reason": "Discussing gold chart patterns (inverted h&s)."
+  },
+  {
+   "author": "Js3mwtRc",
+   "reason": "General advice on trading risk management without a clear currency price outlook."
+  },
+  {
+   "author": "Luxyus",
+   "reason": "General trading psychology and advice without a directional currency view."
+  },
+  {
+   "author": "Billy200",
+   "reason": "Commenting on session conditions without giving a directional outlook."
+  },
+  {
+   "author": "johncen",
+   "reason": "Short comment responding to gold chart pattern without currency prediction."
+  },
+  {
+   "author": "Billy200",
+   "reason": "Describes a past executed trade without future outlook for the pair."
+  },
+  {
+   "author": "vssfx",
+   "reason": "Posted an attached image without accompanying text or currency view."
+  },
+  {
+   "author": "SmartMoneyOg",
+   "reason": "Vague mention of reversal possibility without a clear directional projection."
+  },
+  {
+   "author": "Js3mwtRc",
+   "reason": "Descriptive market update on support levels without clear probabilistic shift from baseline for longer horizons."
+  },
+  {
+   "author": "Js3mwtRc",
+   "reason": "Pure question about respecting a triangle and Friday squeeze."
+  },
+  {
+   "author": "johncen",
+   "reason": "Speculative and uncertain statement ('who knows') about breaking resistance."
+  },
+  {
+   "author": "johncen",
+   "reason": "Stating market is rangy with mixed signals without a strong directional forecast."
+  },
+  {
+   "author": "Billy200",
+   "reason": "Noting choppy session conditions without a directional prediction."
+  }
+ ],
+ "model": "gemini-3.5-flash-lite",
+ "source_url": "https://www.forexfactory.com/thread/1279289-only-eurusd?page=1089",
+ "source_task_id": "125a2f70-4c74-494c-9697-67c256fb61a6",
+ "fetched_at": "2026-10-11T19:46:35.985Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 150
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 429,
+    "ms": 155
+   },
+   {
+    "model": "gemini-3.5-flash-lite",
+    "status": 200,
+    "ms": 5093
+   }
+  ],
+  "response_id": "rujLasy4LY3djrEP2OD8iAY",
+  "input_chars": 28142,
+  "markdown_sha256": "e19b73743ca375984963593f84041d5bb6c3d1cd91b6cb6d6355fc1aa6480164",
+  "prompt_tokens": 11715,
+  "output_tokens": 1630,
+  "thinking_tokens": null
+ }
+}

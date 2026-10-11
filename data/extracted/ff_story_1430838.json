@@ -1,0 +1,53 @@
+{
+ "opinions": [],
+ "skipped": [
+  {
+   "author": "Prashanthfx",
+   "reason": "Comment contains no directional view or analysis on any currency pair."
+  }
+ ],
+ "model": "gemini-3.5-flash",
+ "source_url": "https://www.forexfactory.com/news/1430838-usdjpy-weekly-outlook-us-inflation-threatens-to-break",
+ "source_task_id": "e74fa0e2-18ed-4e66-8627-fae3c61a1ddc",
+ "fetched_at": "2026-10-11T19:44:42.110Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 262
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 503,
+    "ms": 1504
+   },
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 141
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 429,
+    "ms": 153
+   },
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 133
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 200,
+    "ms": 3979
+   }
+  ],
+  "response_id": "jefLasjJNaDVjMcPir66sQ0",
+  "input_chars": 7764,
+  "markdown_sha256": "6a89210613124bfc656ab6956b09521bf43cd7313f112af8e8e65f51c52df563",
+  "prompt_tokens": 2965,
+  "output_tokens": 54,
+  "thinking_tokens": 547
+ }
+}

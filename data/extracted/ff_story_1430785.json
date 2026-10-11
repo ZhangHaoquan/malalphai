@@ -1,0 +1,33 @@
+{
+ "opinions": [],
+ "skipped": [
+  {
+   "author": "Emypeta",
+   "reason": "Pure question about AUD with no forecast for USDEUR, USDJPY, USDGBP, or USDCAD."
+  }
+ ],
+ "model": "gemini-3.5-flash",
+ "source_url": "https://www.forexfactory.com/news/1430785-australian-dollar-short-term-outlook-audusd-rebound-challenges-september",
+ "source_task_id": "6ba4dc4b-1697-4d32-9d13-1d032492af90",
+ "fetched_at": "2026-10-11T19:39:57.219Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 181
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 200,
+    "ms": 5408
+   }
+  ],
+  "response_id": "PObLauyTJvzYjMcPoryaoAU",
+  "input_chars": 6804,
+  "markdown_sha256": "9e8314770c2d17087c5fdd04d793431fac3d06d518c597c2774931a0f66a6785",
+  "prompt_tokens": 2772,
+  "output_tokens": 38,
+  "thinking_tokens": 867
+ }
+}

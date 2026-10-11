@@ -1,0 +1,213 @@
+{
+ "opinions": [
+  {
+   "author": "Billy200",
+   "quote": "any day can be a short term bullish reversal so I'm low risk until we reach that level.",
+   "pairs": [
+    "USDEUR"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.25,
+     "sideways": 0.55,
+     "usd_up": 0.2
+    },
+    "22d": {
+     "usd_down": 0.2,
+     "sideways": 0.64,
+     "usd_up": 0.16
+    },
+    "66d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    }
+   },
+   "reason": "The author mentions a potential short-term bullish reversal on EUR/USD, implying a weaker dollar.",
+   "comment_id": "15951814",
+   "relative_time": "Oct 9, 2026 7:05am"
+  },
+  {
+   "author": "Js3mwtRc",
+   "quote": "eu is trending down aggressively with scope the 1.1089-1.1130 zone if 1.1161 breaks.",
+   "pairs": [
+    "USDEUR"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.1,
+     "sideways": 0.4,
+     "usd_up": 0.5
+    },
+    "22d": {
+     "usd_down": 0.1,
+     "sideways": 0.4,
+     "usd_up": 0.5
+    },
+    "66d": {
+     "usd_down": 0.12,
+     "sideways": 0.5,
+     "usd_up": 0.38
+    }
+   },
+   "reason": "The author states EUR/USD is trending down aggressively, indicating USDEUR upside.",
+   "comment_id": "15951877",
+   "relative_time": "Oct 9, 2026 7:43am"
+  },
+  {
+   "author": "Ads1070",
+   "quote": "1.1990 and then up it goes!",
+   "pairs": [
+    "USDEUR"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.1,
+     "sideways": 0.5,
+     "usd_up": 0.4
+    },
+    "22d": {
+     "usd_down": 0.1,
+     "sideways": 0.5,
+     "usd_up": 0.4
+    },
+    "66d": {
+     "usd_down": 0.12,
+     "sideways": 0.58,
+     "usd_up": 0.3
+    }
+   },
+   "reason": "Expecting EUR/USD to go up translates to USDEUR going down.",
+   "comment_id": "15951921",
+   "relative_time": "Oct 9, 2026 8:15am"
+  },
+  {
+   "author": "johncen",
+   "quote": "1067 bear target but still thinking it is too soon for that to come",
+   "pairs": [
+    "USDEUR"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.12,
+     "sideways": 0.68,
+     "usd_up": 0.2
+    },
+    "22d": {
+     "usd_down": 0.15,
+     "sideways": 0.6,
+     "usd_up": 0.25
+    },
+    "66d": {
+     "usd_down": 0.15,
+     "sideways": 0.55,
+     "usd_up": 0.3
+    }
+   },
+   "reason": "The author mentions a bear target on EUR/USD, indicating a long-term stronger US dollar.",
+   "comment_id": "15951932",
+   "relative_time": "Oct 9, 2026 8:20am"
+  },
+  {
+   "author": "Js3mwtRc",
+   "quote": "EUR/USD closed down for the 5th week in a row... The trend remains bearish",
+   "pairs": [
+    "USDEUR"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.1,
+     "sideways": 0.45,
+     "usd_up": 0.45
+    },
+    "22d": {
+     "usd_down": 0.1,
+     "sideways": 0.45,
+     "usd_up": 0.45
+    },
+    "66d": {
+     "usd_down": 0.12,
+     "sideways": 0.58,
+     "usd_up": 0.3
+    }
+   },
+   "reason": "The author highlights a continuous bearish trend in EUR/USD, meaning USDEUR is expected higher.",
+   "comment_id": "15952924",
+   "relative_time": "Oct 10, 1:54am"
+  },
+  {
+   "author": "johncen",
+   "quote": "150 up or 150 pips down",
+   "pairs": [
+    "USDEUR"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    },
+    "22d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    },
+    "66d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    }
+   },
+   "reason": "Ambiguous comment giving equal weight to both directions.",
+   "comment_id": "15952971",
+   "relative_time": "Oct 10, 4:44am"
+  }
+ ],
+ "skipped": [
+  {
+   "author": "mortgagee",
+   "reason": "Only attached a chart image without text providing a currency direction opinion."
+  },
+  {
+   "author": "newbegger",
+   "reason": "Discusses trading psychology, risk-reward ratios, and tax loss selling strategies without a specific currency direction prediction."
+  },
+  {
+   "author": "SmartMoneyOg",
+   "reason": "Discusses risk-to-reward philosophy rather than providing a currency forecast."
+  },
+  {
+   "author": "paogeh",
+   "reason": "Posted images labeled #AI and #40% without contextual text providing a clear currency outlook."
+  }
+ ],
+ "model": "gemini-3.5-flash-lite",
+ "source_url": "https://www.forexfactory.com/thread/post/15953537",
+ "source_task_id": "46b4c27a-e9b8-47bc-af5a-e8289bb61d50",
+ "fetched_at": "2026-10-11T19:44:57.384Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 183
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 429,
+    "ms": 196
+   },
+   {
+    "model": "gemini-3.5-flash-lite",
+    "status": 200,
+    "ms": 4291
+   }
+  ],
+  "response_id": "jOjLavH3BpvVjMcP6bvC4AM",
+  "input_chars": 24406,
+  "markdown_sha256": "ca906603ec37cd9e265f07ff58a89ac245fbb8ca732a5fb4ab5b78c03104496f",
+  "prompt_tokens": 9670,
+  "output_tokens": 1795,
+  "thinking_tokens": null
+ }
+}

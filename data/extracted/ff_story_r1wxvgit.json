@@ -1,0 +1,183 @@
+{
+ "opinions": [
+  {
+   "author": "PipEcho",
+   "quote": "EURUSD Daily: Pullback Setup into Premium FVG Zone 📉 On EURUSD price printed a fresh lower low (LL) on the Daily timeframe, confirming the overall bearish flow.",
+   "pairs": [
+    "USDEUR"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.16,
+     "sideways": 0.5,
+     "usd_up": 0.34
+    },
+    "22d": {
+     "usd_down": 0.16,
+     "sideways": 0.4,
+     "usd_up": 0.44
+    },
+    "66d": {
+     "usd_down": 0.16,
+     "sideways": 0.4,
+     "usd_up": 0.44
+    }
+   },
+   "reason": "The author notes a bearish flow on EURUSD which corresponds to USDEUR upside.",
+   "comment_id": "1wxvgit"
+  },
+  {
+   "author": "beninvestments",
+   "quote": "I actually have a sell limit order open.",
+   "pairs": [
+    "USDEUR"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.16,
+     "sideways": 0.5,
+     "usd_up": 0.34
+    },
+    "22d": {
+     "usd_down": 0.16,
+     "sideways": 0.4,
+     "usd_up": 0.44
+    },
+    "66d": {
+     "usd_down": 0.16,
+     "sideways": 0.4,
+     "usd_up": 0.44
+    }
+   },
+   "reason": "A sell limit order on EURUSD implies expecting EURUSD to drop, hence USDEUR rising.",
+   "comment_id": "pel6ev9"
+  },
+  {
+   "author": "Pretty-Dark-3636",
+   "quote": "Fundamental gesehen ist der Euro Short anzusehen. BIP runter [...] Währung runter!!!",
+   "pairs": [
+    "USDEUR"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.16,
+     "sideways": 0.5,
+     "usd_up": 0.34
+    },
+    "22d": {
+     "usd_down": 0.16,
+     "sideways": 0.3,
+     "usd_up": 0.54
+    },
+    "66d": {
+     "usd_down": 0.16,
+     "sideways": 0.3,
+     "usd_up": 0.54
+    }
+   },
+   "reason": "The author expects the Euro to fall fundamentally, meaning USDEUR goes up.",
+   "comment_id": "pdxesv5"
+  },
+  {
+   "author": "texashayseed01",
+   "quote": "Fibonacci daily has not found bottom yet.",
+   "pairs": [
+    "USDEUR"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.16,
+     "sideways": 0.6,
+     "usd_up": 0.24
+    },
+    "22d": {
+     "usd_down": 0.16,
+     "sideways": 0.6,
+     "usd_up": 0.24
+    },
+    "66d": {
+     "usd_down": 0.16,
+     "sideways": 0.6,
+     "usd_up": 0.24
+    }
+   },
+   "reason": "Expecting Fibonacci not to have found a bottom implies further downward movement for EURUSD, which is USDEUR up.",
+   "comment_id": "pdxfx4s"
+  }
+ ],
+ "skipped": [
+  {
+   "author": "rforex-modtools",
+   "reason": "Discusses technical analysis methodology without providing a specific currency outlook."
+  },
+  {
+   "author": "beninvestments",
+   "reason": "Agrees with pullback setup but does not give a directional stance."
+  },
+  {
+   "author": "CoatAsleep9770",
+   "reason": "General comment about trading strategy using macroeconomics without a specific currency forecast."
+  },
+  {
+   "author": "Pretty-Dark-3636",
+   "reason": "Agrees with previous macro sentiment without adding new directional forecasts."
+  },
+  {
+   "author": "No-Monk-6815",
+   "reason": "General remark about volume indicators on forex."
+  },
+  {
+   "author": "PipEcho",
+   "reason": "Discusses the use of volume profile as an indicator."
+  },
+  {
+   "author": "Relevant-Owl-8455",
+   "reason": "Meta comment about trading terminology."
+  },
+  {
+   "author": "ImpressiveGear7",
+   "reason": "Laughing reaction."
+  },
+  {
+   "author": "[deleted]",
+   "reason": "Deleted comment."
+  },
+  {
+   "author": "PipEcho",
+   "reason": "Describes trading execution rules without giving a clear directional prediction."
+  },
+  {
+   "author": "AdStrong1162",
+   "reason": "Joke or taunt about demo accounts."
+  }
+ ],
+ "model": "gemini-3.5-flash-lite",
+ "source_url": "https://www.reddit.com/r/Forex/comments/1wxvgit/eurusd_daily_pullback_setup_into_premium_fvg_zone/.rss",
+ "source_task_id": "5e60cf11-2d46-4d3a-9163-67682bff0263",
+ "fetched_at": "2026-10-11T19:48:23.110Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 191
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 429,
+    "ms": 255
+   },
+   {
+    "model": "gemini-3.5-flash-lite",
+    "status": 200,
+    "ms": 3502
+   }
+  ],
+  "response_id": "0ujLatOmEMLj-sAP-K-R6Qw",
+  "input_chars": 4542,
+  "markdown_sha256": "25a55ba417d50a996e7fd1eb349be3a76aff9a20d8fa8ec47f95c9dc6c58bd68",
+  "prompt_tokens": 1849,
+  "output_tokens": 1370,
+  "thinking_tokens": null
+ }
+}

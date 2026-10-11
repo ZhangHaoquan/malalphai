@@ -10,7 +10,7 @@ import time
 import urllib.error
 import urllib.request
 
-MODELS = ["gemini-3.8-flash", "gemini-3.5-flash"]
+MODELS = ["gemini-3.8-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite"]
 PAIRS = ["USDEUR", "USDJPY", "USDGBP", "USDCAD"]
 
 PROMPT = """You read forum pages about currencies. The page below was fetched by Nimble at {fetched_at} (UTC).
@@ -64,21 +64,21 @@ def extract(nimble_result: dict) -> dict:
     body = {"contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {"responseMimeType": "application/json", "responseSchema": SCHEMA, "temperature": 0.2}}
     out, used, attempts = None, None, []
-    for attempt in range(6):
+    for attempt in range(10):
         model = MODELS[attempt % len(MODELS)]
         req = urllib.request.Request(
             f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
             data=json.dumps(body).encode(), headers={"Content-Type": "application/json", "x-goog-api-key": os.environ["GEMINI_API_KEY"]})
         t0 = time.time()
         try:
-            with urllib.request.urlopen(req, timeout=120) as r:
+            with urllib.request.urlopen(req, timeout=240) as r:
                 out, used = json.load(r), model
                 attempts.append({"model": model, "status": 200, "ms": round((time.time() - t0) * 1000)})
                 break
         except urllib.error.HTTPError as e:
             attempts.append({"model": model, "status": e.code, "ms": round((time.time() - t0) * 1000)})
             print(f"{model}: HTTP {e.code}, retrying", file=sys.stderr)
-            time.sleep(2 + attempt * 2)
+            time.sleep(15 if e.code == 429 else 3)
     if out is None:
         raise SystemExit("Gemini unavailable after retries")
     result = json.loads(out["candidates"][0]["content"]["parts"][0]["text"])

@@ -1,0 +1,33 @@
+{
+  "opinions": [],
+  "skipped": [
+    {
+      "author": "Smmtrader",
+      "reason": "Does not express a directional view or mention any of the specified currency pairs."
+    }
+  ],
+  "model": "gemini-3.5-flash",
+  "source_url": "https://www.forexfactory.com/thread/post/15953488",
+  "source_task_id": "417bfa31-76f7-4e19-b499-f15bc7a19e2d",
+  "fetched_at": "2026-10-11T19:45:11.784Z",
+  "trace": {
+    "attempts": [
+      {
+        "model": "gemini-3.8-flash",
+        "status": 429,
+        "ms": 659
+      },
+      {
+        "model": "gemini-3.5-flash",
+        "status": 200,
+        "ms": 6611
+      }
+    ],
+    "response_id": "cefLarWUGf7v_uMP-q7MqQE",
+    "input_chars": 12112,
+    "markdown_sha256": "0186075fa177748a03127b61c57e8eec6bc4a026f6627d05db570786ed9990a7",
+    "prompt_tokens": 4664,
+    "output_tokens": 32,
+    "thinking_tokens": 1180
+  }
+}

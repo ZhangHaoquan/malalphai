@@ -1,0 +1,313 @@
+{
+ "opinions": [
+  {
+   "author": "robertbrown0427",
+   "quote": "GBP CAD - Short",
+   "pairs": [
+    "USDCAD",
+    "USDGBP"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.2,
+     "sideways": 0.6,
+     "usd_up": 0.2
+    },
+    "22d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    },
+    "66d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    }
+   },
+   "reason": "The user is looking to short GBPCAD, indicating bearish direction for the cross, but this does not explicitly dictate USD direction.",
+   "comment_id": "1x1c134"
+  },
+  {
+   "author": "beninvestments",
+   "quote": "The bullish momentum is supported by the interest rate differential between the Fed and the BoC.",
+   "pairs": [
+    "USDCAD"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.1,
+     "sideways": 0.5,
+     "usd_up": 0.4
+    },
+    "22d": {
+     "usd_down": 0.1,
+     "sideways": 0.5,
+     "usd_up": 0.4
+    },
+    "66d": {
+     "usd_down": 0.1,
+     "sideways": 0.5,
+     "usd_up": 0.4
+    }
+   },
+   "reason": "The user states USD/CAD bullish momentum is supported by interest rate differentials, favoring USD up.",
+   "comment_id": "1x13txa"
+  },
+  {
+   "author": "Yahfet_Llamada",
+   "quote": "EURUSD really on a hard rally huh",
+   "pairs": [
+    "USDEUR"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.4,
+     "sideways": 0.5,
+     "usd_up": 0.1
+    },
+    "22d": {
+     "usd_down": 0.4,
+     "sideways": 0.5,
+     "usd_up": 0.1
+    },
+    "66d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    }
+   },
+   "reason": "EURUSD rallying implies USD is down against EUR.",
+   "comment_id": "1wy7534"
+  },
+  {
+   "author": "PipEcho",
+   "quote": "On EURUSD price printed a fresh lower low (LL) on the Daily timeframe, confirming the overall bearish flow.",
+   "pairs": [
+    "USDEUR"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.1,
+     "sideways": 0.5,
+     "usd_up": 0.4
+    },
+    "22d": {
+     "usd_down": 0.1,
+     "sideways": 0.5,
+     "usd_up": 0.4
+    },
+    "66d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    }
+   },
+   "reason": "Bearish flow on EURUSD implies USDEUR goes up as EUR drops against USD.",
+   "comment_id": "1wxvgit"
+  },
+  {
+   "author": "ManufacturerHeavy125",
+   "quote": "actual NFP came in at just 29K against 90K expected, supporting the bullish scenario",
+   "pairs": [
+    "USDEUR",
+    "USDJPY",
+    "USDGBP",
+    "USDCAD"
+   ],
+   "outlook": {
+    "5d": {
+     "usd_down": 0.4,
+     "sideways": 0.5,
+     "usd_up": 0.1
+    },
+    "22d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    },
+    "66d": {
+     "usd_down": 0.16,
+     "sideways": 0.68,
+     "usd_up": 0.16
+    }
+   },
+   "reason": "Weaker NFP puts pressure on the dollar.",
+   "comment_id": "1wvws1n"
+  }
+ ],
+ "skipped": [
+  {
+   "author": "Real-Proposal-2230",
+   "reason": "Asks a general question about losses and recovery without giving a currency view."
+  },
+  {
+   "author": "ProcedureDeep7013",
+   "reason": "Discusses trading psychology regarding missing a move, no currency view."
+  },
+  {
+   "author": "Impossible-Row6808",
+   "reason": "Asks a question about risk management and shared currency exposure."
+  },
+  {
+   "author": "Wooden_Culture5267",
+   "reason": "Asks for top brokers."
+  },
+  {
+   "author": "JosephGebru",
+   "reason": "Asks a technical question about market structure and lower highs."
+  },
+  {
+   "author": "AffectionateTie502",
+   "reason": "Discusses risk management vs trade management."
+  },
+  {
+   "author": "anxhelasweet",
+   "reason": "Reports a website 403 error."
+  },
+  {
+   "author": "MuchoPaper",
+   "reason": "Asks about leverage differences."
+  },
+  {
+   "author": "Dear-Darluh-2027",
+   "reason": "Asks traders where they are from and what they trade."
+  },
+  {
+   "author": "beninvestments",
+   "reason": "States it was a slow week with no trades opened."
+  },
+  {
+   "author": "Whole-Green1381",
+   "reason": "Discusses catching pips on gold."
+  },
+  {
+   "author": "forex_bulls",
+   "reason": "Low quality/meme post."
+  },
+  {
+   "author": "Ok-Bus5014",
+   "reason": "Account blowout story seeking emotional support."
+  },
+  {
+   "author": "Accomplished_Rise_26",
+   "reason": "Asking for prop firm recommendations."
+  },
+  {
+   "author": "DarkData_Red",
+   "reason": "Shares an algo trading win without a specific macro or currency outlook."
+  },
+  {
+   "author": "Few-Pepper858",
+   "reason": "Rant about noobs trading on feelings."
+  },
+  {
+   "author": "onepercentimprovemen",
+   "reason": "Asking for macro website recommendations."
+  },
+  {
+   "author": "infinitebeing_",
+   "reason": "Account drawdown recovery update."
+  },
+  {
+   "author": "Beneficial-Block-923",
+   "reason": "Asking for FTMO long-term tips."
+  },
+  {
+   "author": "HR-King",
+   "reason": "Asking for an MT5 copy trade platform."
+  },
+  {
+   "author": "nihilistweeb",
+   "reason": "Asking how to get into Forex."
+  },
+  {
+   "author": "Maleficent_Funny3455",
+   "reason": "Vague pump statement."
+  },
+  {
+   "author": "TurbulentLandscape63",
+   "reason": "Gold setup post."
+  },
+  {
+   "author": "No_Assistance_6358",
+   "reason": "Question about a broker ignoring a TP line."
+  },
+  {
+   "author": "mohsin_ali_abbas",
+   "reason": "Educational post on math and winrate in trading."
+  },
+  {
+   "author": "HauntedAlgorithm",
+   "reason": "Recounts a past gold short session."
+  },
+  {
+   "author": "Extra-Particular-625",
+   "reason": "Meme post."
+  },
+  {
+   "author": "sleepingcomedy",
+   "reason": "Distressed personal post about capital loss."
+  },
+  {
+   "author": "dalalstreetgambler",
+   "reason": "Asks about 4h candle trading experience."
+  },
+  {
+   "author": "JPF1992",
+   "reason": "Asks for simple forex apps."
+  },
+  {
+   "author": "StrongDirt1336",
+   "reason": "AUDCAD buy call without explanatory outlook text."
+  },
+  {
+   "author": "No-Roof-6251",
+   "reason": "Asks a technical question about fair value gaps."
+  },
+  {
+   "author": "EveningBar9494",
+   "reason": "General statement about discrimination."
+  },
+  {
+   "author": "KuroKien",
+   "reason": "Unclear post about a platform episode release."
+  },
+  {
+   "author": "Ill_Corgi_9309",
+   "reason": "Discusses discipline issues."
+  },
+  {
+   "author": "Less_Ad_4277",
+   "reason": "Asks for broker withdrawal recommendations."
+  }
+ ],
+ "model": "gemini-3.5-flash-lite",
+ "source_url": "https://www.reddit.com/r/Forex/new/.rss?limit=50",
+ "source_task_id": "4853a6c4-7e90-49e2-a063-7aa5872b2299",
+ "fetched_at": "2026-10-11T19:48:16.244Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 176
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 429,
+    "ms": 182
+   },
+   {
+    "model": "gemini-3.5-flash-lite",
+    "status": 200,
+    "ms": 6027
+   }
+  ],
+  "response_id": "z-jLauTEPIO21MkPypG3CQ",
+  "input_chars": 29304,
+  "markdown_sha256": "1b71331a6b7f98633c29115373a61e298a118cdfac4b04f014cab7d9d2e205ef",
+  "prompt_tokens": 8775,
+  "output_tokens": 2438,
+  "thinking_tokens": null
+ }
+}

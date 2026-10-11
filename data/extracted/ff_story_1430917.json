@@ -1,0 +1,56 @@
+{
+ "opinions": [],
+ "skipped": [
+  {
+   "author": "Trumpfacker",
+   "reason": "Political comment without currency outlook"
+  },
+  {
+   "author": "Trader#0E10",
+   "reason": "Commentary/insult without currency outlook"
+  },
+  {
+   "author": "Trader#D632",
+   "reason": "Pure insult/question without currency outlook"
+  }
+ ],
+ "model": "gemini-3.8-flash",
+ "source_url": "https://www.forexfactory.com/news/1430917-zelenskyy-discussed-the-energy-ceasefire-announced-by-trump",
+ "source_task_id": "9281120c-a82b-48c6-9e0e-f5756db7e728",
+ "fetched_at": "2026-10-11T19:39:47.516Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 503,
+    "ms": 2835
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 503,
+    "ms": 1871
+   },
+   {
+    "model": "gemini-3.8-flash",
+    "status": 503,
+    "ms": 62048
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 503,
+    "ms": 3515
+   },
+   {
+    "model": "gemini-3.8-flash",
+    "status": 200,
+    "ms": 19054
+   }
+  ],
+  "response_id": "c-bLasXmLfW6_uMPjdDjYA",
+  "input_chars": 6895,
+  "markdown_sha256": "a0cf840441d0e9b84059f3162427014e3ec1b3acbc083b497dbd673f8afcbbdd",
+  "prompt_tokens": 2838,
+  "output_tokens": 61,
+  "thinking_tokens": 244
+ }
+}

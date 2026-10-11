@@ -1,0 +1,53 @@
+{
+ "opinions": [],
+ "skipped": [
+  {
+   "author": "The Fool",
+   "reason": "Joke about money printing without a currency view"
+  },
+  {
+   "author": "aboodmash",
+   "reason": "Joke about money printing without a currency view"
+  },
+  {
+   "author": "EasyPeasy196",
+   "reason": "Joke about money printing without a currency view"
+  },
+  {
+   "author": "Trader#499C",
+   "reason": "Comment about gold rather than a currency pair"
+  },
+  {
+   "author": "Trader#FEA8",
+   "reason": "Comment about gold market move rather than a currency pair"
+  },
+  {
+   "author": "Trader#EA8D",
+   "reason": "Question about inflation and Fed policy without an explicit currency view"
+  }
+ ],
+ "model": "gemini-3.5-flash",
+ "source_url": "https://www.forexfactory.com/news/1430916-us-government-sold-728-billion-of-treasuries-this",
+ "source_task_id": "d0a6a479-824d-4441-a21d-d90eb51cfcb7",
+ "fetched_at": "2026-10-11T19:39:47.552Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 503,
+    "ms": 77764
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 200,
+    "ms": 6841
+   }
+  ],
+  "response_id": "j-fLasKTD56ajMcPno7W4Q4",
+  "input_chars": 8318,
+  "markdown_sha256": "d3693a740d7330070051e45695d4ab71acac7036c1a81494777d8b91be762266",
+  "prompt_tokens": 3373,
+  "output_tokens": 124,
+  "thinking_tokens": 1250
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "opinions": [],
+ "skipped": [
+  {
+   "author": "W0lfram",
+   "reason": "No directional currency outlook provided."
+  },
+  {
+   "author": "chartsniper4",
+   "reason": "No directional currency outlook provided."
+  }
+ ],
+ "model": "gemini-3.5-flash",
+ "source_url": "https://www.forexfactory.com/news/1430840-the-global-week-ahead-immaculate-disinflation",
+ "source_task_id": "830122e2-54ea-445a-ba93-3f4cb1770551",
+ "fetched_at": "2026-10-11T19:44:42.104Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 503,
+    "ms": 54787
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 200,
+    "ms": 4992
+   }
+  ],
+  "response_id": "eOfLarTFDvHajMcP_7OisAw",
+  "input_chars": 8218,
+  "markdown_sha256": "c18c9eaa3db0d69b747b947578ca3b2b79eacb6585e93e0a16117386d62e346b",
+  "prompt_tokens": 3150,
+  "output_tokens": 39,
+  "thinking_tokens": 871
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "opinions": [],
+ "skipped": [],
+ "model": "gemini-3.5-flash",
+ "source_url": "https://www.forexfactory.com/news/1430820-more-fed-hikes-on-the-horizon-heres-what",
+ "source_task_id": "74e96d61-b299-4b7e-ae20-1b38ad225147",
+ "fetched_at": "2026-10-11T19:44:47.794Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 478
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 200,
+    "ms": 4844
+   }
+  ],
+  "response_id": "gOfLavezE5jM_PUPlq7quAo",
+  "input_chars": 5182,
+  "markdown_sha256": "0bcda10b6bf5d3b732210ef0222835069db4077d4259b5d0333d9a12578f4a32",
+  "prompt_tokens": 2037,
+  "output_tokens": 8,
+  "thinking_tokens": 645
+ }
+}

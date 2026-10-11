@@ -1,0 +1,41 @@
+{
+ "opinions": [],
+ "skipped": [
+  {
+   "author": "MorlsNQ.",
+   "reason": "Question without a currency view"
+  },
+  {
+   "author": "The Fool",
+   "reason": "Comment about AI bubble without a currency view"
+  },
+  {
+   "author": "justkhally01",
+   "reason": "Comment without a currency view"
+  }
+ ],
+ "model": "gemini-3.5-flash",
+ "source_url": "https://www.forexfactory.com/news/1430859-week-ahead-firm-us-cpi-and-unresolved-european",
+ "source_task_id": "0d5f8e60-471b-4391-8217-a54f9b9a1b9f",
+ "fetched_at": "2026-10-11T19:44:42.279Z",
+ "trace": {
+  "attempts": [
+   {
+    "model": "gemini-3.8-flash",
+    "status": 429,
+    "ms": 152
+   },
+   {
+    "model": "gemini-3.5-flash",
+    "status": 200,
+    "ms": 5447
+   }
+  ],
+  "response_id": "aOfLapqRDJWh1MkP6oHQgAs",
+  "input_chars": 6544,
+  "markdown_sha256": "ea270924f8a9fdd1fb537ca528ed71c01080740df2df728a5f04f08bc1606082",
+  "prompt_tokens": 2573,
+  "output_tokens": 55,
+  "thinking_tokens": 901
+ }
+}
